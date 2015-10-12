@@ -97,7 +97,7 @@ public class DownloadCommand extends AbstractDownloadCommand implements Internal
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -105,7 +105,7 @@ public class DownloadCommand extends AbstractDownloadCommand implements Internal
         this.hvm = hvm;
     }
 
-    public boolean isHvm() {
+    public Boolean isHvm() {
         return hvm;
     }
 
@@ -126,7 +126,7 @@ public class DownloadCommand extends AbstractDownloadCommand implements Internal
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 

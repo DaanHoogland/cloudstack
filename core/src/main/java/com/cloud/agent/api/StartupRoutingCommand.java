@@ -81,7 +81,7 @@ public class StartupRoutingCommand extends StartupCommand {
         return cpuSockets;
     }
 
-    public int getCpus() {
+    public Integer getCpus() {
         return cpus;
     }
 
@@ -89,15 +89,15 @@ public class StartupRoutingCommand extends StartupCommand {
         return caps;
     }
 
-    public long getSpeed() {
+    public Long getSpeed() {
         return speed;
     }
 
-    public long getMemory() {
+    public Long getMemory() {
         return memory;
     }
 
-    public long getDom0MinMemory() {
+    public Long getDom0MinMemory() {
         return dom0MinMemory;
     }
 
@@ -133,7 +133,7 @@ public class StartupRoutingCommand extends StartupCommand {
         this.pool = pool;
     }
 
-    public boolean isPoolSync() {
+    public Boolean isPoolSync() {
         return poolSync;
     }
 
@@ -181,7 +181,7 @@ public class StartupRoutingCommand extends StartupCommand {
         this.groupDetails = groupDetails;
     }
 
-    public boolean getSupportsClonedVolumes() {
+    public Boolean getSupportsClonedVolumes() {
         return supportsClonedVolumes;
     }
 

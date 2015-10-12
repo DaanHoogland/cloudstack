@@ -146,7 +146,7 @@ public class UserVO implements User, Identity, InternalIdentity {
     }
 
         @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

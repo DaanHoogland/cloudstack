@@ -18,24 +18,24 @@ package com.cloud.vm;
 
 public interface VmStats {
     // vm related stats
-    public double getCPUUtilization();
+    public Double getCPUUtilization();
 
-    public double getNetworkReadKBs();
+    public Double getNetworkReadKBs();
 
-    public double getNetworkWriteKBs();
+    public Double getNetworkWriteKBs();
 
-    public double getDiskReadIOs();
+    public Double getDiskReadIOs();
 
-    public double getDiskWriteIOs();
+    public Double getDiskWriteIOs();
 
-    public double getDiskReadKBs();
+    public Double getDiskReadKBs();
 
-    public double getDiskWriteKBs();
+    public Double getDiskWriteKBs();
 
-    public double getMemoryKBs();
+    public Double getMemoryKBs();
 
-    public double getIntFreeMemoryKBs();
+    public Double getIntFreeMemoryKBs();
 
-    public double getTargetMemoryKBs();
+    public Double getTargetMemoryKBs();
 
 }

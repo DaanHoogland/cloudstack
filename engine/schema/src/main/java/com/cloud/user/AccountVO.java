@@ -107,7 +107,7 @@ public class AccountVO implements Account {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

@@ -25,11 +25,11 @@ import com.cloud.vm.VirtualMachine;
 import com.cloud.vm.VirtualMachine.Type;
 
 public class VirtualMachineTO {
-    private long id;
+    private Long id;
     private String name;
     private BootloaderType bootloader;
     Type type;
-    int cpus;
+    Integer cpus;
 
     /**
         'speed' is still here since 4.0.X/4.1.X management servers do not support
@@ -44,17 +44,17 @@ public class VirtualMachineTO {
     Integer minSpeed;
     Integer maxSpeed;
 
-    long minRam;
-    long maxRam;
+    Long minRam;
+    Long maxRam;
     String hostName;
     String arch;
     String os;
     String platformEmulator;
     String bootArgs;
     String[] bootupScripts;
-    boolean enableHA;
-    boolean limitCpuUse;
-    boolean enableDynamicallyScaleVm;
+    Boolean enableHA;
+    Boolean limitCpuUse;
+    Boolean enableDynamicallyScaleVm;
     String vncPassword;
     String vncAddr;
     Map<String, String> params;
@@ -74,8 +74,8 @@ public class VirtualMachineTO {
 
     Map<String, String> guestOsDetails = new HashMap<String, String>();
 
-    public VirtualMachineTO(long id, String instanceName, VirtualMachine.Type type, int cpus, Integer speed, long minRam, long maxRam, BootloaderType bootloader,
-            String os, boolean enableHA, boolean limitCpuUse, String vncPassword) {
+    public VirtualMachineTO(Long id, String instanceName, VirtualMachine.Type type, Integer cpus, Integer speed, Long minRam, Long maxRam, BootloaderType bootloader,
+            String os, Boolean enableHA, Boolean limitCpuUse, String vncPassword) {
         this.id = id;
         name = instanceName;
         this.type = type;
@@ -90,8 +90,8 @@ public class VirtualMachineTO {
         this.vncPassword = vncPassword;
     }
 
-    public VirtualMachineTO(long id, String instanceName, VirtualMachine.Type type, int cpus, Integer minSpeed, Integer maxSpeed, long minRam, long maxRam,
-            BootloaderType bootloader, String os, boolean enableHA, boolean limitCpuUse, String vncPassword) {
+    public VirtualMachineTO(Long id, String instanceName, VirtualMachine.Type type, Integer cpus, Integer minSpeed, Integer maxSpeed, Long minRam, Long maxRam,
+            BootloaderType bootloader, String os, Boolean enableHA, Boolean limitCpuUse, String vncPassword) {
         this.id = id;
         name = instanceName;
         this.type = type;
@@ -110,19 +110,19 @@ public class VirtualMachineTO {
     protected VirtualMachineTO() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public boolean isEnableDynamicallyScaleVm() {
+    public Boolean isEnableDynamicallyScaleVm() {
         return enableDynamicallyScaleVm;
     }
 
-    public void setEnableDynamicallyScaleVm(boolean enableDynamicallyScaleVm) {
+    public void setEnableDynamicallyScaleVm(Boolean enableDynamicallyScaleVm) {
         this.enableDynamicallyScaleVm = enableDynamicallyScaleVm;
     }
 
@@ -146,11 +146,11 @@ public class VirtualMachineTO {
         this.bootloader = bootloader;
     }
 
-    public int getCpus() {
+    public Integer getCpus() {
         return cpus;
     }
 
-    public void setCpus(int cpus) {
+    public void setCpus(Integer cpus) {
         this.cpus = cpus;
     }
 
@@ -166,20 +166,20 @@ public class VirtualMachineTO {
         return maxSpeed;
     }
 
-    public boolean getLimitCpuUse() {
+    public Boolean getLimitCpuUse() {
         return limitCpuUse;
     }
 
-    public long getMinRam() {
+    public Long getMinRam() {
         return minRam;
     }
 
-    public void setRam(long minRam, long maxRam) {
+    public void setRam(Long minRam, Long maxRam) {
         this.minRam = minRam;
         this.maxRam = maxRam;
     }
 
-    public long getMaxRam() {
+    public Long getMaxRam() {
         return maxRam;
     }
 

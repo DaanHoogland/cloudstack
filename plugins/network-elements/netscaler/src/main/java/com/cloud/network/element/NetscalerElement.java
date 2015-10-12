@@ -1191,7 +1191,7 @@ IpDeployer, StaticNatServiceProvider, GslbServiceProvider {
                     rulesTO = new ArrayList<StaticNatRuleTO>();
                     for (StaticNat rule : rules) {
                         IpAddress sourceIp = _networkMgr.getIp(rule.getSourceIpAddressId());
-                        StaticNatRuleTO ruleTO = new StaticNatRuleTO(0, sourceIp.getAddress().addr(), null, null,
+                        StaticNatRuleTO ruleTO = new StaticNatRuleTO(0l, sourceIp.getAddress().addr(), null, null,
                                 rule.getDestIpAddress(), null, null, null, rule.isForRevoke(), false);
                         rulesTO.add(ruleTO);
                     }
@@ -1218,7 +1218,7 @@ IpDeployer, StaticNatServiceProvider, GslbServiceProvider {
 
                         List<StaticNatRuleTO> rulesTO = new ArrayList<StaticNatRuleTO>();
                         IpAddress sourceIp = _networkMgr.getIp(rule.getSourceIpAddressId());
-                        StaticNatRuleTO ruleTO = new StaticNatRuleTO(0, sourceIp.getAddress().addr(), null, null,
+                        StaticNatRuleTO ruleTO = new StaticNatRuleTO(0l, sourceIp.getAddress().addr(), null, null,
                                 rule.getDestIpAddress(), null, null, null, rule.isForRevoke(), false);
                         rulesTO.add(ruleTO);
                         SetStaticNatRulesCommand cmd = new SetStaticNatRulesCommand(rulesTO, null);

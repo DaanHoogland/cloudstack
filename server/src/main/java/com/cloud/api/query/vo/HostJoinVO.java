@@ -202,7 +202,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
     private String username;
 
     @Override
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
@@ -271,7 +271,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return removed;
     }
 
-    public boolean isOutOfBandManagementEnabled() {
+    public Boolean isOutOfBandManagementEnabled() {
         return outOfBandManagementEnabled;
     }
 
@@ -279,7 +279,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return outOfBandManagementPowerState;
     }
 
-    public boolean isHostHAEnabled() {
+    public Boolean isHostHAEnabled() {
         return hostHAEnabled;
     }
 
@@ -399,7 +399,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return username;
     }
 
-    public boolean isAnnotated() {
+    public Boolean isAnnotated() {
         return StringUtils.isNotBlank(annotation);
     }
 }

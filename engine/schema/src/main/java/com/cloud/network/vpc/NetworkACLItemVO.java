@@ -129,7 +129,7 @@ public class NetworkACLItemVO implements NetworkACLItem, Cloneable {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

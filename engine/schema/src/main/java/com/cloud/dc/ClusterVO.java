@@ -94,7 +94,7 @@ public class ClusterVO implements Cluster {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

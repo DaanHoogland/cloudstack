@@ -115,7 +115,7 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

@@ -81,7 +81,7 @@ public class SslCertVO implements SslCert {
 
     // Getters
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

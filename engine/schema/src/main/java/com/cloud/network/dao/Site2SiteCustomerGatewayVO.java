@@ -103,7 +103,7 @@ public class Site2SiteCustomerGatewayVO implements Site2SiteCustomerGateway {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

@@ -204,15 +204,15 @@ public class UserVmJoinDaoImpl extends GenericDaoBaseWithTagInformation<UserVmJo
             VmStats vmStats = ApiDBUtils.getVmStatistics(userVm.getId());
             if (vmStats != null) {
                 userVmResponse.setCpuUsed(new DecimalFormat("#.##").format(vmStats.getCPUUtilization()) + "%");
-                userVmResponse.setNetworkKbsRead((long)vmStats.getNetworkReadKBs());
-                userVmResponse.setNetworkKbsWrite((long)vmStats.getNetworkWriteKBs());
-                userVmResponse.setDiskKbsRead((long)vmStats.getDiskReadKBs());
-                userVmResponse.setDiskKbsWrite((long)vmStats.getDiskWriteKBs());
-                userVmResponse.setDiskIORead((long)vmStats.getDiskReadIOs());
-                userVmResponse.setDiskIOWrite((long)vmStats.getDiskWriteIOs());
-                userVmResponse.setMemoryKBs((long)vmStats.getMemoryKBs());
-                userVmResponse.setMemoryIntFreeKBs((long)vmStats.getIntFreeMemoryKBs());
-                userVmResponse.setMemoryTargetKBs((long)vmStats.getTargetMemoryKBs());
+                userVmResponse.setNetworkKbsRead(vmStats.getNetworkReadKBs().longValue());
+                userVmResponse.setNetworkKbsWrite(vmStats.getNetworkWriteKBs().longValue());
+                userVmResponse.setDiskKbsRead(vmStats.getDiskReadKBs().longValue());
+                userVmResponse.setDiskKbsWrite(vmStats.getDiskWriteKBs().longValue());
+                userVmResponse.setDiskIORead(vmStats.getDiskReadIOs().longValue());
+                userVmResponse.setDiskIOWrite(vmStats.getDiskWriteIOs().longValue());
+                userVmResponse.setMemoryKBs(vmStats.getMemoryKBs().longValue());
+                userVmResponse.setMemoryIntFreeKBs(vmStats.getIntFreeMemoryKBs().longValue());
+                userVmResponse.setMemoryTargetKBs(vmStats.getTargetMemoryKBs().longValue());
 
             }
         }

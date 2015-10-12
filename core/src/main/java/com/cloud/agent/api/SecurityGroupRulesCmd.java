@@ -82,11 +82,11 @@ public class SecurityGroupRulesCmd extends Command {
             return proto;
         }
 
-        public int getStartPort() {
+        public Integer getStartPort() {
             return startPort;
         }
 
-        public int getEndPort() {
+        public Integer getEndPort() {
             return endPort;
         }
 
@@ -121,7 +121,7 @@ public class SecurityGroupRulesCmd extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return true;
     }
 
@@ -256,7 +256,7 @@ public class SecurityGroupRulesCmd extends Command {
      * used for logging
      * @return the number of Cidrs in the in and egress rule sets for this security group rules command.
      */
-    public int getTotalNumCidrs() {
+    public Integer getTotalNumCidrs() {
         int count = 0;
         for (final IpPortAndProto i : ingressRuleSet) {
             count += i.allowedCidrs.size();

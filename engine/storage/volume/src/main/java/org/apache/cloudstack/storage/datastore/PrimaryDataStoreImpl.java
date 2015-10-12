@@ -135,7 +135,7 @@ public class PrimaryDataStoreImpl implements PrimaryDataStore {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return pdsv.getId();
     }
 

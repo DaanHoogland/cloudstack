@@ -128,7 +128,7 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -158,7 +158,7 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public boolean isRollingRestart() {
+    public Boolean isRollingRestart() {
         return isRollingRestart;
     }
 

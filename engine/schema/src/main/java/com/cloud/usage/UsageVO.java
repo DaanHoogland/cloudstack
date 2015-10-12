@@ -231,7 +231,7 @@ public class UsageVO implements Usage, InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

@@ -162,7 +162,7 @@ public class DomainJoinVO extends BaseViewVO implements InternalIdentity, Identi
 
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

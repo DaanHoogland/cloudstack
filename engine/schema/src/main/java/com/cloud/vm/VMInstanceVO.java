@@ -249,7 +249,7 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

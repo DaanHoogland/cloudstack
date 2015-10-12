@@ -94,7 +94,7 @@ public class TemplateObjectTO implements DataTO {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -224,7 +224,7 @@ public class TemplateObjectTO implements DataTO {
         this.bootable = bootable;
     }
 
-    public boolean isBootable() {
+    public Boolean isBootable() {
         return bootable;
     }
 
@@ -236,7 +236,7 @@ public class TemplateObjectTO implements DataTO {
         this.uniqueName = uniqueName;
     }
 
-    public boolean isDirectDownload() {
+    public Boolean isDirectDownload() {
         return directDownload;
     }
 

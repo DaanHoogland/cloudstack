@@ -31,7 +31,7 @@ import com.cloud.storage.StoragePool;
 public class BackupSnapshotCommand extends SnapshotCommand {
     private String prevSnapshotUuid;
     private String prevBackupUuid;
-    private boolean isVolumeInactive;
+    private Boolean isVolumeInactive;
     private String vmName;
     private Long snapshotId;
     @LogLevel(Log4jLevel.Off)
@@ -76,7 +76,7 @@ public class BackupSnapshotCommand extends SnapshotCommand {
         return prevBackupUuid;
     }
 
-    public boolean isVolumeInactive() {
+    public Boolean isVolumeInactive() {
         return isVolumeInactive;
     }
 

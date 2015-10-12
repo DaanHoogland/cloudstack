@@ -27,8 +27,8 @@ public class CreatePrivateTemplateFromVolumeCommand extends SnapshotCommand {
     private String _volumePath;
     private String _userSpecifiedName;
     private String _uniqueName;
-    private long _templateId;
-    private long _accountId;
+    private Long _templateId;
+    private Long _accountId;
     StorageFilerTO _primaryPool;
     // For XenServer
     private String _secondaryStorageUrl;
@@ -51,7 +51,7 @@ public class CreatePrivateTemplateFromVolumeCommand extends SnapshotCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 
@@ -73,7 +73,7 @@ public class CreatePrivateTemplateFromVolumeCommand extends SnapshotCommand {
         return _uniqueName;
     }
 
-    public long getTemplateId() {
+    public Long getTemplateId() {
         return _templateId;
     }
 

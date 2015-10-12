@@ -304,7 +304,7 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public boolean isRedundant() {
+    public Boolean isRedundant() {
         return this.redundant;
     }
 
@@ -322,7 +322,7 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

@@ -58,7 +58,7 @@ public class CheckS2SVpnConnectionsAnswer extends Answer {
         }
     }
 
-    public boolean isConnected(String ip) {
+    public Boolean isConnected(String ip) {
         if (this.getResult()) {
             Boolean status = ipToConnected.get(ip);
 
@@ -77,7 +77,7 @@ public class CheckS2SVpnConnectionsAnswer extends Answer {
         return null;
     }
 
-    public boolean isIPPresent(String ip) {
+    public Boolean isIPPresent(String ip) {
         if (this.getResult()) {
             Boolean status = ipToConnected.get(ip);
             if (status != null) {

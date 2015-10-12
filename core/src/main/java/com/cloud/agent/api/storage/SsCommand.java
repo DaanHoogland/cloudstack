@@ -34,7 +34,7 @@ public abstract class SsCommand extends StorageNfsVersionCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return true;
     }
 

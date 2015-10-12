@@ -385,7 +385,7 @@ public class NetworkUsageManagerImpl extends ManagerBase implements NetworkUsage
                 } else {
                     for (UsageIPAddressVO usageIp : fullDurationIpUsage) {
                         String publicIp = usageIp.getAddress();
-                        long[] bytesSentRcvd = answer.get(publicIp);
+                        Long[] bytesSentRcvd = answer.get(publicIp);
                         Long bytesSent = bytesSentRcvd[0];
                         Long bytesRcvd = bytesSentRcvd[1];
                         if (bytesSent == null || bytesRcvd == null) {
@@ -417,7 +417,7 @@ public class NetworkUsageManagerImpl extends ManagerBase implements NetworkUsage
                     return false;
                 } else {
                     String publicIp = usageIp.getAddress();
-                    long[] bytesSentRcvd = answer.get(publicIp);
+                    Long[] bytesSentRcvd = answer.get(publicIp);
                     Long bytesSent = bytesSentRcvd[0];
                     Long bytesRcvd = bytesSentRcvd[1];
                     if (bytesSent == null || bytesRcvd == null) {

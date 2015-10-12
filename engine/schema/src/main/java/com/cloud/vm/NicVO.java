@@ -241,7 +241,7 @@ public class NicVO implements Nic {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

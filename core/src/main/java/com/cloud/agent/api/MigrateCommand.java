@@ -57,11 +57,11 @@ public class MigrateCommand extends Command {
         this.autoConvergence = autoConvergence;
     }
 
-    public boolean isAutoConvergence() {
+    public Boolean isAutoConvergence() {
         return autoConvergence;
     }
 
-    public boolean isWindows() {
+    public Boolean isWindows() {
         return isWindows;
     }
 
@@ -86,7 +86,7 @@ public class MigrateCommand extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return executeInSequence;
     }
 

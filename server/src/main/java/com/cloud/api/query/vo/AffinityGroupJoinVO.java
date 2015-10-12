@@ -73,7 +73,7 @@ public class AffinityGroupJoinVO extends BaseViewVO implements ControlledViewEnt
     private String domainPath = null;
 
     @Column(name = "project_id")
-    private long projectId;
+    private Long projectId;
 
     @Column(name = "project_uuid")
     private String projectUuid;
@@ -105,7 +105,7 @@ public class AffinityGroupJoinVO extends BaseViewVO implements ControlledViewEnt
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -162,7 +162,7 @@ public class AffinityGroupJoinVO extends BaseViewVO implements ControlledViewEnt
         return domainPath;
     }
 
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 

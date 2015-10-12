@@ -36,7 +36,7 @@ public class NetworkTO {
     protected TrafficType type;
     protected URI broadcastUri;
     protected URI isolationUri;
-    protected boolean isSecurityGroupEnabled;
+    protected Boolean isSecurityGroupEnabled;
     protected String name;
     protected String ip6address;
     protected String ip6cidr;
@@ -104,7 +104,7 @@ public class NetworkTO {
         return name;
     }
 
-    public void setSecurityGroupEnabled(boolean enabled) {
+    public void setSecurityGroupEnabled(Boolean enabled) {
         this.isSecurityGroupEnabled = enabled;
     }
 
@@ -124,8 +124,6 @@ public class NetworkTO {
      * the full information about what is needed.
      *
      * @param ip
-     * @param ip6address
-     * @param vlan
      * @param netmask
      * @param mac
      * @param gateway
@@ -209,7 +207,7 @@ public class NetworkTO {
         this.isolationUri = isolationUri;
     }
 
-    public boolean isSecurityGroupEnabled() {
+    public Boolean isSecurityGroupEnabled() {
         return this.isSecurityGroupEnabled;
     }
 }

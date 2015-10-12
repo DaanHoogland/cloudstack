@@ -37,7 +37,7 @@ public class Site2SiteVpnCfgCommand extends NetworkElementCommand {
     private boolean encap;
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return true;
     }
 
@@ -63,7 +63,7 @@ public class Site2SiteVpnCfgCommand extends NetworkElementCommand {
         this.encap = encap;
     }
 
-    public boolean isCreate() {
+    public Boolean isCreate() {
         return create;
     }
 
@@ -95,7 +95,7 @@ public class Site2SiteVpnCfgCommand extends NetworkElementCommand {
         this.espPolicy = espPolicy;
     }
 
-    public long getIkeLifetime() {
+    public Long getIkeLifetime() {
         return ikeLifetime;
     }
 
@@ -103,7 +103,7 @@ public class Site2SiteVpnCfgCommand extends NetworkElementCommand {
         this.ikeLifetime = ikeLifetime;
     }
 
-    public long getEspLifetime() {
+    public Long getEspLifetime() {
         return espLifetime;
     }
 
@@ -167,7 +167,7 @@ public class Site2SiteVpnCfgCommand extends NetworkElementCommand {
         this.peerGuestCidrList = peerGuestCidrList;
     }
 
-    public boolean isPassive() {
+    public Boolean isPassive() {
         return passive;
     }
 

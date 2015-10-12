@@ -67,17 +67,17 @@ public class ResizeVolumeCommand extends Command {
         return pool;
     }
 
-    public long getCurrentSize() { return currentSize; }
+    public Long getCurrentSize() { return currentSize; }
 
-    public long getNewSize() { return newSize; }
+    public Long getNewSize() { return newSize; }
 
-    public boolean getShrinkOk() { return shrinkOk; }
+    public Boolean getShrinkOk() { return shrinkOk; }
 
     public String getInstanceName() {
         return vmInstance;
     }
 
-    public boolean isManaged() { return managed; }
+    public Boolean isManaged() { return managed; }
 
     public String get_iScsiName() {return iScsiName; }
 
@@ -85,7 +85,7 @@ public class ResizeVolumeCommand extends Command {
      * {@inheritDoc}
      */
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 }

@@ -44,7 +44,7 @@ public class AttachIsoCommand extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return true;
     }
 
@@ -56,7 +56,7 @@ public class AttachIsoCommand extends Command {
         return isoPath;
     }
 
-    public boolean isAttach() {
+    public Boolean isAttach() {
         return attach;
     }
 
@@ -80,7 +80,7 @@ public class AttachIsoCommand extends Command {
         return deviceKey;
     }
 
-    public boolean isForce() {
+    public Boolean isForce() {
         return force;
     }
 }

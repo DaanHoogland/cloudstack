@@ -22,11 +22,11 @@ import java.util.List;
 import java.util.Map;
 
 public class NicTO extends NetworkTO {
-    int deviceId;
+    Integer deviceId;
     Integer networkRateMbps;
     Integer networkRateMulticastMbps;
-    boolean defaultNic;
-    boolean pxeDisable;
+    Boolean defaultNic;
+    Boolean pxeDisable;
     String nicUuid;
     List<String> nicSecIps;
     Map<NetworkOffering.Detail, String> details;
@@ -35,11 +35,11 @@ public class NicTO extends NetworkTO {
         super();
     }
 
-    public void setDeviceId(int deviceId) {
+    public void setDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
     }
 
-    public int getDeviceId() {
+    public Integer getDeviceId() {
         return deviceId;
     }
 
@@ -55,19 +55,19 @@ public class NicTO extends NetworkTO {
         return networkRateMulticastMbps;
     }
 
-    public boolean isDefaultNic() {
+    public Boolean isDefaultNic() {
         return defaultNic;
     }
 
-    public void setDefaultNic(boolean defaultNic) {
+    public void setDefaultNic(Boolean defaultNic) {
         this.defaultNic = defaultNic;
     }
 
-    public void setPxeDisable(boolean pxeDisable) {
+    public void setPxeDisable(Boolean pxeDisable) {
         this.pxeDisable = pxeDisable;
     }
 
-    public boolean getPxeDisable() {
+    public Boolean getPxeDisable() {
         return pxeDisable;
     }
 

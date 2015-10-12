@@ -39,7 +39,7 @@ import com.cloud.storage.StoragePoolStatus;
 public class BackupSnapshotCommandTest {
     public StoragePool pool = new StoragePool() {
         @Override
-        public long getId() {
+        public Long getId() {
             return 1L;
         };
 
@@ -135,7 +135,7 @@ public class BackupSnapshotCommandTest {
         };
 
         @Override
-        public boolean isManaged() { return false; }
+        public Boolean isManaged() { return false; }
 
         @Override
         public Long getPodId() {

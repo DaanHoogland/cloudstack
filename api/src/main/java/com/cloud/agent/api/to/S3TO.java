@@ -41,8 +41,8 @@ public final class S3TO implements ClientOptions, DataStoreTO {
     private Integer socketTimeout;
     private Integer connectionTtl;
     private Date created;
-    private boolean enableRRS;
-    private long maxSingleUploadSizeInBytes;
+    private Boolean enableRRS;
+    private Long maxSingleUploadSizeInBytes;
     private static final String pathSeparator = "/";
 
     public S3TO(final Long id, final String uuid, final String accessKey, final String secretKey, final String endPoint, final String bucketName,
@@ -201,19 +201,19 @@ public final class S3TO implements ClientOptions, DataStoreTO {
         return DataStoreRole.Image;
     }
 
-    public boolean isEnableRRS() {
+    public Boolean getEnableRRS() {
         return enableRRS;
     }
 
-    public void setEnableRRS(boolean enableRRS) {
+    public void setEnableRRS(Boolean enableRRS) {
         this.enableRRS = enableRRS;
     }
 
-    public long getMaxSingleUploadSizeInBytes() {
+    public Long getMaxSingleUploadSizeInBytes() {
         return maxSingleUploadSizeInBytes;
     }
 
-    public void setMaxSingleUploadSizeInBytes(long maxSingleUploadSizeInBytes) {
+    public void setMaxSingleUploadSizeInBytes(Long maxSingleUploadSizeInBytes) {
         this.maxSingleUploadSizeInBytes = maxSingleUploadSizeInBytes;
     }
 

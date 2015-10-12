@@ -188,7 +188,7 @@ public class AccountJoinVO extends BaseViewVO implements InternalIdentity, Ident
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

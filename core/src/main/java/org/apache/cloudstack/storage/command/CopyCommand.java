@@ -57,7 +57,7 @@ public class CopyCommand extends StorageSubSystemCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return executeInSequence;
     }
 
@@ -69,7 +69,7 @@ public class CopyCommand extends StorageSubSystemCommand {
         this.cacheTO = cacheTO;
     }
 
-    public int getWaitInMillSeconds() {
+    public Integer getWaitInMillSeconds() {
         return getWait() * 1000;
     }
 

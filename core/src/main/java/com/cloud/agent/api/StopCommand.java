@@ -68,7 +68,7 @@ public class StopCommand extends RebootCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         // VR stop doesn't go through queue
         if (this.vmName != null && this.vmName.startsWith("r-")) {
             return false;
@@ -76,7 +76,7 @@ public class StopCommand extends RebootCommand {
         return this.executeInSequence;
     }
 
-    public boolean isProxy() {
+    public Boolean isProxy() {
         return this.isProxy;
     }
 
@@ -96,7 +96,7 @@ public class StopCommand extends RebootCommand {
         this.gpuDevice = gpuDevice;
     }
 
-    public boolean checkBeforeCleanup() {
+    public Boolean checkBeforeCleanup() {
         return this.checkBeforeCleanup;
     }
 
@@ -108,7 +108,7 @@ public class StopCommand extends RebootCommand {
         this.controlIp = controlIp;
     }
 
-    public boolean isForceStop() {
+    public Boolean isForceStop() {
         return forceStop;
     }
 

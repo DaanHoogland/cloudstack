@@ -29,7 +29,7 @@ public class CreateStoragePoolCommand extends ModifyStoragePoolCommand {
     public static final String STORAGE_HOST = "storageHost";
     public static final String STORAGE_PORT = "storagePort";
 
-    private boolean _createDatastore;
+    private Boolean _createDatastore;
     private Map<String, String> _details;
 
     public CreateStoragePoolCommand(boolean add, StoragePool pool) {
@@ -40,7 +40,7 @@ public class CreateStoragePoolCommand extends ModifyStoragePoolCommand {
         _createDatastore = createDatastore;
     }
 
-    public boolean getCreateDatastore() {
+    public Boolean getCreateDatastore() {
         return _createDatastore;
     }
 

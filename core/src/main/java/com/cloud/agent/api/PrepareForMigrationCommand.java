@@ -40,12 +40,12 @@ public class PrepareForMigrationCommand extends Command {
         this.rollback = rollback;
     }
 
-    public boolean isRollback() {
+    public Boolean isRollback() {
         return rollback;
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return true;
     }
 }

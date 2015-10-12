@@ -314,7 +314,7 @@ public class ConsoleProxyResource extends ServerResourceBase implements ServerRe
         return _name;
     }
 
-    private void launchConsoleProxy(final byte[] ksBits, final String ksPassword, final String encryptorPassword) {
+    private void launchConsoleProxy(final Byte[] ksBits, final String ksPassword, final String encryptorPassword) {
         final Object resource = this;
         s_logger.info("Building class loader for com.cloud.consoleproxy.ConsoleProxy");
         final ClassLoader loader = ReflectUtil.getClassLoaderForName("console-proxy");

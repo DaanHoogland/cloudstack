@@ -61,7 +61,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getCPUUtilization() {
+    public Double getCPUUtilization() {
         return cpuUtilization;
     }
 
@@ -70,7 +70,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getNetworkReadKBs() {
+    public Double getNetworkReadKBs() {
         return networkReadKBs;
     }
 
@@ -79,7 +79,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getNetworkWriteKBs() {
+    public Double getNetworkWriteKBs() {
         return networkWriteKBs;
     }
 
@@ -88,7 +88,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getDiskReadIOs() {
+    public Double getDiskReadIOs() {
         return diskReadIOs;
     }
 
@@ -97,7 +97,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getDiskWriteIOs() {
+    public Double getDiskWriteIOs() {
         return diskWriteIOs;
     }
 
@@ -106,7 +106,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getDiskReadKBs() {
+    public Double getDiskReadKBs() {
         return diskReadKBs;
     }
 
@@ -115,7 +115,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getDiskWriteKBs() {
+    public Double getDiskWriteKBs() {
         return diskWriteKBs;
     }
 
@@ -124,7 +124,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getMemoryKBs() {
+    public Double getMemoryKBs() {
         return memoryKBs;
     }
 
@@ -133,7 +133,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getIntFreeMemoryKBs() {
+    public Double getIntFreeMemoryKBs() {
         return intfreememoryKBs;
     }
 
@@ -142,7 +142,7 @@ public class VmStatsEntry implements VmStats {
     }
 
     @Override
-    public double getTargetMemoryKBs() {
+    public Double getTargetMemoryKBs() {
         return targetmemoryKBs;
     }
 
@@ -150,7 +150,7 @@ public class VmStatsEntry implements VmStats {
         this.targetmemoryKBs = targetmemoryKBs;
     }
 
-    public int getNumCPUs() {
+    public Integer getNumCPUs() {
         return numCPUs;
     }
 

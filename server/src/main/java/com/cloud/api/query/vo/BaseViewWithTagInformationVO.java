@@ -72,7 +72,7 @@ public abstract class BaseViewWithTagInformationVO extends BaseViewVO implements
     @Column(name = "tag_domain_name")
     private String tagDomainName;
 
-    public long getTagId() {
+    public Long getTagId() {
         return tagId;
     }
 
@@ -176,7 +176,7 @@ public abstract class BaseViewWithTagInformationVO extends BaseViewVO implements
         this.tagDomainName = tagDomainName;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

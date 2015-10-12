@@ -40,13 +40,13 @@ import com.cloud.utils.net.NetUtils;
  *
  */
 public class FirewallRuleTO implements InternalIdentity {
-    long id;
+    Long id;
     String srcVlanTag;
     String srcIp;
     String protocol;
-    int[] srcPortRange;
-    boolean revoked;
-    boolean alreadyAdded;
+    Integer[] srcPortRange;
+    Boolean revoked;
+    Boolean alreadyAdded;
     private List<String> sourceCidrList;
     private List<String> destCidrList;
     FirewallRule.Purpose purpose;
@@ -54,18 +54,18 @@ public class FirewallRuleTO implements InternalIdentity {
     private Integer icmpCode;
     private FirewallRule.TrafficType trafficType;
     private String guestCidr;
-    private boolean defaultEgressPolicy;
+    private Boolean defaultEgressPolicy = false;
     private FirewallRule.FirewallRuleType type;
 
     protected FirewallRuleTO() {
     }
 
-    public FirewallRuleTO(long id, String srcIp, String protocol, Integer srcPortStart, Integer srcPortEnd, boolean revoked, boolean alreadyAdded,
+    public FirewallRuleTO(Long id, String srcIp, String protocol, Integer srcPortStart, Integer srcPortEnd, Boolean revoked, Boolean alreadyAdded,
             FirewallRule.Purpose purpose, List<String> sourceCidr, Integer icmpType, Integer icmpCode) {
         this(id, null, srcIp, protocol, srcPortStart, srcPortEnd, revoked, alreadyAdded, purpose, sourceCidr, icmpType, icmpCode);
     }
 
-    public FirewallRuleTO(long id, String srcVlanTag, String srcIp, String protocol, Integer srcPortStart, Integer srcPortEnd, boolean revoked, boolean alreadyAdded,
+    public FirewallRuleTO(Long id, String srcVlanTag, String srcIp, String protocol, Integer srcPortStart, Integer srcPortEnd, Boolean revoked, Boolean alreadyAdded,
             FirewallRule.Purpose purpose, List<String> sourceCidr, Integer icmpType, Integer icmpCode) {
         this.id = id;
         this.srcVlanTag = srcVlanTag;
@@ -79,10 +79,10 @@ public class FirewallRuleTO implements InternalIdentity {
                 portRange.add(srcPortEnd);
             }
 
-            srcPortRange = new int[portRange.size()];
+            srcPortRange = new Integer[portRange.size()];
             int i = 0;
             for (Integer port : portRange) {
-                srcPortRange[i] = port.intValue();
+                srcPortRange[i] = port;
                 i++;
             }
         }
@@ -158,7 +158,7 @@ public class FirewallRuleTO implements InternalIdentity {
     }
 
     public FirewallRuleTO(FirewallRule rule, String srcVlanTag, String srcIp, FirewallRule.Purpose purpose, FirewallRule.TrafficType trafficType,
-            boolean defaultEgressPolicy) {
+            Boolean defaultEgressPolicy) {
         this(rule.getId(),
             srcVlanTag,
             srcIp,
@@ -176,7 +176,7 @@ public class FirewallRuleTO implements InternalIdentity {
         this.defaultEgressPolicy = defaultEgressPolicy;
     }
 
-    public FirewallRuleTO(FirewallRule rule, String srcVlanTag, String srcIp, FirewallRule.Purpose purpose, boolean revokeState, boolean alreadyAdded) {
+    public FirewallRuleTO(FirewallRule rule, String srcVlanTag, String srcIp, FirewallRule.Purpose purpose, Boolean revokeState, Boolean alreadyAdded) {
         this(rule.getId(),
             srcVlanTag,
             srcIp,
@@ -191,7 +191,7 @@ public class FirewallRuleTO implements InternalIdentity {
             rule.getIcmpCode());
     }
 
-    public FirewallRuleTO(FirewallRule rule, String guestVlanTag, FirewallRule.TrafficType trafficType, String guestCidr, boolean defaultEgressPolicy,
+    public FirewallRuleTO(FirewallRule rule, String guestVlanTag, FirewallRule.TrafficType trafficType, String guestCidr, Boolean defaultEgressPolicy,
             FirewallRule.FirewallRuleType type) {
         this(rule.getId(),
             guestVlanTag,
@@ -216,7 +216,7 @@ public class FirewallRuleTO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -232,7 +232,7 @@ public class FirewallRuleTO implements InternalIdentity {
         return protocol;
     }
 
-    public int[] getSrcPortRange() {
+    public Integer[] getSrcPortRange() {
         return srcPortRange;
     }
 
@@ -251,7 +251,7 @@ public class FirewallRuleTO implements InternalIdentity {
             return NetUtils.portRangeToString(srcPortRange);
     }
 
-    public boolean revoked() {
+    public Boolean revoked() {
         return revoked;
     }
 
@@ -263,7 +263,7 @@ public class FirewallRuleTO implements InternalIdentity {
         return destCidrList;
     }
 
-    public boolean isAlreadyAdded() {
+    public Boolean isAlreadyAdded() {
         return alreadyAdded;
     }
 
@@ -271,7 +271,7 @@ public class FirewallRuleTO implements InternalIdentity {
         return purpose;
     }
 
-    public boolean isDefaultEgressPolicy() {
+    public Boolean isDefaultEgressPolicy() {
         return defaultEgressPolicy;
     }
 

@@ -157,7 +157,7 @@ public class PublicIp implements PublicIpAddress {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return _addr.getId();
     }
 

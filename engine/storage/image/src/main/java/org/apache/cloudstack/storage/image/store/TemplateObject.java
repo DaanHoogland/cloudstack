@@ -105,7 +105,7 @@ public class TemplateObject implements TemplateInfo {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return imageVO.getId();
     }
 
