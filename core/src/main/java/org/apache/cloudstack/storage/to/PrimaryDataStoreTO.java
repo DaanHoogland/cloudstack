@@ -42,11 +42,11 @@ public class PrimaryDataStoreTO implements DataStoreTO {
     private final String uuid;
     private final String name;
     private String type;
-    private final long id;
+    private final Long id;
     private StoragePoolType poolType;
     private String host;
     private String path;
-    private int port;
+    private Integer port;
     private final String url;
     private Map<String, String> details;
     private static final String pathSeparator = "/";
@@ -66,7 +66,7 @@ public class PrimaryDataStoreTO implements DataStoreTO {
         this.isManaged = dataStore.isManaged();
     }
 
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
@@ -121,11 +121,11 @@ public class PrimaryDataStoreTO implements DataStoreTO {
         this.path = path;
     }
 
-    public int getPort() {
+    public Integer getPort() {
         return port;
     }
 
-    public void setPort(int port) {
+    public void setPort(Integer port) {
         this.port = port;
     }
 
