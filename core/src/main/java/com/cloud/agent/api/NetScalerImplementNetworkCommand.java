@@ -53,7 +53,7 @@ public class NetScalerImplementNetworkCommand extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         //TODO checkout whether we need to mark it true ??
         //Marking it true is causing another guest network execution in queue
         return false;

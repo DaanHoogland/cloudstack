@@ -55,7 +55,7 @@ public class ListExternalLoadBalancersCmd extends BaseListCmd {
     /////////////////// Accessors ///////////////////////
     /////////////////////////////////////////////////////
 
-    public long getZoneId() {
+    public Long getZoneId() {
         return zoneId;
     }
 

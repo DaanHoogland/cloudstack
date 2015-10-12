@@ -23,7 +23,6 @@ import org.apache.cloudstack.api.ApiErrorCode;
 import org.apache.cloudstack.api.BaseAsyncCmd;
 import org.apache.cloudstack.api.Parameter;
 import org.apache.cloudstack.api.ServerApiException;
-import org.apache.cloudstack.api.BaseCmd.CommandType;
 import org.apache.cloudstack.api.response.DomainResponse;
 import org.apache.cloudstack.api.response.ProjectResponse;
 import org.apache.cloudstack.api.response.Site2SiteCustomerGatewayResponse;
@@ -156,7 +155,7 @@ public class CreateVpnCustomerGatewayCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Long accountId = _accountService.finalyzeAccountId(accountName, domainId, projectId, true);
         if (accountId == null) {
             accountId = CallContext.current().getCallingAccount().getId();

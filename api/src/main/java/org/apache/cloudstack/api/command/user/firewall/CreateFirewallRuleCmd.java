@@ -153,7 +153,7 @@ public class CreateFirewallRuleCmd extends BaseAsyncCreateCmd implements Firewal
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         throw new UnsupportedOperationException("database ID can only provided by VO objects");
     }
 
@@ -206,7 +206,7 @@ public class CreateFirewallRuleCmd extends BaseAsyncCreateCmd implements Firewal
     }
 
     @Override
-    public long getNetworkId() {
+    public Long getNetworkId() {
         IpAddress ip = _entityMgr.findById(IpAddress.class, getIpAddressId());
         Long ntwkId = null;
 
@@ -222,7 +222,7 @@ public class CreateFirewallRuleCmd extends BaseAsyncCreateCmd implements Firewal
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account account = CallContext.current().getCallingAccount();
 
         if (account != null) {
@@ -233,7 +233,7 @@ public class CreateFirewallRuleCmd extends BaseAsyncCreateCmd implements Firewal
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         IpAddress ip = _networkService.getIp(ipAddressId);
         return ip.getDomainId();
     }
@@ -271,7 +271,7 @@ public class CreateFirewallRuleCmd extends BaseAsyncCreateCmd implements Firewal
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         IpAddress ip = _networkService.getIp(ipAddressId);
         return ip.getAccountId();
     }
@@ -340,7 +340,7 @@ public class CreateFirewallRuleCmd extends BaseAsyncCreateCmd implements Firewal
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if (display != null) {
             return display;
         } else {

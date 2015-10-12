@@ -391,7 +391,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return diskOfferingUuid;
     }
 
-    public long getDiskOfferingId() {
+    public Long getDiskOfferingId() {
         return diskOfferingId;
     }
 
@@ -407,12 +407,12 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return displayName;
     }
 
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -427,12 +427,12 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
     }
 
     @Override
-    public short getAccountType() {
+    public Short getAccountType() {
         return accountType;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -451,7 +451,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return domainPath;
     }
 
-    public long getInstanceGroupId() {
+    public Long getInstanceGroupId() {
         return instanceGroupId;
     }
 
@@ -483,7 +483,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return instanceName;
     }
 
-    public long getGuestOSId() {
+    public Long getGuestOSId() {
         return guestOsId;
     }
 
@@ -495,7 +495,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return hypervisorType;
     }
 
-    public boolean isHaEnabled() {
+    public Boolean isHaEnabled() {
         return haEnabled;
     }
 
@@ -519,15 +519,15 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return podUuid;
     }
 
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
-    public boolean limitCpuUse() {
+    public Boolean limitCpuUse() {
         return limitCpuUse;
     }
 
-    public boolean isDisplayVm() {
+    public Boolean isDisplayVm() {
         return displayVm;
     }
 
@@ -539,7 +539,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return dataCenterName;
     }
 
-    public boolean isSecurityGroupEnabled() {
+    public Boolean isSecurityGroupEnabled() {
         return securityGroupEnabled;
     }
 
@@ -555,7 +555,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return hostName;
     }
 
-    public long getTemplateId() {
+    public Long getTemplateId() {
         return templateId;
     }
 
@@ -571,7 +571,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return templateDisplayText;
     }
 
-    public boolean isPasswordEnabled() {
+    public Boolean isPasswordEnabled() {
         return passwordEnabled;
     }
 
@@ -599,19 +599,19 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return serviceOfferingName;
     }
 
-    public int getCpu() {
+    public Integer getCpu() {
         return cpu;
     }
 
-    public int getSpeed() {
+    public Integer getSpeed() {
         return speed;
     }
 
-    public int getRamSize() {
+    public Integer getRamSize() {
         return ramSize;
     }
 
-    public long getPoolId() {
+    public Long getPoolId() {
         return poolId;
     }
 
@@ -619,7 +619,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return poolType;
     }
 
-    public long getVolumeId() {
+    public Long getVolumeId() {
         return volumeId;
     }
 
@@ -631,7 +631,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return volumeType;
     }
 
-    public long getSecurityGroupId() {
+    public Long getSecurityGroupId() {
         return securityGroupId;
     }
 
@@ -643,15 +643,15 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return securityGroupDescription;
     }
 
-    public long getVpcId() {
+    public Long getVpcId() {
         return vpcId;
     }
 
-    public long getNicId() {
+    public Long getNicId() {
         return nicId;
     }
 
-    public boolean isDefaultNic() {
+    public Boolean isDefaultNic() {
         return isDefaultNic;
     }
 
@@ -679,7 +679,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return isolationUri;
     }
 
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
@@ -695,7 +695,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return guestType;
     }
 
-    public long getPublicIpId() {
+    public Long getPublicIpId() {
         return publicIpId;
     }
 
@@ -703,7 +703,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return publicIpAddress;
     }
 
-    public long getServiceOfferingId() {
+    public Long getServiceOfferingId() {
         return serviceOfferingId;
     }
 
@@ -719,11 +719,11 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return userData;
     }
 
-    public long getGuestOsId() {
+    public Long getGuestOsId() {
         return guestOsId;
     }
 
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 
@@ -741,7 +741,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return keypairName;
     }
 
-    public boolean isLimitCpuUse() {
+    public Boolean isLimitCpuUse() {
         return limitCpuUse;
     }
 
@@ -781,7 +781,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return jobUuid;
     }
 
-    public int getJobStatus() {
+    public Integer getJobStatus() {
         return jobStatus;
     }
 
@@ -807,7 +807,7 @@ public class UserVmJoinVO extends BaseViewWithTagInformationVO implements Contro
         return ip6Cidr;
     }
 
-    public long getAffinityGroupId() {
+    public Long getAffinityGroupId() {
         return affinityGroupId;
     }
 

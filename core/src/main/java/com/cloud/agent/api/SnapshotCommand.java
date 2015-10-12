@@ -121,7 +121,7 @@ public class SnapshotCommand extends StorageNfsVersionCommand {
      * {@inheritDoc}
      */
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 

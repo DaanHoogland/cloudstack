@@ -79,7 +79,7 @@ public class DeleteIsoCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         VirtualMachineTemplate iso = _entityMgr.findById(VirtualMachineTemplate.class, getId());
         if (iso != null) {
             return iso.getAccountId();

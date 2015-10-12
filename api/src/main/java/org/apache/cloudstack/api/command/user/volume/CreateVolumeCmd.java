@@ -158,7 +158,7 @@ public class CreateVolumeCmd extends BaseAsyncCreateCustomIdCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if(displayVolume == null)
             return true;
         else
@@ -187,7 +187,7 @@ public class CreateVolumeCmd extends BaseAsyncCreateCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Long accountId = _accountService.finalyzeAccountId(accountName, domainId, projectId, true);
         if (accountId == null) {
             return CallContext.current().getCallingAccount().getId();

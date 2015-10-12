@@ -62,7 +62,7 @@ public class TemplateEntityImpl implements TemplateEntity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return templateInfo.getId();
     }
 
@@ -108,7 +108,7 @@ public class TemplateEntityImpl implements TemplateEntity {
     }
 
     @Override
-    public boolean isDynamicallyScalable() {
+    public Boolean isDynamicallyScalable() {
         return false;
     }
 
@@ -137,19 +137,19 @@ public class TemplateEntityImpl implements TemplateEntity {
     }
 
     @Override
-    public boolean isFeatured() {
+    public Boolean isFeatured() {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public boolean isPublicTemplate() {
+    public Boolean isPublicTemplate() {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public boolean isExtractable() {
+    public Boolean isExtractable() {
         // TODO Auto-generated method stub
         return false;
     }
@@ -167,7 +167,7 @@ public class TemplateEntityImpl implements TemplateEntity {
     }
 
     @Override
-    public boolean isRequiresHvm() {
+    public Boolean isRequiresHvm() {
         // TODO Auto-generated method stub
         return false;
     }
@@ -179,19 +179,19 @@ public class TemplateEntityImpl implements TemplateEntity {
     }
 
     @Override
-    public boolean isEnablePassword() {
+    public Boolean isEnablePassword() {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public boolean isEnableSshKey() {
+    public Boolean isEnableSshKey() {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public boolean isCrossZones() {
+    public Boolean isCrossZones() {
         // TODO Auto-generated method stub
         return false;
     }
@@ -203,13 +203,13 @@ public class TemplateEntityImpl implements TemplateEntity {
     }
 
     @Override
-    public long getGuestOSId() {
+    public Long getGuestOSId() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override
-    public boolean isBootable() {
+    public Boolean isBootable() {
         // TODO Auto-generated method stub
         return false;
     }
@@ -227,7 +227,7 @@ public class TemplateEntityImpl implements TemplateEntity {
     }
 
     @Override
-    public int getBits() {
+    public Integer getBits() {
         // TODO Auto-generated method stub
         return 0;
     }
@@ -263,27 +263,27 @@ public class TemplateEntityImpl implements TemplateEntity {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override
-    public long getPhysicalSize() {
+    public Long getPhysicalSize() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override
-    public long getVirtualSize() {
+    public Long getVirtualSize() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override
@@ -292,9 +292,9 @@ public class TemplateEntityImpl implements TemplateEntity {
     }
 
     @Override
-    public long getUpdatedCount() {
+    public Long getUpdatedCount() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override

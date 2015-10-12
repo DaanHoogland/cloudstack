@@ -43,7 +43,7 @@ public final class RevertSnapshotCommand extends StorageSubSystemCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return _executeInSequence;
     }
 }

@@ -81,7 +81,7 @@ public class DeleteStaticRouteCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         if (ownerId == null) {
             StaticRoute route = _entityMgr.findById(StaticRoute.class, id);
             if (route == null) {

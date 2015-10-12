@@ -27,11 +27,11 @@ public interface VMTemplateStorageResourceAssoc extends InternalIdentity {
 
     String getInstallPath();
 
-    long getTemplateId();
+    Long getTemplateId();
 
     void setTemplateId(long templateId);
 
-    int getDownloadPercent();
+    Integer getDownloadPercent();
 
     void setDownloadPercent(int downloadPercent);
 
@@ -59,6 +59,6 @@ public interface VMTemplateStorageResourceAssoc extends InternalIdentity {
 
     String getJobId();;
 
-    long getTemplateSize();
+    Long getTemplateSize();
 
 }

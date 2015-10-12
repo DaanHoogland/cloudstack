@@ -204,7 +204,7 @@ public class AssociateIPAddrCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if(display == null)
             return true;
         else
@@ -212,7 +212,7 @@ public class AssociateIPAddrCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account caller = CallContext.current().getCallingAccount();
         if (accountName != null && domainId != null) {
             Account account = _accountService.finalizeOwner(caller, accountName, domainId, projectId);

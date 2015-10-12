@@ -21,6 +21,7 @@ package org.apache.cloudstack.storage.datastore.util;
 
 import javax.inject.Inject;
 
+import com.cloud.user.Account;
 import org.apache.cloudstack.api.APICommand;
 import org.apache.cloudstack.api.ApiConstants;
 import org.apache.cloudstack.api.BaseCmd;
@@ -70,8 +71,8 @@ public class ListElastistorVolumeCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         // TODO Auto-generated method stub
-        return 0;
+        return Account.ACCOUNT_ID_ANONYMOUS_NORMAL;
     }
 }

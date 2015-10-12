@@ -105,7 +105,7 @@ public class NicIpAliasVO implements NicIpAlias  {
     String startIpOfSubnet;
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -114,7 +114,7 @@ public class NicIpAliasVO implements NicIpAlias  {
     }
 
     @Override
-    public long getNicId() {
+    public Long getNicId() {
         return nicId;
     }
 
@@ -123,7 +123,7 @@ public class NicIpAliasVO implements NicIpAlias  {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -132,7 +132,7 @@ public class NicIpAliasVO implements NicIpAlias  {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -159,7 +159,7 @@ public class NicIpAliasVO implements NicIpAlias  {
     }
 
     @Override
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
@@ -185,7 +185,7 @@ public class NicIpAliasVO implements NicIpAlias  {
     }
 
     @Override
-    public long getVmId() {
+    public Long getVmId() {
         return vmId;
     }
 

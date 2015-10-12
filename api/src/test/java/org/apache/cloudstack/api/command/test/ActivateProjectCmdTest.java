@@ -79,7 +79,7 @@ public class ActivateProjectCmdTest extends TestCase {
         Mockito.when(projectService.getProjectOwner(Matchers.anyLong())).thenReturn(account);
         activateProjectCmd._projectService = projectService;
 
-        Assert.assertEquals(2L, activateProjectCmd.getEntityOwnerId());
+        Assert.assertEquals((Long)2L, activateProjectCmd.getEntityOwnerId());
 
     }
 

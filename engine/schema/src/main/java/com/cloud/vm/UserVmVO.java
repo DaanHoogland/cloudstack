@@ -65,7 +65,7 @@ public class UserVmVO extends VMInstanceVO implements UserVm {
     }
 
     @Override
-    public long getServiceOfferingId() {
+    public Long getServiceOfferingId() {
         return serviceOfferingId;
     }
 

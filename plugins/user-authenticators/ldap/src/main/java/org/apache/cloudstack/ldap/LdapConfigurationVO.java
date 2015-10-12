@@ -40,7 +40,7 @@ public class LdapConfigurationVO implements InternalIdentity {
     private int port;
 
     @Column(name = "domain_id")
-    private Long domainId;
+    private long domainId;
 
     public LdapConfigurationVO() {
     }
@@ -56,11 +56,11 @@ public class LdapConfigurationVO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public int getPort() {
+    public Integer getPort() {
         return port;
     }
 

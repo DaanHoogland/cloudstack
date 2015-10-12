@@ -115,7 +115,7 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -130,7 +130,7 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public long getZoneId() {
+    public Long getZoneId() {
         return zoneId;
     }
 
@@ -140,12 +140,12 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -159,7 +159,7 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public long getVpcOfferingId() {
+    public Long getVpcOfferingId() {
         return vpcOfferingId;
     }
 
@@ -200,7 +200,7 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public boolean isRestartRequired() {
+    public Boolean isRestartRequired() {
         return restartRequired;
     }
 
@@ -209,7 +209,7 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public boolean isRegionLevelVpc() {
+    public Boolean isRegionLevelVpc() {
         return regionLevelVpc;
     }
 
@@ -219,12 +219,12 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 
     @Override
-    public boolean isRedundant() {
+    public Boolean isRedundant() {
         return redundant;
     }
 
@@ -233,7 +233,7 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public boolean isRollingRestart() {
+    public Boolean isRollingRestart() {
         return rollingRestart;
     }
 
@@ -247,7 +247,7 @@ public class VpcVO implements Vpc {
     }
 
     @Override
-    public boolean usesDistributedRouter() {
+    public Boolean usesDistributedRouter() {
         return usesDistributedRouter;
     }
 }

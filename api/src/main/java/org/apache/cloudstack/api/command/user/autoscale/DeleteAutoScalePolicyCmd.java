@@ -70,7 +70,7 @@ public class DeleteAutoScalePolicyCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         AutoScalePolicy autoScalePolicy = _entityMgr.findById(AutoScalePolicy.class, getId());
         if (autoScalePolicy != null) {
             return autoScalePolicy.getAccountId();

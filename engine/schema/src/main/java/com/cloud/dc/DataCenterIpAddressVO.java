@@ -84,7 +84,7 @@ public class DataCenterIpAddressVO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -96,7 +96,7 @@ public class DataCenterIpAddressVO implements InternalIdentity {
         this.instanceId = instanceId;
     }
 
-    public long getPodId() {
+    public Long getPodId() {
         return podId;
     }
 
@@ -108,7 +108,7 @@ public class DataCenterIpAddressVO implements InternalIdentity {
         return ipAddress;
     }
 
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -116,11 +116,11 @@ public class DataCenterIpAddressVO implements InternalIdentity {
         return takenAt;
     }
 
-    public long getMacAddress() {
+    public Long getMacAddress() {
         return macAddress;
     }
 
-    public boolean isForSystemVms() {
+    public Boolean isForSystemVms() {
         return forSystemVms;
     }
 

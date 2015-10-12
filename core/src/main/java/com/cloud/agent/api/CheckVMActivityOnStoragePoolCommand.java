@@ -64,7 +64,7 @@ public final class CheckVMActivityOnStoragePoolCommand extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 }

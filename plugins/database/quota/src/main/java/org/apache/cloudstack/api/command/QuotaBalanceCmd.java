@@ -109,7 +109,7 @@ public class QuotaBalanceCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
        return _accountService.getActiveAccountByName(accountName, domainId).getAccountId();
     }
 

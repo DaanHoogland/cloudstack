@@ -108,7 +108,7 @@ public class VpcOfferingVO implements VpcOffering {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -137,7 +137,7 @@ public class VpcOfferingVO implements VpcOffering {
     }
 
     @Override
-    public boolean isDefault() {
+    public Boolean isDefault() {
         return isDefault;
     }
 
@@ -169,17 +169,17 @@ public class VpcOfferingVO implements VpcOffering {
     }
 
     @Override
-    public boolean supportsDistributedRouter() {
+    public Boolean supportsDistributedRouter() {
         return supportsDistributedRouter;
     }
 
     @Override
-    public boolean offersRegionLevelVPC() {
+    public Boolean offersRegionLevelVPC() {
         return offersRegionLevelVPC;
     }
 
     @Override
-    public boolean getRedundantRouter() {
+    public Boolean getRedundantRouter() {
         return this.redundantRouter;
     }
 

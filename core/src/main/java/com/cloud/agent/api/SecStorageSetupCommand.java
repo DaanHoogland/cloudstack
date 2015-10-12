@@ -43,7 +43,7 @@ public class SecStorageSetupCommand extends StorageNfsVersionCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return true;
     }
 

@@ -137,7 +137,7 @@ public class CreateAutoScaleVmProfileCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if(display == null)
             return true;
         else
@@ -230,7 +230,7 @@ public class CreateAutoScaleVmProfileCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return getAccountId();
     }
 

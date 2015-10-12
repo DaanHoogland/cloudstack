@@ -110,7 +110,7 @@ public class CreateAffinityGroupCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account caller = CallContext.current().getCallingAccount();
 
         //For domain wide affinity groups (if the affinity group processor type allows it)

@@ -114,9 +114,9 @@ public class MetricsServiceImpl extends ComponentLifecycleBase implements Metric
         final HostStats hostStats = ApiDBUtils.getHostStatistics(host.getId());
         if (hostStats != null) {
             metrics.addCpuUsedPercentage(hostStats.getCpuUtilization());
-            metrics.addMemoryUsed((long) hostStats.getUsedMemory());
+            metrics.addMemoryUsed(hostStats.getUsedMemory().longValue());
             metrics.setMaximumCpuUsage(hostStats.getCpuUtilization());
-            metrics.setMaximumMemoryUsage((long) hostStats.getUsedMemory());
+            metrics.setMaximumMemoryUsage(hostStats.getUsedMemory().longValue());
         }
     }
 

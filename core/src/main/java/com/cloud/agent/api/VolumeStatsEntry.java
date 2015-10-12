@@ -40,7 +40,7 @@ public class VolumeStatsEntry implements VolumeStats {
         this.volumeUuid = volumeUuid;
     }
 
-    public long getPhysicalSize() {
+    public Long getPhysicalSize() {
         return physicalsize;
     }
 
@@ -48,7 +48,7 @@ public class VolumeStatsEntry implements VolumeStats {
         this.physicalsize = size;
     }
 
-    public long getVirtualSize() {
+    public Long getVirtualSize() {
         return virtualSize;
     }
 

@@ -48,9 +48,9 @@ public interface Domain extends OwnedBy, Identity, InternalIdentity {
 
     void setPath(String path);
 
-    int getLevel();
+    Integer getLevel();
 
-    int getChildCount();
+    Integer getChildCount();
 
     long getNextChildSeq();
 

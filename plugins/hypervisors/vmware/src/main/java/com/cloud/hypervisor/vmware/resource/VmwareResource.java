@@ -3413,7 +3413,7 @@ public class VmwareResource implements StoragePoolResource, ServerResource, Vmwa
         VmwareContext context = getServiceContext();
         VmwareHypervisorHost hyperHost = getHyperHost(context);
 
-        HostStatsEntry hostStats = new HostStatsEntry(cmd.getHostId(), 0, 0, 0, "host", 0, 0, 0, 0);
+        HostStatsEntry hostStats = new HostStatsEntry(cmd.getHostId(), 0.0, 0.0, 0.0, "host", 0.0, 0.0, 0.0, 0.0);
         Answer answer = new GetHostStatsAnswer(cmd, hostStats);
         try {
             HostStatsEntry entry = getHyperHostStats(hyperHost);
@@ -5824,8 +5824,8 @@ public class VmwareResource implements StoragePoolResource, ServerResource, Vmwa
         entry.setEntityType("host");
         double cpuUtilization = ((double)(hardwareSummary.getTotalCpu() - hardwareSummary.getEffectiveCpu()) / (double)hardwareSummary.getTotalCpu() * 100);
         entry.setCpuUtilization(cpuUtilization);
-        entry.setTotalMemoryKBs(hardwareSummary.getTotalMemory() / 1024);
-        entry.setFreeMemoryKBs(hardwareSummary.getEffectiveMemory() * 1024);
+        entry.setTotalMemoryKBs(Double.valueOf(hardwareSummary.getTotalMemory() / 1024));
+        entry.setFreeMemoryKBs(Double.valueOf(hardwareSummary.getEffectiveMemory() * 1024));
 
         return entry;
     }

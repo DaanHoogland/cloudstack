@@ -898,7 +898,7 @@ public class IpAddressManagerImpl extends ManagerBase implements IpAddressManage
                                     if (!isIpDedicated(addr)) {
                                         UsageEventUtils.publishUsageEvent(EventTypes.EVENT_NET_IP_ASSIGN, owner.getId(), addr.getDataCenterId(), addr.getId(),
                                                 addr.getAddress().toString(),
-                                                addr.isSourceNat(), guestType, addr.getSystem(), addr.getClass().getName(), addr.getUuid());
+                                                addr.isSourceNat(), guestType, addr.isSystem(), addr.getClass().getName(), addr.getUuid());
                                     }
                                     if (updateIpResourceCount(addr)) {
                                         _resourceLimitMgr.incrementResourceCount(owner.getId(), ResourceType.public_ip);
@@ -1251,7 +1251,7 @@ public class IpAddressManagerImpl extends ManagerBase implements IpAddressManage
                     ipaddr = _ipAddressDao.persist(ipaddr);
 
                     UsageEventUtils.publishUsageEvent(EventTypes.EVENT_PORTABLE_IP_ASSIGN, ipaddr.getId(), ipaddr.getDataCenterId(), ipaddr.getId(),
-                            ipaddr.getAddress().toString(), ipaddr.isSourceNat(), null, ipaddr.getSystem(), ipaddr.getClass().getName(), ipaddr.getUuid());
+                            ipaddr.getAddress().toString(), ipaddr.isSourceNat(), null, ipaddr.isSystem(), ipaddr.getClass().getName(), ipaddr.getUuid());
 
                     return ipaddr;
                 }
@@ -1790,7 +1790,7 @@ public class IpAddressManagerImpl extends ManagerBase implements IpAddressManage
                         if (!isIpDedicated(ip)) {
                             String eventType = ip.isPortable() ? EventTypes.EVENT_PORTABLE_IP_RELEASE : EventTypes.EVENT_NET_IP_RELEASE;
                             UsageEventUtils.publishUsageEvent(eventType, ip.getAllocatedToAccountId(), ip.getDataCenterId(), addrId, ip.getAddress().addr(), ip.isSourceNat(),
-                                    guestType, ip.getSystem(), ip.getClass().getName(), ip.getUuid());
+                                    guestType, ip.isSystem(), ip.getClass().getName(), ip.getUuid());
                         }
                     }
 
@@ -1989,7 +1989,7 @@ public class IpAddressManagerImpl extends ManagerBase implements IpAddressManage
         boolean success = true;
         Long networkId = ip.getAssociatedWithNetworkId();
         if (networkId != null) {
-            if (ip.getSystem()) {
+            if (ip.isSystem()) {
                 CallContext ctx = CallContext.current();
                 if (!disassociatePublicIpAddress(ip.getId(), ctx.getCallingUserId(), ctx.getCallingAccount())) {
                     s_logger.warn("Unable to release system ip address id=" + ip.getId());

@@ -87,7 +87,7 @@ public class EnableOutOfBandManagementForClusterCmd extends BaseAsyncCmd {
     }
 
     @Override
-    final public long getEntityOwnerId() {
+    final public Long getEntityOwnerId() {
         return CallContext.current().getCallingAccountId();
     }
 

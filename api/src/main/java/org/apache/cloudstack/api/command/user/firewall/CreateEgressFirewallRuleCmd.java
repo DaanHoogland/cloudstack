@@ -173,7 +173,7 @@ public class CreateEgressFirewallRuleCmd extends BaseAsyncCreateCmd implements F
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         throw new UnsupportedOperationException("database id can only provided by VO objects");
     }
 
@@ -219,12 +219,12 @@ public class CreateEgressFirewallRuleCmd extends BaseAsyncCreateCmd implements F
     }
 
     @Override
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account account = CallContext.current().getCallingAccount();
 
         if (account != null) {
@@ -235,7 +235,7 @@ public class CreateEgressFirewallRuleCmd extends BaseAsyncCreateCmd implements F
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         Network network = _networkService.getNetwork(networkId);
             return  network.getDomainId();
         }
@@ -304,7 +304,7 @@ public class CreateEgressFirewallRuleCmd extends BaseAsyncCreateCmd implements F
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         Network network = _networkService.getNetwork(networkId);
         return network.getAccountId();
     }
@@ -371,7 +371,7 @@ public class CreateEgressFirewallRuleCmd extends BaseAsyncCreateCmd implements F
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if (display != null) {
             return display;
         } else {

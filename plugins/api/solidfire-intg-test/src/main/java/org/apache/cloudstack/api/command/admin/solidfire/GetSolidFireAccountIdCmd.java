@@ -52,7 +52,7 @@ public class GetSolidFireAccountIdCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return util.getAccountIdForAccountUuid(csAccountUuid);
     }
 

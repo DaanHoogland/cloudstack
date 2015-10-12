@@ -55,8 +55,8 @@ class Cmd1 extends BaseCmd {
         return BaseCmdTest.CMD1_RESPONSE;
     }
     @Override
-    public long getEntityOwnerId() {
-        return 0;
+    public Long getEntityOwnerId() {
+        return 0l;
     }
 }
 

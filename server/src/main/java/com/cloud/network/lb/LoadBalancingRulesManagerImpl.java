@@ -1984,7 +1984,7 @@ public class LoadBalancingRulesManagerImpl<Type> extends ManagerBase implements 
     protected boolean handleSystemLBIpRelease(LoadBalancerVO lb) {
         IpAddress ip = _ipAddressDao.findById(lb.getSourceIpAddressId());
         boolean success = true;
-        if (ip.getSystem()) {
+        if (ip.isSystem()) {
             s_logger.debug("Releasing system ip address " + lb.getSourceIpAddressId() + " as a part of delete lb rule");
             if (!_ipAddrMgr.disassociatePublicIpAddress(lb.getSourceIpAddressId(), CallContext.current().getCallingUserId(), CallContext.current().getCallingAccount())) {
                 s_logger.warn("Unable to release system ip address id=" + lb.getSourceIpAddressId() + " as a part of delete lb rule");

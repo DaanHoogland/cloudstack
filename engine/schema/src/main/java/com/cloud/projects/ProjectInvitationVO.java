@@ -77,7 +77,7 @@ public class ProjectInvitationVO implements ProjectInvitation {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -137,12 +137,12 @@ public class ProjectInvitationVO implements ProjectInvitation {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return inDomainId == null ? -1 : inDomainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return forAccountId == null ? -1 : forAccountId;
     }
 

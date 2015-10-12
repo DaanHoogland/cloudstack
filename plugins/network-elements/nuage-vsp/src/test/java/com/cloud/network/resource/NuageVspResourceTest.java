@@ -143,7 +143,7 @@ public class NuageVspResourceTest extends NuageTest {
 
         PingCommand ping = _resource.getCurrentStatus(42);
         assertNotNull(ping);
-        assertEquals(42, ping.getHostId());
+        assertEquals(42l, ping.getHostId().longValue());
         assertEquals(Host.Type.L2Networking, ping.getHostType());
     }
 

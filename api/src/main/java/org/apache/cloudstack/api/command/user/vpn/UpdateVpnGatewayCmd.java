@@ -61,7 +61,7 @@ public class UpdateVpnGatewayCmd extends BaseAsyncCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Site2SiteVpnGateway gw = _entityMgr.findById(Site2SiteVpnGateway.class, getId());
         if (gw != null) {
             return gw.getAccountId();

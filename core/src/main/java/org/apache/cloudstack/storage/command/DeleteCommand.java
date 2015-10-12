@@ -34,7 +34,7 @@ public final class DeleteCommand extends StorageSubSystemCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 

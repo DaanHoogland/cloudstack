@@ -64,7 +64,7 @@ public class RecoverVMCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         UserVm userVm = _entityMgr.findById(UserVm.class, getId());
         if (userVm != null) {
             return userVm.getAccountId();

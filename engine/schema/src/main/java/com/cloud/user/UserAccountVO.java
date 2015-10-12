@@ -113,7 +113,7 @@ public class UserAccountVO implements UserAccount, InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -158,7 +158,7 @@ public class UserAccountVO implements UserAccount, InternalIdentity {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -207,10 +207,6 @@ public class UserAccountVO implements UserAccount, InternalIdentity {
         return created;
     }
 
-//    public void setCreated(Date created) {
-//        this.created = created;
-//    }
-
     @Override
     public Date getRemoved() {
         return removed;
@@ -230,7 +226,7 @@ public class UserAccountVO implements UserAccount, InternalIdentity {
     }
 
     @Override
-    public short getType() {
+    public Short getType() {
         return type;
     }
 
@@ -278,7 +274,7 @@ public class UserAccountVO implements UserAccount, InternalIdentity {
     }
 
     @Override
-    public boolean isRegistered() {
+    public Boolean isRegistered() {
         return registered;
     }
 
@@ -291,7 +287,7 @@ public class UserAccountVO implements UserAccount, InternalIdentity {
     }
 
     @Override
-    public int getLoginAttempts() {
+    public Integer getLoginAttempts() {
         return loginAttempts;
     }
 

@@ -73,8 +73,7 @@ public interface NetworkACLItem extends InternalIdentity, Identity, Displayable 
 
     TrafficType getTrafficType();
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 
     String getReason();
 }

@@ -741,15 +741,15 @@ public class CertServiceTest {
 
     public class UploadSslCertCmdExtn extends UploadSslCertCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 
     public class DeleteSslCertCmdExtn extends DeleteSslCertCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 }

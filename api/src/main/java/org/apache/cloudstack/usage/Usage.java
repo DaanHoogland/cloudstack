@@ -20,7 +20,7 @@ import java.util.Date;
 
 public interface Usage {
 
-    public long getId();
+    public Long getId();
 
     public Long getZoneId();
 
@@ -32,7 +32,7 @@ public interface Usage {
 
     public String getUsageDisplay();
 
-    public int getUsageType();
+    public Integer getUsageType();
 
     public Double getRawUsage();
 

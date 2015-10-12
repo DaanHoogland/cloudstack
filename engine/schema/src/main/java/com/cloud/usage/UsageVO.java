@@ -231,7 +231,7 @@ public class UsageVO implements Usage, InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -261,7 +261,7 @@ public class UsageVO implements Usage, InternalIdentity {
     }
 
     @Override
-    public int getUsageType() {
+    public Integer getUsageType() {
         return usageType;
     }
 

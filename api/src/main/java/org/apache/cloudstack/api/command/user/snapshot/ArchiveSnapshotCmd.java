@@ -77,7 +77,7 @@ public class ArchiveSnapshotCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Snapshot snapshot = _entityMgr.findById(Snapshot.class, getId());
         if (snapshot != null) {
             return snapshot.getAccountId();

@@ -87,7 +87,7 @@ public class DeleteAccountFromProjectCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Project project = _projectService.getProject(projectId);
         //verify input parameters
         if (project == null) {

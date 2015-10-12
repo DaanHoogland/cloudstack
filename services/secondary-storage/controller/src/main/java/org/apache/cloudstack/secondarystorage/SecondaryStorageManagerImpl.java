@@ -1279,7 +1279,7 @@ public class SecondaryStorageManagerImpl extends ManagerBase implements Secondar
             //get system ip and create static nat rule for the vm in case of basic networking with EIP/ELB
             _rulesMgr.getSystemIpAndEnableStaticNatForVm(profile.getVirtualMachine(), false);
             IPAddressVO ipaddr = _ipAddressDao.findByAssociatedVmId(profile.getVirtualMachine().getId());
-            if (ipaddr != null && ipaddr.getSystem()) {
+            if (ipaddr != null && ipaddr.isSystem()) {
                 SecondaryStorageVmVO secVm = _secStorageVmDao.findById(profile.getId());
                 // override SSVM guest IP with EIP, so that download url's with be prepared with EIP
                 secVm.setPublicIpAddress(ipaddr.getAddress().addr());
@@ -1297,7 +1297,7 @@ public class SecondaryStorageManagerImpl extends ManagerBase implements Secondar
     public void finalizeStop(VirtualMachineProfile profile, Answer answer) {
         //release elastic IP here
         IPAddressVO ip = _ipAddressDao.findByAssociatedVmId(profile.getId());
-        if (ip != null && ip.getSystem()) {
+        if (ip != null && ip.isSystem()) {
             CallContext ctx = CallContext.current();
             try {
                 _rulesMgr.disableStaticNat(ip.getId(), ctx.getCallingAccount(), ctx.getCallingUserId(), true);

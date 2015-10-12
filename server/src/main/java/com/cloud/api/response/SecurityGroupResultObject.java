@@ -67,7 +67,7 @@ public class SecurityGroupResultObject implements ControlledEntity, InternalIden
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -92,7 +92,7 @@ public class SecurityGroupResultObject implements ControlledEntity, InternalIden
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -101,7 +101,7 @@ public class SecurityGroupResultObject implements ControlledEntity, InternalIden
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 

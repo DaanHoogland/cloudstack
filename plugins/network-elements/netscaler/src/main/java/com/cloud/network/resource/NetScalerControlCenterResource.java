@@ -604,7 +604,7 @@ public class NetScalerControlCenterResource implements ServerResource {
                         JSONObject ipstat = statsIPList.getJSONObject(i);
                         JSONObject ipvalues =  ipstat.getJSONObject("ipstats");
                         if(ipstat != null) {
-                            long[] bytesSentAndReceived = new long[] {0, 0};
+                            Long[] bytesSentAndReceived = new Long[] {0l, 0l};
                             bytesSentAndReceived[0] = ipvalues.getLong("received");
                             bytesSentAndReceived[1] = ipvalues.getLong("sent");
 

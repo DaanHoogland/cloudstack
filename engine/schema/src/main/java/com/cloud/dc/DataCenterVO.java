@@ -294,7 +294,7 @@ public class DataCenterVO implements DataCenter {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -346,7 +346,7 @@ public class DataCenterVO implements DataCenter {
     }
 
     @Override
-    public boolean isSecurityGroupEnabled() {
+    public Boolean isSecurityGroupEnabled() {
         return securityGroupEnabled;
     }
 
@@ -355,7 +355,7 @@ public class DataCenterVO implements DataCenter {
     }
 
     @Override
-    public boolean isLocalStorageEnabled() {
+    public Boolean isLocalStorageEnabled() {
         return localStorageEnabled;
     }
 
@@ -428,7 +428,7 @@ public class DataCenterVO implements DataCenter {
         this.uuid = uuid;
     }
 
-    public long getMacAddress() {
+    public Long getMacAddress() {
         return macAddress;
     }
 

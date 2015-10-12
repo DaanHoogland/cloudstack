@@ -72,7 +72,7 @@ public class RevokeSecurityGroupIngressCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         SecurityRule rule = _entityMgr.findById(SecurityRule.class, getId());
         if (rule != null) {
             SecurityGroup group = _entityMgr.findById(SecurityGroup.class, rule.getSecurityGroupId());

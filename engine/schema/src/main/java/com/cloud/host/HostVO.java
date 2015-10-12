@@ -535,7 +535,7 @@ public class HostVO implements Host {
     }
 
     @Override
-    public long getLastPinged() {
+    public Long getLastPinged() {
         return lastPinged;
     }
 
@@ -545,7 +545,7 @@ public class HostVO implements Host {
     }
 
     @Override
-    public long getTotalSize() {
+    public Long getTotalSize() {
         return totalSize;
     }
 
@@ -574,7 +574,7 @@ public class HostVO implements Host {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -589,7 +589,7 @@ public class HostVO implements Host {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -713,16 +713,16 @@ public class HostVO implements Host {
     }
 
     @Override
-    public boolean isInMaintenanceStates() {
+    public Boolean isInMaintenanceStates() {
         return (getResourceState() == ResourceState.Maintenance || getResourceState() == ResourceState.ErrorInMaintenance || getResourceState() == ResourceState.PrepareForMaintenance);
     }
 
     @Override
-    public boolean isDisabled() {
+    public Boolean isDisabled() {
         return (getResourceState() == ResourceState.Disabled);
     }
 
-    public long getUpdated() {
+    public Long getUpdated() {
         return updated;
     }
 

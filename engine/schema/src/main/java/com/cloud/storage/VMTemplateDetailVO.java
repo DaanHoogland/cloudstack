@@ -56,12 +56,12 @@ public class VMTemplateDetailVO implements ResourceDetail {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     @Override
-    public long getResourceId() {
+    public Long getResourceId() {
         return resourceId;
     }
 
@@ -76,7 +76,7 @@ public class VMTemplateDetailVO implements ResourceDetail {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 

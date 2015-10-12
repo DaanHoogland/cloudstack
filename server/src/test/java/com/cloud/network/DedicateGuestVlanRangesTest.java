@@ -378,22 +378,22 @@ public class DedicateGuestVlanRangesTest {
 
     public class DedicateGuestVlanRangeCmdExtn extends DedicateGuestVlanRangeCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 
     public class ReleaseDedicatedGuestVlanRangeCmdExtn extends ReleaseDedicatedGuestVlanRangeCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 
     public class ListDedicatedGuestVlanRangesCmdExtn extends ListDedicatedGuestVlanRangesCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 }

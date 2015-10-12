@@ -75,7 +75,7 @@ public class DisableUserCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         User user = _entityMgr.findById(User.class, getId());
         if (user != null) {
             return user.getAccountId();

@@ -84,7 +84,7 @@ public class UploadVO implements Upload {
     private String installPath;
 
     @Override
-    public long getDataStoreId() {
+    public Long getDataStoreId() {
         return dataStoreId;
     }
 
@@ -93,7 +93,7 @@ public class UploadVO implements Upload {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -114,13 +114,6 @@ public class UploadVO implements Upload {
 
     public void setLastUpdated(Date date) {
         lastUpdated = date;
-    }
-
-    public UploadVO(long hostId, long templateId) {
-        super();
-        this.dataStoreId = hostId;
-        this.typeId = templateId;
-        this.uuid = UUID.randomUUID().toString();
     }
 
     public UploadVO(long hostId, long typeId, Date lastUpdated, Status uploadState, Type type, String uploadUrl, Mode mode) {
@@ -188,7 +181,7 @@ public class UploadVO implements Upload {
     }
 
     @Override
-    public int getUploadPercent() {
+    public Integer getUploadPercent() {
         return uploadPercent;
     }
 
@@ -206,7 +199,7 @@ public class UploadVO implements Upload {
     }
 
     @Override
-    public long getTypeId() {
+    public Long getTypeId() {
         return typeId;
     }
 

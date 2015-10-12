@@ -188,7 +188,7 @@ public class AccountJoinVO extends BaseViewVO implements InternalIdentity, Ident
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -201,7 +201,7 @@ public class AccountJoinVO extends BaseViewVO implements InternalIdentity, Ident
         return accountName;
     }
 
-    public short getType() {
+    public Short getType() {
         return type;
     }
 
@@ -217,7 +217,7 @@ public class AccountJoinVO extends BaseViewVO implements InternalIdentity, Ident
         return removed;
     }
 
-    public boolean isNeedsCleanup() {
+    public Boolean isNeedsCleanup() {
         return needsCleanup;
     }
 
@@ -225,7 +225,7 @@ public class AccountJoinVO extends BaseViewVO implements InternalIdentity, Ident
         return networkDomain;
     }
 
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -241,7 +241,7 @@ public class AccountJoinVO extends BaseViewVO implements InternalIdentity, Ident
         return domainPath;
     }
 
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -377,11 +377,11 @@ public class AccountJoinVO extends BaseViewVO implements InternalIdentity, Ident
         return jobUuid;
     }
 
-    public int getJobStatus() {
+    public Integer getJobStatus() {
         return jobStatus;
     }
 
-    public boolean isDefault() {
+    public Boolean isDefault() {
         return isDefault;
     }
 }

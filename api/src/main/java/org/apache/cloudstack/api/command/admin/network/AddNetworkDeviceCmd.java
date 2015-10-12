@@ -20,6 +20,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import com.cloud.user.Account;
 import org.apache.log4j.Logger;
 
 import org.apache.cloudstack.api.APICommand;
@@ -92,9 +93,8 @@ public class AddNetworkDeviceCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
-        // TODO Auto-generated method stub
-        return 0;
+    public Long getEntityOwnerId() {
+        return Account.ACCOUNT_ID_ANONYMOUS_NORMAL;
     }
 
 }

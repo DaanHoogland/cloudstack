@@ -26,8 +26,6 @@ import org.apache.cloudstack.api.InternalIdentity;
 import com.cloud.hypervisor.Hypervisor.HypervisorType;
 import com.cloud.storage.Storage.ImageFormat;
 import com.cloud.storage.Storage.TemplateType;
-import com.cloud.storage.Volume.Event;
-import com.cloud.storage.Volume.State;
 import com.cloud.utils.fsm.StateMachine2;
 import com.cloud.utils.fsm.StateObject;
 
@@ -81,14 +79,14 @@ public interface VirtualMachineTemplate extends ControlledEntity, Identity, Inte
     @Override
     State getState();
 
-    boolean isFeatured();
+    Boolean isFeatured();
 
     /**
      * @return public or private template
      */
-    boolean isPublicTemplate();
+    Boolean isPublicTemplate();
 
-    boolean isExtractable();
+    Boolean isExtractable();
 
     /**
      * @return name
@@ -97,27 +95,27 @@ public interface VirtualMachineTemplate extends ControlledEntity, Identity, Inte
 
     ImageFormat getFormat();
 
-    boolean isRequiresHvm();
+    Boolean isRequiresHvm();
 
     String getDisplayText();
 
-    boolean isEnablePassword();
+    Boolean isEnablePassword();
 
-    boolean isEnableSshKey();
+    Boolean isEnableSshKey();
 
-    boolean isCrossZones();
+    Boolean isCrossZones();
 
     Date getCreated();
 
-    long getGuestOSId();
+    Long getGuestOSId();
 
-    boolean isBootable();
+    Boolean isBootable();
 
     TemplateType getTemplateType();
 
     HypervisorType getHypervisorType();
 
-    int getBits();
+    Integer getBits();
 
     String getUniqueName();
 
@@ -131,11 +129,11 @@ public interface VirtualMachineTemplate extends ControlledEntity, Identity, Inte
 
     Map getDetails();
 
-    boolean isDynamicallyScalable();
+    Boolean isDynamicallyScalable();
 
     Long getParentTemplateId();
 
-    long getUpdatedCount();
+    Long getUpdatedCount();
 
     void incrUpdatedCount();
 

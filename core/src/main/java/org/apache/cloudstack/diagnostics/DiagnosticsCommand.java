@@ -33,12 +33,12 @@ public class DiagnosticsCommand extends NetworkElementCommand {
     }
 
     @Override
-    public boolean isQuery() {
+    public Boolean isQuery() {
         return true;
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return this.executeInSequence;
     }
 }

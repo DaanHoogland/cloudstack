@@ -40,7 +40,7 @@ public interface Host extends StateObject<Status>, Identity, Partition, HAResour
             _virtual = virtual;
         }
 
-        public boolean isVirtual() {
+        public Boolean isVirtual() {
             return _virtual;
         }
 
@@ -126,7 +126,7 @@ public interface Host extends StateObject<Status>, Identity, Partition, HAResour
     /**
      * @return availability zone.
      */
-    long getDataCenterId();
+    Long getDataCenterId();
 
     /**
      * @return parent path.  only used for storage server.
@@ -156,7 +156,7 @@ public interface Host extends StateObject<Status>, Identity, Partition, HAResour
     /*
      * @return total size
      */
-    long getTotalSize();
+    Long getTotalSize();
 
     /*
      * @return capabilities
@@ -166,7 +166,7 @@ public interface Host extends StateObject<Status>, Identity, Partition, HAResour
     /*
      * @return last pinged time
      */
-    long getLastPinged();
+    Long getLastPinged();
 
     /*
      * @return management server id
@@ -200,9 +200,9 @@ public interface Host extends StateObject<Status>, Identity, Partition, HAResour
 
     String getHypervisorVersion();
 
-    boolean isInMaintenanceStates();
+    Boolean isInMaintenanceStates();
 
-    boolean isDisabled();
+    Boolean isDisabled();
 
     ResourceState getResourceState();
 }

@@ -44,7 +44,7 @@ public class FirewallRuleTO implements InternalIdentity {
     String srcVlanTag;
     String srcIp;
     String protocol;
-    int[] srcPortRange;
+    Integer[] srcPortRange;
     boolean revoked;
     boolean alreadyAdded;
     private List<String> sourceCidrList;
@@ -79,7 +79,7 @@ public class FirewallRuleTO implements InternalIdentity {
                 portRange.add(srcPortEnd);
             }
 
-            srcPortRange = new int[portRange.size()];
+            srcPortRange = new Integer[portRange.size()];
             int i = 0;
             for (Integer port : portRange) {
                 srcPortRange[i] = port.intValue();
@@ -216,7 +216,7 @@ public class FirewallRuleTO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -232,7 +232,7 @@ public class FirewallRuleTO implements InternalIdentity {
         return protocol;
     }
 
-    public int[] getSrcPortRange() {
+    public Integer[] getSrcPortRange() {
         return srcPortRange;
     }
 
@@ -251,7 +251,7 @@ public class FirewallRuleTO implements InternalIdentity {
             return NetUtils.portRangeToString(srcPortRange);
     }
 
-    public boolean revoked() {
+    public Boolean revoked() {
         return revoked;
     }
 
@@ -263,7 +263,7 @@ public class FirewallRuleTO implements InternalIdentity {
         return destCidrList;
     }
 
-    public boolean isAlreadyAdded() {
+    public Boolean isAlreadyAdded() {
         return alreadyAdded;
     }
 
@@ -271,7 +271,7 @@ public class FirewallRuleTO implements InternalIdentity {
         return purpose;
     }
 
-    public boolean isDefaultEgressPolicy() {
+    public Boolean isDefaultEgressPolicy() {
         return defaultEgressPolicy;
     }
 

@@ -176,7 +176,7 @@ public abstract class BaseViewWithTagInformationVO extends BaseViewVO implements
         this.tagDomainName = tagDomainName;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

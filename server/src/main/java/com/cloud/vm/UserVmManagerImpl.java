@@ -4364,7 +4364,7 @@ public class UserVmManagerImpl extends ManagerBase implements UserVmManager, Vir
         VirtualMachine vm = profile.getVirtualMachine();
         // release elastic IP here
         IPAddressVO ip = _ipAddressDao.findByAssociatedVmId(profile.getId());
-        if (ip != null && ip.getSystem()) {
+        if (ip != null && ip.isSystem()) {
             CallContext ctx = CallContext.current();
             try {
                 long networkId = ip.getAssociatedWithNetworkId();

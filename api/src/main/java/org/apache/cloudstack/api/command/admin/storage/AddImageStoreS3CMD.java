@@ -152,7 +152,7 @@ public final class AddImageStoreS3CMD extends BaseCmd implements ClientOptions {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return ACCOUNT_ID_SYSTEM;
     }
 

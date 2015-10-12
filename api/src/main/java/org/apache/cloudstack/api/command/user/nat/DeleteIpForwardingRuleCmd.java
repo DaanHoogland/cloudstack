@@ -84,7 +84,7 @@ public class DeleteIpForwardingRuleCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         if (ownerId == null) {
             FirewallRule rule = _entityMgr.findById(FirewallRule.class, id);
             if (rule == null) {

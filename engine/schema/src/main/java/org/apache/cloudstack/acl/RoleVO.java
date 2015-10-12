@@ -76,7 +76,7 @@ public class RoleVO implements Role {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

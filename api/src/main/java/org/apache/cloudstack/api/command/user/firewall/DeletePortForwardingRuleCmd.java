@@ -85,7 +85,7 @@ public class DeletePortForwardingRuleCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         if (ownerId == null) {
             PortForwardingRule rule = _entityMgr.findById(PortForwardingRule.class, id);
             if (rule == null) {

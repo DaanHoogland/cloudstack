@@ -252,7 +252,7 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -267,12 +267,12 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
     }
 
     @Override
-    public short getAccountType() {
+    public Short getAccountType() {
         return accountType;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -291,7 +291,7 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return domainPath;
     }
 
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 
@@ -305,7 +305,7 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return projectName;
     }
 
-    public boolean isExtractable() {
+    public Boolean isExtractable() {
         return extractable;
     }
 
@@ -313,7 +313,7 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return templateType;
     }
 
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -329,11 +329,11 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return uniqueName;
     }
 
-    public boolean isPublicTemplate() {
+    public Boolean isPublicTemplate() {
         return publicTemplate;
     }
 
-    public boolean isFeatured() {
+    public Boolean isFeatured() {
         return featured;
     }
 
@@ -341,11 +341,11 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return url;
     }
 
-    public boolean isRequiresHvm() {
+    public Boolean isRequiresHvm() {
         return requiresHvm;
     }
 
-    public int getBits() {
+    public Integer getBits() {
         return bits;
     }
 
@@ -357,15 +357,15 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return displayText;
     }
 
-    public boolean isEnablePassword() {
+    public Boolean isEnablePassword() {
         return enablePassword;
     }
 
-    public boolean isDynamicallyScalable() {
+    public Boolean isDynamicallyScalable() {
         return dynamicallyScalable;
     }
 
-    public long getGuestOSId() {
+    public Long getGuestOSId() {
         return guestOSId;
     }
 
@@ -377,15 +377,15 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return guestOSName;
     }
 
-    public boolean isBootable() {
+    public Boolean isBootable() {
         return bootable;
     }
 
-    public boolean isPrepopulate() {
+    public Boolean isPrepopulate() {
         return prepopulate;
     }
 
-    public boolean isCrossZones() {
+    public Boolean isCrossZones() {
         return crossZones;
     }
 
@@ -405,11 +405,11 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return templateTag;
     }
 
-    public int getSortKey() {
+    public Integer getSortKey() {
         return sortKey;
     }
 
-    public boolean isEnableSshKey() {
+    public Boolean isEnableSshKey() {
         return enableSshKey;
     }
 
@@ -417,15 +417,15 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return downloadState;
     }
 
-    public long getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public long getPhysicalSize() {
+    public Long getPhysicalSize() {
         return physicalSize;
     }
 
-    public boolean isDestroyed() {
+    public Boolean isDestroyed() {
         return destroyed;
     }
 
@@ -449,7 +449,7 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         return format;
     }
 
-    public int getDownloadPercent() {
+    public Integer getDownloadPercent() {
         return downloadPercent;
     }
 
@@ -486,7 +486,7 @@ public class TemplateJoinVO extends BaseViewWithTagInformationVO implements Cont
         this.accountId = accountId;
     }
 
-    public boolean isDirectDownload() {
+    public Boolean isDirectDownload() {
         return directDownload;
     }
 

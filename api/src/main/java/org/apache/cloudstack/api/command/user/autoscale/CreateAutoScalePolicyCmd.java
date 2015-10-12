@@ -127,7 +127,7 @@ public class CreateAutoScalePolicyCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         if (conditionAccountId != null) {
             return conditionAccountId;
         }

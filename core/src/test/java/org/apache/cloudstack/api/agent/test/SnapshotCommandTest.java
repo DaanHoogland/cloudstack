@@ -40,7 +40,7 @@ public class SnapshotCommandTest {
 
     public StoragePool pool = new StoragePool() {
         @Override
-        public long getId() {
+        public Long getId() {
             return 1L;
         };
 
@@ -76,17 +76,17 @@ public class SnapshotCommandTest {
         };
 
         @Override
-        public long getDataCenterId() {
+        public Long getDataCenterId() {
             return 0L;
         };
 
         @Override
-        public long getCapacityBytes() {
+        public Long getCapacityBytes() {
             return 0L;
         };
 
         @Override
-        public long getUsedBytes() {
+        public Long getUsedBytes() {
             return 0L;
         };
 
@@ -116,12 +116,12 @@ public class SnapshotCommandTest {
         };
 
         @Override
-        public boolean isShared() {
+        public Boolean isShared() {
             return false;
         };
 
         @Override
-        public boolean isLocal() {
+        public Boolean isLocal() {
             return false;
         };
 
@@ -131,12 +131,12 @@ public class SnapshotCommandTest {
         };
 
         @Override
-        public int getPort() {
+        public Integer getPort() {
             return 25;
         };
 
         @Override
-        public boolean isManaged() { return false; }
+        public Boolean isManaged() { return false; }
 
         @Override
         public Long getPodId() {
@@ -150,7 +150,7 @@ public class SnapshotCommandTest {
         }
 
         @Override
-        public boolean isInMaintenance() {
+        public Boolean isInMaintenance() {
             // TODO Auto-generated method stub
             return false;
         }

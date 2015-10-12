@@ -79,7 +79,7 @@ public class DisableStaticNatCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return _entityMgr.findById(IpAddress.class, ipAddressId).getAccountId();
     }
 

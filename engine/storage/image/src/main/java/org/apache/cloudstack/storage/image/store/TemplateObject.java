@@ -105,7 +105,7 @@ public class TemplateObject implements TemplateInfo {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return imageVO.getId();
     }
 
@@ -368,22 +368,22 @@ public class TemplateObject implements TemplateInfo {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return imageVO.getAccountId();
     }
 
     @Override
-    public boolean isFeatured() {
+    public Boolean isFeatured() {
         return imageVO.isFeatured();
     }
 
     @Override
-    public boolean isPublicTemplate() {
+    public Boolean isPublicTemplate() {
         return imageVO.isPublicTemplate();
     }
 
     @Override
-    public boolean isExtractable() {
+    public Boolean isExtractable() {
         return imageVO.isExtractable();
     }
 
@@ -393,7 +393,7 @@ public class TemplateObject implements TemplateInfo {
     }
 
     @Override
-    public boolean isRequiresHvm() {
+    public Boolean isRequiresHvm() {
         return imageVO.isRequiresHvm();
     }
 
@@ -403,17 +403,17 @@ public class TemplateObject implements TemplateInfo {
     }
 
     @Override
-    public boolean isEnablePassword() {
+    public Boolean isEnablePassword() {
         return imageVO.isEnablePassword();
     }
 
     @Override
-    public boolean isEnableSshKey() {
+    public Boolean isEnableSshKey() {
         return imageVO.isEnableSshKey();
     }
 
     @Override
-    public boolean isCrossZones() {
+    public Boolean isCrossZones() {
         return imageVO.isCrossZones();
     }
 
@@ -423,12 +423,12 @@ public class TemplateObject implements TemplateInfo {
     }
 
     @Override
-    public long getGuestOSId() {
+    public Long getGuestOSId() {
         return imageVO.getGuestOSId();
     }
 
     @Override
-    public boolean isBootable() {
+    public Boolean isBootable() {
         return imageVO.isBootable();
     }
 
@@ -443,7 +443,7 @@ public class TemplateObject implements TemplateInfo {
     }
 
     @Override
-    public int getBits() {
+    public Integer getBits() {
         return imageVO.getBits();
     }
 
@@ -485,12 +485,12 @@ public class TemplateObject implements TemplateInfo {
     }
 
     @Override
-    public boolean isDynamicallyScalable() {
+    public Boolean isDynamicallyScalable() {
         return false;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return imageVO.getDomainId();
     }
 
@@ -508,9 +508,9 @@ public class TemplateObject implements TemplateInfo {
     }
 
     @Override
-    public long getUpdatedCount() {
+    public Long getUpdatedCount() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override

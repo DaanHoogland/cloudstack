@@ -21,5 +21,6 @@ import java.util.List;
 public interface SecurityGroupAction {
     List<Long> getSecurityGroupIdList();
     List<String> getSecurityGroupNameList();
-    long getEntityOwnerId();
+    // TODO: this is also in BaseCmd. is it both needed?
+    Long getEntityOwnerId();
 }

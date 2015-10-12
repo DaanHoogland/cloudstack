@@ -79,7 +79,7 @@ public class DeleteDomainCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Domain domain = _entityMgr.findById(Domain.class, getId());
         if (domain != null) {
             return domain.getAccountId();

@@ -112,7 +112,7 @@ public class LBStickinessPolicyVO implements StickinessPolicy {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -159,7 +159,7 @@ public class LBStickinessPolicyVO implements StickinessPolicy {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 }

@@ -5203,7 +5203,7 @@ public class LibvirtComputingResourceTest {
     public void testUnknownCommand() {
         libvirtComputingResource = new LibvirtComputingResource();
         Command cmd = new Command() {
-            @Override public boolean executeInSequence() {
+            @Override public Boolean executeInSequence() {
                 return false;
             }
         };
@@ -5215,7 +5215,7 @@ public class LibvirtComputingResourceTest {
     public void testKnownCommand() {
         libvirtComputingResource = new LibvirtComputingResource();
         Command cmd = new PingTestCommand() {
-            @Override public boolean executeInSequence() {
+            @Override public Boolean executeInSequence() {
                 throw new NullPointerException("test succeeded");
             }
         };

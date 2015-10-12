@@ -76,7 +76,7 @@ public final class DisableHAForClusterCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return CallContext.current().getCallingAccountId();
     }
 

@@ -82,9 +82,9 @@ public abstract class BaseListCmd extends BaseCmd implements IBaseListCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         // no owner is needed for list command
-        return 0;
+        return 0l;
     }
 
     @Override

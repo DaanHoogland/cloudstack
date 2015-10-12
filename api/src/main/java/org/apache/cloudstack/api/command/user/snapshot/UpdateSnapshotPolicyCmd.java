@@ -84,7 +84,7 @@ public class UpdateSnapshotPolicyCmd extends BaseAsyncCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
 
         SnapshotPolicy policy = _entityMgr.findById(SnapshotPolicy.class, getId());
         if (policy == null) {

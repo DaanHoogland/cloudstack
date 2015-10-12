@@ -145,7 +145,7 @@ public class AssignVMCmd extends BaseCmd  {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         UserVm vm = _responseGenerator.findUserVmById(getVmId());
         if (vm != null) {
             return vm.getAccountId();

@@ -160,7 +160,7 @@ public class VMSnapshotVO implements VMSnapshot {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -197,12 +197,12 @@ public class VMSnapshotVO implements VMSnapshot {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -225,7 +225,7 @@ public class VMSnapshotVO implements VMSnapshot {
     }
 
     @Override
-    public long getUpdatedCount() {
+    public Long getUpdatedCount() {
         return updatedCount;
     }
 
@@ -254,7 +254,7 @@ public class VMSnapshotVO implements VMSnapshot {
     }
 
     @Override
-    public long getServiceOfferingId() {
+    public Long getServiceOfferingId() {
         return serviceOfferingId;
     }
 }

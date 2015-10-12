@@ -202,7 +202,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
     private String username;
 
     @Override
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
@@ -215,7 +215,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return version;
     }
 
-    public long getZoneId() {
+    public Long getZoneId() {
         return zoneId;
     }
 
@@ -259,7 +259,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return caps;
     }
 
-    public long getLastPinged() {
+    public Long getLastPinged() {
         return lastPinged;
     }
 
@@ -271,7 +271,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return removed;
     }
 
-    public boolean isOutOfBandManagementEnabled() {
+    public Boolean isOutOfBandManagementEnabled() {
         return outOfBandManagementEnabled;
     }
 
@@ -279,7 +279,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return outOfBandManagementPowerState;
     }
 
-    public boolean isHostHAEnabled() {
+    public Boolean isHostHAEnabled() {
         return hostHAEnabled;
     }
 
@@ -311,11 +311,11 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return speed;
     }
 
-    public long getTotalMemory() {
+    public Long getTotalMemory() {
         return totalMemory;
     }
 
-    public long getClusterId() {
+    public Long getClusterId() {
         return clusterId;
     }
 
@@ -331,7 +331,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return clusterType;
     }
 
-    public long getOsCategoryId() {
+    public Long getOsCategoryId() {
         return osCategoryId;
     }
 
@@ -351,11 +351,11 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return jobUuid;
     }
 
-    public int getJobStatus() {
+    public Integer getJobStatus() {
         return jobStatus;
     }
 
-    public long getPodId() {
+    public Long getPodId() {
         return podId;
     }
 
@@ -367,19 +367,19 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return podName;
     }
 
-    public long getMemUsedCapacity() {
+    public Long getMemUsedCapacity() {
         return memUsedCapacity;
     }
 
-    public long getMemReservedCapacity() {
+    public Long getMemReservedCapacity() {
         return memReservedCapacity;
     }
 
-    public long getCpuUsedCapacity() {
+    public Long getCpuUsedCapacity() {
         return cpuUsedCapacity;
     }
 
-    public long getCpuReservedCapacity() {
+    public Long getCpuReservedCapacity() {
         return cpuReservedCapacity;
     }
 
@@ -399,7 +399,7 @@ public class HostJoinVO extends BaseViewVO implements InternalIdentity, Identity
         return username;
     }
 
-    public boolean isAnnotated() {
+    public Boolean isAnnotated() {
         return StringUtils.isNotBlank(annotation);
     }
 }

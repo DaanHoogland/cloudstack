@@ -65,7 +65,7 @@ public class MigrateVolumeCommand extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return true;
     }
 
@@ -73,7 +73,7 @@ public class MigrateVolumeCommand extends Command {
         return volumePath;
     }
 
-    public long getVolumeId() {
+    public Long getVolumeId() {
         return volumeId;
     }
 
@@ -113,7 +113,7 @@ public class MigrateVolumeCommand extends Command {
         return destDetails;
     }
 
-    public int getWaitInMillSeconds() {
+    public Integer getWaitInMillSeconds() {
         return getWait() * 1000;
     }
 }

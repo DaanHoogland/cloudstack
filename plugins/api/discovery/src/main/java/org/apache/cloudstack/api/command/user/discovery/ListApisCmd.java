@@ -18,6 +18,7 @@ package org.apache.cloudstack.api.command.user.discovery;
 
 import javax.inject.Inject;
 
+import com.cloud.user.Account;
 import org.apache.cloudstack.acl.RoleType;
 import org.apache.log4j.Logger;
 
@@ -70,8 +71,8 @@ public class ListApisCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         // no owner is needed for list command
-        return 0;
+        return Account.ACCOUNT_ID_ANONYMOUS_NORMAL;
     }
 }

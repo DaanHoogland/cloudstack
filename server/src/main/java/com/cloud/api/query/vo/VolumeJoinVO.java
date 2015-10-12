@@ -294,7 +294,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return provisioningType;
     }
 
-    public long getSize() {
+    public Long getSize() {
         return size;
     }
 
@@ -323,11 +323,11 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
-    public boolean isDisplayVolume() {
+    public Boolean isDisplayVolume() {
         return displayVolume;
     }
 
@@ -342,12 +342,12 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
     }
 
     @Override
-    public short getAccountType() {
+    public Short getAccountType() {
         return accountType;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -366,7 +366,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return domainPath;
     }
 
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 
@@ -380,7 +380,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return projectName;
     }
 
-    public long getVmId() {
+    public Long getVmId() {
         return vmId;
     }
 
@@ -404,7 +404,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return vmType;
     }
 
-    public long getVolumeStoreSize() {
+    public Long getVolumeStoreSize() {
         return volumeStoreSize;
     }
 
@@ -416,7 +416,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return format;
     }
 
-    public int getDownloadPercent() {
+    public Integer getDownloadPercent() {
         return downloadPercent;
     }
 
@@ -432,7 +432,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return hypervisorType;
     }
 
-    public long getDiskOfferingId() {
+    public Long getDiskOfferingId() {
         return diskOfferingId;
     }
 
@@ -448,7 +448,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return diskOfferingDisplayText;
     }
 
-    public boolean isUseLocalStorage() {
+    public Boolean isUseLocalStorage() {
         return useLocalStorage;
     }
 
@@ -472,7 +472,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return cacheMode;
     }
 
-    public long getPoolId() {
+    public Long getPoolId() {
         return poolId;
     }
 
@@ -504,7 +504,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         this.podId = podId;
     }
 
-    public long getClusterId() {
+    public Long getClusterId() {
         return clusterId;
     }
 
@@ -516,7 +516,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return clusterUuid;
     }
 
-    public long getTemplateId() {
+    public Long getTemplateId() {
         return templateId;
     }
 
@@ -524,7 +524,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return templateUuid;
     }
 
-    public boolean isExtractable() {
+    public Boolean isExtractable() {
         return extractable;
     }
 
@@ -540,7 +540,7 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return templateDisplayText;
     }
 
-    public long getIsoId() {
+    public Long getIsoId() {
         return isoId;
     }
 
@@ -564,11 +564,11 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return jobUuid;
     }
 
-    public int getJobStatus() {
+    public Integer getJobStatus() {
         return jobStatus;
     }
 
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -580,11 +580,11 @@ public class VolumeJoinVO extends BaseViewWithTagInformationVO implements Contro
         return dataCenterName;
     }
 
-    public long getPodId() {
+    public Long getPodId() {
         return podId;
     }
 
-    public boolean isSystemUse() {
+    public Boolean isSystemUse() {
         return systemUse;
     }
 

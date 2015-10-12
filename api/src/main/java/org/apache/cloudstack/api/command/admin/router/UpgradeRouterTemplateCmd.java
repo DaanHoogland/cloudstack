@@ -113,7 +113,7 @@ public class UpgradeRouterTemplateCmd extends org.apache.cloudstack.api.BaseCmd 
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return Account.ACCOUNT_ID_SYSTEM; // no account info given, parent this command to SYSTEM so ERROR events are tracked
     }
 

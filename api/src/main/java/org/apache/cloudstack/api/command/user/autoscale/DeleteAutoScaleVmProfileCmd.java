@@ -70,7 +70,7 @@ public class DeleteAutoScaleVmProfileCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         AutoScaleVmProfile autoScaleVmProfile = _entityMgr.findById(AutoScaleVmProfile.class, getId());
         if (autoScaleVmProfile != null) {
             return autoScaleVmProfile.getAccountId();

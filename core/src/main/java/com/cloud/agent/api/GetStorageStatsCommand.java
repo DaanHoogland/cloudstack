@@ -88,7 +88,7 @@ public class GetStorageStatsCommand extends StorageNfsVersionCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 }

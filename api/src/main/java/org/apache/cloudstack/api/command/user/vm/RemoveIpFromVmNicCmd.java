@@ -79,7 +79,7 @@ public class RemoveIpFromVmNicCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account caller = CallContext.current().getCallingAccount();
         return caller.getAccountId();
     }

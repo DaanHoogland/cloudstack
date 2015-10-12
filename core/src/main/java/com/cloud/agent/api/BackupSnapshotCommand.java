@@ -76,7 +76,7 @@ public class BackupSnapshotCommand extends SnapshotCommand {
         return prevBackupUuid;
     }
 
-    public boolean isVolumeInactive() {
+    public Boolean isVolumeInactive() {
         return isVolumeInactive;
     }
 

@@ -68,7 +68,7 @@ public abstract class NetworkElementCommand extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 
@@ -84,7 +84,7 @@ public abstract class NetworkElementCommand extends Command {
         return 1;
     }
 
-    public boolean isQuery() {
+    public Boolean isQuery() {
         return false;
     }
 }

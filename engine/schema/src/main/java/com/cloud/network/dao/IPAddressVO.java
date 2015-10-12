@@ -136,7 +136,7 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public boolean readyToUse() {
+    public Boolean readyToUse() {
         return state == State.Allocated;
     }
 
@@ -170,7 +170,7 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -229,7 +229,7 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public boolean isSourceNat() {
+    public Boolean isSourceNat() {
         return sourceNat;
     }
 
@@ -238,7 +238,7 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public long getVlanId() {
+    public Long getVlanId() {
         return vlanId;
     }
 
@@ -247,7 +247,7 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public boolean isOneToOneNat() {
+    public Boolean isOneToOneNat() {
         return oneToOneNat;
     }
 
@@ -256,12 +256,12 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return allocatedInDomainId == null ? -1 : allocatedInDomainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return allocatedToAccountId == null ? -1 : allocatedToAccountId;
     }
 
@@ -281,7 +281,7 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -312,7 +312,7 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public boolean getSystem() {
+    public Boolean isSystem() {
         return system;
     }
 
@@ -321,7 +321,7 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public boolean isPortable() {
+    public Boolean isPortable() {
         return portable;
     }
 
@@ -353,7 +353,7 @@ public class IPAddressVO implements IpAddress {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 

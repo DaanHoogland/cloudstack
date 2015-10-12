@@ -228,7 +228,7 @@ public class UploadListener implements Listener {
     @Override
     public boolean processAnswers(long agentId, long seq, Answer[] answers) {
         boolean processed = false;
-        if (answers != null & answers.length > 0) {
+        if (answers != null && answers.length > 0) {
             if (answers[0] instanceof UploadAnswer) {
                 final UploadAnswer answer = (UploadAnswer)answers[0];
                 if (getJobId() == null) {
@@ -397,7 +397,7 @@ public class UploadListener implements Listener {
         vo.setLastUpdated(new Date());
         vo.setUploadUrl(uploadUrl);
         vo.setJobId(null);
-        vo.setUploadPercent(0);
+        vo.setUploadPercent((short)0);
         vo.setErrorString(uploadErrorString);
 
         uploadDao.update(getUploadId(), vo);

@@ -62,7 +62,7 @@ public class ListSnapshotPoliciesCmd extends BaseListCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if (display != null) {
             return display;
         }

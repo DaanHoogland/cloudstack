@@ -147,7 +147,7 @@ public class LoadBalancerTO {
         return srcIp;
     }
 
-    public int getSrcPort() {
+    public Integer getSrcPort() {
         return srcPort;
     }
 
@@ -167,15 +167,15 @@ public class LoadBalancerTO {
         this.lbProtocol = lbProtocol;
     }
 
-    public boolean isRevoked() {
+    public Boolean isRevoked() {
         return revoked;
     }
 
-    public boolean isAlreadyAdded() {
+    public Boolean isAlreadyAdded() {
         return alreadyAdded;
     }
 
-    public boolean isInline() {
+    public Boolean isInline() {
         return inline;
     }
 
@@ -199,7 +199,7 @@ public class LoadBalancerTO {
         this.autoScaleVmGroupTO = autoScaleVmGroupTO;
     }
 
-    public boolean isAutoScaleVmGroupTO() {
+    public Boolean isAutoScaleVmGroupTO() {
         return this.autoScaleVmGroupTO != null;
     }
 
@@ -290,19 +290,19 @@ public class LoadBalancerTO {
             return description;
         }
 
-        public int getResponseTime() {
+        public Integer getResponseTime() {
             return responseTime;
         }
 
-        public int getHealthcheckInterval() {
+        public Integer getHealthcheckInterval() {
             return healthcheckInterval;
         }
 
-        public int getHealthcheckThresshold() {
+        public Integer getHealthcheckThresshold() {
             return healthcheckThresshold;
         }
 
-        public int getUnhealthThresshold() {
+        public Integer getUnhealthThresshold() {
             return unhealthThresshold;
         }
 
@@ -310,7 +310,7 @@ public class LoadBalancerTO {
             this.revoked = revoke;
         }
 
-        public boolean isRevoked() {
+        public Boolean isRevoked() {
             return revoked;
         }
 
@@ -343,15 +343,15 @@ public class LoadBalancerTO {
             return destIp;
         }
 
-        public int getDestPort() {
+        public Integer getDestPort() {
             return destPort;
         }
 
-        public boolean isRevoked() {
+        public Boolean isRevoked() {
             return revoked;
         }
 
-        public boolean isAlreadyAdded() {
+        public Boolean isAlreadyAdded() {
             return alreadyAdded;
         }
 
@@ -437,11 +437,11 @@ public class LoadBalancerTO {
             return id;
         }
 
-        public int getDuration() {
+        public Integer getDuration() {
             return duration;
         }
 
-        public int getQuietTime() {
+        public Integer getQuietTime() {
             return quietTime;
         }
 
@@ -449,7 +449,7 @@ public class LoadBalancerTO {
             return action;
         }
 
-        public boolean isRevoked() {
+        public Boolean isRevoked() {
             return revoked;
         }
 
@@ -568,19 +568,19 @@ public class LoadBalancerTO {
             return uuid;
         }
 
-        public int getMinMembers() {
+        public Integer getMinMembers() {
             return minMembers;
         }
 
-        public int getMaxMembers() {
+        public Integer getMaxMembers() {
             return maxMembers;
         }
 
-        public int getMemberPort() {
+        public Integer getMemberPort() {
             return memberPort;
         }
 
-        public int getInterval() {
+        public Integer getInterval() {
             return interval;
         }
 

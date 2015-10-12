@@ -116,7 +116,7 @@ public class DeleteNetworkCmd extends BaseAsyncCmd {
         return ApiCommandJobType.Network;
     }
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Network network = _networkService.getNetwork(id);
         if (network == null) {
             throw new InvalidParameterValueException("Network ID=" + id + " doesn't exist");

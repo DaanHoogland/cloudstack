@@ -187,7 +187,7 @@ public class CreateGlobalLoadBalancerRuleCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Long accountId = _accountService.finalyzeAccountId(accountName, domainId, null, true);
         if (accountId == null) {
             return CallContext.current().getCallingAccount().getId();

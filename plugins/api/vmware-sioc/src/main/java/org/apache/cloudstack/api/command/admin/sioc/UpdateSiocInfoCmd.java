@@ -72,7 +72,7 @@ public class UpdateSiocInfoCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account account = CallContext.current().getCallingAccount();
 
         if (account != null) {

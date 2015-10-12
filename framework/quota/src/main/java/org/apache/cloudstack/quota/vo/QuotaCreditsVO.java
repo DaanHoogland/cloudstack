@@ -110,7 +110,7 @@ public class QuotaCreditsVO implements InternalIdentity {
     private Long updatedBy = null;
 
     @Override
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 }

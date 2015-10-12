@@ -77,7 +77,7 @@ public final class EnableHAForHostCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return CallContext.current().getCallingAccountId();
     }
 

@@ -70,7 +70,7 @@ public class DeleteRemoteAccessVpnCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         if (ownerId == null) {
             RemoteAccessVpn vpnEntity = _ravService.getRemoteAccessVpn(publicIpId);
             if (vpnEntity != null)

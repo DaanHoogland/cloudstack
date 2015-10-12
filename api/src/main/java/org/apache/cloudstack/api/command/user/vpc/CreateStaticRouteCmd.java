@@ -121,7 +121,7 @@ public class CreateStaticRouteCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         VpcGateway gateway = _entityMgr.findById(VpcGateway.class, gatewayId);
         if (gateway == null) {
             throw new InvalidParameterValueException("Invalid gateway id is specified");

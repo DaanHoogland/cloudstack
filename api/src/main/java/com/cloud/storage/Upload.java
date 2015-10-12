@@ -47,7 +47,7 @@ public interface Upload extends InternalIdentity, Identity {
         FTP_UPLOAD, HTTP_DOWNLOAD
     }
 
-    long getDataStoreId();
+    Long getDataStoreId();
 
     Date getCreated();
 
@@ -57,11 +57,11 @@ public interface Upload extends InternalIdentity, Identity {
 
     String getJobId();
 
-    int getUploadPercent();
+    Integer getUploadPercent();
 
     Status getUploadState();
 
-    long getTypeId();
+    Long getTypeId();
 
     Type getType();
 

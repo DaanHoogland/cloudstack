@@ -62,7 +62,7 @@ public class LockUserCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         User user = _entityMgr.findById(User.class, getId());
         if (user != null) {
             return user.getAccountId();

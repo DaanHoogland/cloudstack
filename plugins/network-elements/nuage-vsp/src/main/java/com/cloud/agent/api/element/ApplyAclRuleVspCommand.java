@@ -56,12 +56,12 @@ public class ApplyAclRuleVspCommand extends Command {
         return _aclRules;
     }
 
-    public boolean isNetworkReset() {
+    public Boolean isNetworkReset() {
         return _networkReset;
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 

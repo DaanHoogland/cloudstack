@@ -146,7 +146,7 @@ public class UserVO implements User, Identity, InternalIdentity {
     }
 
         @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -201,7 +201,7 @@ public class UserVO implements User, Identity, InternalIdentity {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -273,7 +273,7 @@ public class UserVO implements User, Identity, InternalIdentity {
     }
 
     @Override
-    public boolean isRegistered() {
+    public Boolean isRegistered() {
         return registered;
     }
 
@@ -296,7 +296,7 @@ public class UserVO implements User, Identity, InternalIdentity {
     }
 
     @Override
-    public boolean isDefault() {
+    public Boolean isDefault() {
         return isDefault;
     }
 

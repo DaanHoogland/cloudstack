@@ -82,17 +82,17 @@ public interface NetworkOffering extends InfrastructureEntity, InternalIdentity,
      */
     Integer getMulticastRateMbps();
 
-    boolean isForVpc();
+    Boolean isForVpc();
 
     TrafficType getTrafficType();
 
-    boolean isSpecifyVlan();
+    Boolean isSpecifyVlan();
 
     String getTags();
 
-    boolean isDefault();
+    Boolean isDefault();
 
-    boolean isSystemOnly();
+    Boolean isSystemOnly();
 
     Availability getAvailability();
 
@@ -106,39 +106,39 @@ public interface NetworkOffering extends InfrastructureEntity, InternalIdentity,
 
     Long getServiceOfferingId();
 
-    boolean isDedicatedLB();
+    Boolean isDedicatedLB();
 
-    boolean isSharedSourceNat();
+    Boolean isSharedSourceNat();
 
-    boolean isRedundantRouter();
+    Boolean isRedundantRouter();
 
-    boolean isConserveMode();
+    Boolean isConserveMode();
 
-    boolean isElasticIp();
+    Boolean isElasticIp();
 
-    boolean isAssociatePublicIP();
+    Boolean isAssociatePublicIP();
 
-    boolean isElasticLb();
+    Boolean isElasticLb();
 
-    boolean isSpecifyIpRanges();
+    Boolean isSpecifyIpRanges();
 
-    boolean isInline();
+    Boolean isInline();
 
-    boolean isPersistent();
+    Boolean isPersistent();
 
-    boolean isInternalLb();
+    Boolean isInternalLb();
 
-    boolean isPublicLb();
+    Boolean isPublicLb();
 
-    boolean isEgressDefaultPolicy();
+    Boolean isEgressDefaultPolicy();
 
     Integer getConcurrentConnections();
 
-    boolean isKeepAliveEnabled();
+    Boolean isKeepAliveEnabled();
 
-    boolean isSupportingStrechedL2();
+    Boolean isSupportingStrechedL2();
 
-    boolean isSupportingPublicAccess();
+    Boolean isSupportingPublicAccess();
 
     String getServicePackage();
 }

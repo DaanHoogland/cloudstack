@@ -115,7 +115,7 @@ public class UpdateAccountCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account account = _entityMgr.findById(Account.class, getId());
         if (account != null) {
             return account.getAccountId();

@@ -163,7 +163,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     String servicePackageUuid = null;
 
     @Override
-    public boolean isKeepAliveEnabled() {
+    public Boolean isKeepAliveEnabled() {
         return keepAliveEnabled;
     }
 
@@ -172,7 +172,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isForVpc() {
+    public Boolean isForVpc() {
         return forVpc;
     }
 
@@ -181,7 +181,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -210,7 +210,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isSystemOnly() {
+    public Boolean isSystemOnly() {
         return systemOnly;
     }
 
@@ -244,12 +244,12 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isDefault() {
+    public Boolean isDefault() {
         return isDefault;
     }
 
     @Override
-    public boolean isSpecifyVlan() {
+    public Boolean isSpecifyVlan() {
         return specifyVlan;
     }
 
@@ -292,7 +292,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isDedicatedLB() {
+    public Boolean isDedicatedLB() {
         return dedicatedLB;
     }
 
@@ -301,7 +301,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isSharedSourceNat() {
+    public Boolean isSharedSourceNat() {
         return sharedSourceNat;
     }
 
@@ -310,7 +310,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isRedundantRouter() {
+    public Boolean isRedundantRouter() {
         return redundantRouter;
     }
 
@@ -319,7 +319,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isEgressDefaultPolicy() {
+    public Boolean isEgressDefaultPolicy() {
         return egressdefaultpolicy;
     }
 
@@ -451,32 +451,32 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isConserveMode() {
+    public Boolean isConserveMode() {
         return conserveMode;
     }
 
     @Override
-    public boolean isElasticIp() {
+    public Boolean isElasticIp() {
         return elasticIp;
     }
 
     @Override
-    public boolean isAssociatePublicIP() {
+    public Boolean isAssociatePublicIP() {
         return eipAssociatePublicIp;
     }
 
     @Override
-    public boolean isElasticLb() {
+    public Boolean isElasticLb() {
         return elasticLb;
     }
 
     @Override
-    public boolean isSpecifyIpRanges() {
+    public Boolean isSpecifyIpRanges() {
         return specifyIpRanges;
     }
 
     @Override
-    public boolean isInline() {
+    public Boolean isInline() {
         return inline;
     }
 
@@ -485,17 +485,17 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isPersistent() {
+    public Boolean isPersistent() {
         return isPersistent;
     }
 
     @Override
-    public boolean isInternalLb() {
+    public Boolean isInternalLb() {
         return internalLb;
     }
 
     @Override
-    public boolean isPublicLb() {
+    public Boolean isPublicLb() {
         return publicLb;
     }
 
@@ -517,7 +517,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isSupportingStrechedL2() {
+    public Boolean isSupportingStrechedL2() {
         return supportsStrechedL2;
     }
 
@@ -526,7 +526,7 @@ public class NetworkOfferingVO implements NetworkOffering {
     }
 
     @Override
-    public boolean isSupportingPublicAccess() {
+    public Boolean isSupportingPublicAccess() {
         return supportsPublicAccess;
     }
 

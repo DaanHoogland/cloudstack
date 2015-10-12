@@ -578,15 +578,15 @@ public class ConfigurationManagerTest {
 
     public class DedicatePublicIpRangeCmdExtn extends DedicatePublicIpRangeCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 
     public class ReleasePublicIpRangeCmdExtn extends ReleasePublicIpRangeCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 

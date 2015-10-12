@@ -135,7 +135,7 @@ public class PrimaryDataStoreImpl implements PrimaryDataStore {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return pdsv.getId();
     }
 
@@ -237,7 +237,7 @@ public class PrimaryDataStoreImpl implements PrimaryDataStore {
     }
 
     @Override
-    public boolean isManaged() {
+    public Boolean isManaged() {
         return pdsv.isManaged();
     }
 
@@ -327,7 +327,7 @@ public class PrimaryDataStoreImpl implements PrimaryDataStore {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return pdsv.getDataCenterId();
     }
 
@@ -352,12 +352,12 @@ public class PrimaryDataStoreImpl implements PrimaryDataStore {
     }
 
     @Override
-    public long getCapacityBytes() {
+    public Long getCapacityBytes() {
         return pdsv.getCapacityBytes();
     }
 
     @Override
-    public long getUsedBytes() {
+    public Long getUsedBytes() {
         return pdsv.getUsedBytes();
     }
 
@@ -382,12 +382,12 @@ public class PrimaryDataStoreImpl implements PrimaryDataStore {
     }
 
     @Override
-    public boolean isShared() {
+    public Boolean isShared() {
         return pdsv.getScope() == ScopeType.HOST ? false : true;
     }
 
     @Override
-    public boolean isLocal() {
+    public Boolean isLocal() {
         return !isShared();
     }
 
@@ -397,7 +397,7 @@ public class PrimaryDataStoreImpl implements PrimaryDataStore {
     }
 
     @Override
-    public int getPort() {
+    public Integer getPort() {
         return pdsv.getPort();
     }
 
@@ -411,7 +411,7 @@ public class PrimaryDataStoreImpl implements PrimaryDataStore {
     }
 
     @Override
-    public boolean isInMaintenance() {
+    public Boolean isInMaintenance() {
         return getStatus() == StoragePoolStatus.PrepareForMaintenance || getStatus() == StoragePoolStatus.Maintenance ||
             getStatus() == StoragePoolStatus.ErrorInMaintenance || getRemoved() != null;
     }

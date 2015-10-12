@@ -63,8 +63,8 @@ public class CreateSnapshotCmdTest extends TestCase {
             }
 
             @Override
-            public long getEntityOwnerId(){
-                return 1L;
+            public Long getEntityOwnerId(){
+                return Account.ACCOUNT_ID_SYSTEM;
             }
         };
 

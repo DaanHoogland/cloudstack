@@ -148,7 +148,7 @@ public class UpdateNetworkCmd extends BaseAsyncCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Network network = _networkService.getNetwork(id);
         if (network == null) {
             throw new InvalidParameterValueException("Networkd ID=" + id + " doesn't exist");

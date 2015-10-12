@@ -201,7 +201,7 @@ public final class S3TO implements ClientOptions, DataStoreTO {
         return DataStoreRole.Image;
     }
 
-    public boolean isEnableRRS() {
+    public Boolean isEnableRRS() {
         return enableRRS;
     }
 
@@ -209,7 +209,7 @@ public final class S3TO implements ClientOptions, DataStoreTO {
         this.enableRRS = enableRRS;
     }
 
-    public long getMaxSingleUploadSizeInBytes() {
+    public Long getMaxSingleUploadSizeInBytes() {
         return maxSingleUploadSizeInBytes;
     }
 

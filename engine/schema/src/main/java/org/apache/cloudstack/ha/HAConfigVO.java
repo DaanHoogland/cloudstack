@@ -74,7 +74,7 @@ public class HAConfigVO implements HAConfig {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

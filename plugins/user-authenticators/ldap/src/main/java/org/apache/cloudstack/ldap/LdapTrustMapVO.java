@@ -64,7 +64,7 @@ public class LdapTrustMapVO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -76,15 +76,15 @@ public class LdapTrustMapVO implements InternalIdentity {
         return name;
     }
 
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
-    public short getAccountType() {
+    public Short getAccountType() {
         return accountType;
     }
 
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 

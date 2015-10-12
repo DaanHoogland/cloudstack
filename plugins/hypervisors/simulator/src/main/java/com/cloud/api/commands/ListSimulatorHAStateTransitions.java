@@ -98,7 +98,7 @@ public final class ListSimulatorHAStateTransitions extends BaseListCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return CallContext.current().getCallingAccountId();
     }
 }

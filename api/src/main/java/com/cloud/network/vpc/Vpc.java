@@ -35,7 +35,7 @@ public interface Vpc extends ControlledEntity, Identity, InternalIdentity {
     /**
      * @return the id of the zone the VPC belongs to
      */
-    long getZoneId();
+    Long getZoneId();
 
     /**
      * @return super CIDR of the VPC. All the networks participating in VPC, should have CIDRs that are the part of the super cidr
@@ -52,7 +52,7 @@ public interface Vpc extends ControlledEntity, Identity, InternalIdentity {
      *
      * @return VPC offering id - the offering that VPC is created from
      */
-    long getVpcOfferingId();
+    Long getVpcOfferingId();
 
     /**
      *
@@ -70,25 +70,25 @@ public interface Vpc extends ControlledEntity, Identity, InternalIdentity {
      *
      * @return true if restart is required for the VPC; false otherwise
      */
-    boolean isRestartRequired();
+    Boolean isRestartRequired();
 
-    boolean isDisplay();
+    Boolean isDisplay();
 
-    boolean isRedundant();
+    Boolean isRedundant();
 
     /**
      *
      * @return true if VPC is configured to use distributed router to provides one-hop forwarding and hypervisor based ACL
      */
-    boolean usesDistributedRouter();
+    Boolean usesDistributedRouter();
 
     /**
      *
      * @return true if VPC spans multiple zones in the region
      */
-    boolean isRegionLevelVpc();
+    Boolean isRegionLevelVpc();
 
-    boolean isRollingRestart();
+    Boolean isRollingRestart();
 
     void setRollingRestart(boolean rollingRestart);
 }

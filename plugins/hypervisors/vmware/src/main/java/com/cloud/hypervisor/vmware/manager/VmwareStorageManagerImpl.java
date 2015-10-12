@@ -291,7 +291,7 @@ public class VmwareStorageManagerImpl implements VmwareStorageManager {
                 s_logger.info("Template " + templateName + " has already been setup, skip the template setup process in primary storage");
             }
 
-            return new PrimaryStorageDownloadAnswer(templateUuidName, 0);
+            return new PrimaryStorageDownloadAnswer(templateUuidName, 0l);
         } catch (Throwable e) {
             if (e instanceof RemoteException) {
                 hostService.invalidateServiceContext(context);

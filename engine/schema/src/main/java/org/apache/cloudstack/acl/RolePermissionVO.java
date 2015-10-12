@@ -67,7 +67,7 @@ public class RolePermissionVO implements RolePermission {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -76,7 +76,7 @@ public class RolePermissionVO implements RolePermission {
         return uuid;
     }
 
-    public long getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
@@ -110,7 +110,7 @@ public class RolePermissionVO implements RolePermission {
         this.description = description;
     }
 
-    public long getSortOrder() {
+    public Long getSortOrder() {
         return sortOrder;
     }
 

@@ -120,7 +120,7 @@ public class CreateSnapshotFromVMSnapshotCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
 
         VMSnapshot vmsnapshot = _entityMgr.findById(VMSnapshot.class, getVMSnapshotId());
         if (vmsnapshot == null) {

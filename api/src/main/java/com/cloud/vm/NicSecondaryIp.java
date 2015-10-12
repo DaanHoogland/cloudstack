@@ -28,9 +28,9 @@ public interface NicSecondaryIp extends ControlledEntity, Identity, InternalIden
      * @return id in the CloudStack database
      */
     @Override
-    long getId();
+    Long getId();
 
-    long getNicId();
+    Long getNicId();
 
     void setNicId(long nicId);
 
@@ -38,7 +38,7 @@ public interface NicSecondaryIp extends ControlledEntity, Identity, InternalIden
 
     String getIp6Address();
 
-    long getNetworkId();
+    Long getNetworkId();
 
-    long getVmId();
+    Long getVmId();
 }

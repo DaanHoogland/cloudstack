@@ -31,7 +31,7 @@ import com.cloud.utils.Pair;
 public interface AutoScaleVmProfile extends ControlledEntity, InternalIdentity, Displayable {
 
     @Override
-    public long getId();
+    public Long getId();
 
     public String getUuid();
 
@@ -49,7 +49,6 @@ public interface AutoScaleVmProfile extends ControlledEntity, InternalIdentity, 
 
     public long getAutoScaleUserId();
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 
 }

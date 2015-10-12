@@ -23,6 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.cloud.user.Account;
 import org.apache.log4j.Logger;
 
 import org.apache.cloudstack.api.APICommand;
@@ -107,9 +108,9 @@ public class CreateTagsCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         //FIXME - validate the owner here
-        return 1;
+        return Account.ACCOUNT_ID_SYSTEM;
     }
 
     @Override

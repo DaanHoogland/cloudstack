@@ -222,7 +222,7 @@ public class CreateTemplateCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Long volumeId = getVolumeId();
         Long snapshotId = getSnapshotId();
         Account callingAccount = CallContext.current().getCallingAccount();

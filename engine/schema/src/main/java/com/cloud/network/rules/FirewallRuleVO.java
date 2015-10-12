@@ -135,17 +135,17 @@ public class FirewallRuleVO implements FirewallRule {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -189,7 +189,7 @@ public class FirewallRuleVO implements FirewallRule {
     }
 
     @Override
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
@@ -300,7 +300,7 @@ public class FirewallRuleVO implements FirewallRule {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 

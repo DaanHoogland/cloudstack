@@ -55,7 +55,7 @@ public class QuotaEnabledCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return Account.ACCOUNT_ID_SYSTEM;
     }
 

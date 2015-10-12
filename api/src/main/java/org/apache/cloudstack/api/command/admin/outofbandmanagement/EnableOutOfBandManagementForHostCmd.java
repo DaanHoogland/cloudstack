@@ -88,7 +88,7 @@ public class EnableOutOfBandManagementForHostCmd extends BaseAsyncCmd {
     }
 
     @Override
-    final public long getEntityOwnerId() {
+    final public Long getEntityOwnerId() {
         return CallContext.current().getCallingAccountId();
     }
 

@@ -126,7 +126,7 @@ public class AddNicToVMCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         UserVm vm = _responseGenerator.findUserVmById(getVmId());
         if (vm == null) {
              return Account.ACCOUNT_ID_SYSTEM; // bad id given, parent this command to SYSTEM so ERROR events are tracked

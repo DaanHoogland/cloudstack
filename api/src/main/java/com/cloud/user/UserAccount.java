@@ -22,7 +22,7 @@ import org.apache.cloudstack.api.InternalIdentity;
 
 public interface UserAccount extends InternalIdentity {
     @Override
-    long getId();
+    Long getId();
 
     String getUsername();
 
@@ -32,7 +32,7 @@ public interface UserAccount extends InternalIdentity {
 
     String getLastname();
 
-    long getAccountId();
+    Long getAccountId();
 
     String getEmail();
 
@@ -48,7 +48,7 @@ public interface UserAccount extends InternalIdentity {
 
     String getAccountName();
 
-    short getType();
+    Short getType();
 
     Long getDomainId();
 
@@ -58,9 +58,9 @@ public interface UserAccount extends InternalIdentity {
 
     String getRegistrationToken();
 
-    boolean isRegistered();
+    Boolean isRegistered();
 
-    int getLoginAttempts();
+    Integer getLoginAttempts();
 
     public User.Source getSource();
 

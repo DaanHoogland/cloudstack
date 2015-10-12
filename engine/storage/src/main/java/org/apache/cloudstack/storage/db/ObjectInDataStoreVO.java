@@ -127,7 +127,7 @@ public class ObjectInDataStoreVO implements StateObject<ObjectInDataStoreStateMa
     }
 
     @Override
-    public long getObjectId() {
+    public Long getObjectId() {
         return this.objectId;
     }
 
@@ -187,7 +187,7 @@ public class ObjectInDataStoreVO implements StateObject<ObjectInDataStoreStateMa
     }
 
     @Override
-    public long getDataStoreId() {
+    public Long getDataStoreId() {
         return dataStoreId;
     }
 

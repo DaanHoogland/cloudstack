@@ -92,7 +92,7 @@ public class CreateProjectCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account caller = CallContext.current().getCallingAccount();
 
         if ((accountName != null && domainId == null) || (domainId != null && accountName == null)) {

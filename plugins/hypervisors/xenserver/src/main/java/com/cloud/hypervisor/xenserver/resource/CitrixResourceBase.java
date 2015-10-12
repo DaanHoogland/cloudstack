@@ -2205,7 +2205,7 @@ public abstract class CitrixResourceBase implements ServerResource, HypervisorRe
 
     public HostStatsEntry getHostStats(final Connection conn, final GetHostStatsCommand cmd, final String hostGuid, final long hostId) {
 
-        final HostStatsEntry hostStats = new HostStatsEntry(hostId, 0, 0, 0, "host", 0, 0, 0, 0);
+        final HostStatsEntry hostStats = new HostStatsEntry(hostId, 0.0, 0.0, 0.0, "host", 0.0, 0.0, 0.0, 0.0);
         final Object[] rrdData = getRRDData(conn, 1); // call rrd method with 1
         // for host
 

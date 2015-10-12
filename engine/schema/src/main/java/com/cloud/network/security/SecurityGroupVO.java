@@ -61,7 +61,7 @@ public class SecurityGroupVO implements SecurityGroup {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -76,12 +76,12 @@ public class SecurityGroupVO implements SecurityGroup {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 

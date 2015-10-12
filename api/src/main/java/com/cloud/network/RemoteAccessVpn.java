@@ -40,6 +40,5 @@ public interface RemoteAccessVpn extends ControlledEntity, InternalIdentity, Ide
 
     State getState();
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 }

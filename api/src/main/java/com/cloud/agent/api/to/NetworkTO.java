@@ -209,7 +209,7 @@ public class NetworkTO {
         this.isolationUri = isolationUri;
     }
 
-    public boolean isSecurityGroupEnabled() {
+    public Boolean isSecurityGroupEnabled() {
         return this.isSecurityGroupEnabled;
     }
 }

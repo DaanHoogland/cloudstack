@@ -162,7 +162,7 @@ public class NicVO implements Nic {
     }
 
     @Override
-    public boolean isDefaultNic() {
+    public Boolean isDefaultNic() {
         return defaultNic;
     }
 
@@ -241,22 +241,22 @@ public class NicVO implements Nic {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     @Override
-    public long getInstanceId() {
+    public Long getInstanceId() {
         return instanceId;
     }
 
     @Override
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
     @Override
-    public int getDeviceId() {
+    public Integer getDeviceId() {
         return deviceId;
     }
 
@@ -367,7 +367,7 @@ public class NicVO implements Nic {
     }
 
     @Override
-    public boolean getSecondaryIp() {
+    public Boolean getSecondaryIp() {
         return secondaryIp;
     }
 

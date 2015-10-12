@@ -39,7 +39,7 @@ public class Answer extends Command {
         this(command, false, ExceptionUtil.toString(e));
     }
 
-    public boolean getResult() {
+    public Boolean getResult() {
         return result;
     }
 
@@ -48,7 +48,7 @@ public class Answer extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 

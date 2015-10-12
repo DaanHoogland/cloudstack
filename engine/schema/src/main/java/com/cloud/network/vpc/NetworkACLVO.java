@@ -76,7 +76,7 @@ public class NetworkACLVO implements NetworkACL {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -98,7 +98,7 @@ public class NetworkACLVO implements NetworkACL {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 

@@ -86,7 +86,7 @@ public class UpdateVPCCmd extends BaseAsyncCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Vpc vpc = _entityMgr.findById(Vpc.class, getId());
         if (vpc != null) {
             return vpc.getAccountId();

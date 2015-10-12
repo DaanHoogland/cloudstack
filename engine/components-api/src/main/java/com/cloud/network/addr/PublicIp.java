@@ -64,22 +64,22 @@ public class PublicIp implements PublicIpAddress {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return _addr.getDataCenterId();
     }
 
     @Override
-    public boolean readyToUse() {
+    public Boolean readyToUse() {
         return _addr.getAllocatedTime() != null && _addr.getState() == State.Allocated;
     }
 
     @Override
-    public boolean isSourceNat() {
+    public Boolean isSourceNat() {
         return _addr.isSourceNat();
     }
 
     @Override
-    public boolean isOneToOneNat() {
+    public Boolean isOneToOneNat() {
         return _addr.isOneToOneNat();
     }
 
@@ -94,17 +94,17 @@ public class PublicIp implements PublicIpAddress {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return _addr.getAccountId();
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return _addr.getDomainId();
     }
 
     @Override
-    public long getVlanId() {
+    public Long getVlanId() {
         return _vlan.getId();
     }
 
@@ -157,7 +157,7 @@ public class PublicIp implements PublicIpAddress {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return _addr.getId();
     }
 
@@ -192,8 +192,8 @@ public class PublicIp implements PublicIpAddress {
     }
 
     @Override
-    public boolean getSystem() {
-        return _addr.getSystem();
+    public Boolean isSystem() {
+        return _addr.isSystem();
     }
 
     @Override
@@ -222,7 +222,7 @@ public class PublicIp implements PublicIpAddress {
     }
 
     @Override
-    public boolean isPortable() {
+    public Boolean isPortable() {
         return _addr.isPortable();
     }
 
@@ -235,7 +235,7 @@ public class PublicIp implements PublicIpAddress {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return _addr.isDisplay();
     }
 

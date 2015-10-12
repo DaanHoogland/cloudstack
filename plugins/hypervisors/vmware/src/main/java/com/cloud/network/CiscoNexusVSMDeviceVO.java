@@ -92,7 +92,7 @@ public class CiscoNexusVSMDeviceVO implements CiscoNexusVSMDevice {
 
     // Accessor methods
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

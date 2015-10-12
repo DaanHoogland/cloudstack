@@ -3565,7 +3565,7 @@ public class ConfigurationManagerImpl extends ManagerBase implements Configurati
                     final List<IPAddressVO> ips = _publicIpAddressDao.listByVlanId(vlan.getId());
                     for (final IPAddressVO ip : ips) {
                         UsageEventUtils.publishUsageEvent(EventTypes.EVENT_NET_IP_ASSIGN, vlanOwner.getId(), ip.getDataCenterId(), ip.getId(), ip.getAddress().toString(),
-                                ip.isSourceNat(), vlan.getVlanType().toString(), ip.getSystem(), ip.getClass().getName(), ip.getUuid());
+                                ip.isSourceNat(), vlan.getVlanType().toString(), ip.isSystem(), ip.getClass().getName(), ip.getUuid());
                     }
                     // increment resource count for dedicated public ip's
                     _resourceLimitMgr.incrementResourceCount(vlanOwner.getId(), ResourceType.public_ip, new Long(ips.size()));
@@ -3646,7 +3646,7 @@ public class ConfigurationManagerImpl extends ManagerBase implements Configurati
                     } else {
                         resourceCountToBeDecrement++;
                         UsageEventUtils.publishUsageEvent(EventTypes.EVENT_NET_IP_RELEASE, acctVln.get(0).getAccountId(), ip.getDataCenterId(), ip.getId(),
-                                ip.getAddress().toString(), ip.isSourceNat(), vlanRange.getVlanType().toString(), ip.getSystem(), ip.getClass().getName(), ip.getUuid());
+                                ip.getAddress().toString(), ip.isSourceNat(), vlanRange.getVlanType().toString(), ip.isSystem(), ip.getClass().getName(), ip.getUuid());
                     }
                 }
             } finally {
@@ -3779,7 +3779,7 @@ public class ConfigurationManagerImpl extends ManagerBase implements Configurati
            // generate usage event for dedication of every ip address in the range
             for (final IPAddressVO ip : ips) {
                 UsageEventUtils.publishUsageEvent(EventTypes.EVENT_NET_IP_ASSIGN, vlanOwner.getId(), ip.getDataCenterId(), ip.getId(), ip.getAddress().toString(), ip.isSourceNat(),
-                        vlan.getVlanType().toString(), ip.getSystem(), ip.getClass().getName(), ip.getUuid());
+                        vlan.getVlanType().toString(), ip.isSystem(), ip.getClass().getName(), ip.getUuid());
             }
         } else if (domain != null && !forSystemVms) {
             // Create an DomainVlanMapVO entry
@@ -3873,7 +3873,7 @@ public class ConfigurationManagerImpl extends ManagerBase implements Configurati
             for (final IPAddressVO ip : ips) {
                 if (!ipsInUse.contains(ip)) {
                     UsageEventUtils.publishUsageEvent(EventTypes.EVENT_NET_IP_RELEASE, acctVln.get(0).getAccountId(), ip.getDataCenterId(), ip.getId(), ip.getAddress().toString(),
-                            ip.isSourceNat(), vlan.getVlanType().toString(), ip.getSystem(), ip.getClass().getName(), ip.getUuid());
+                            ip.isSourceNat(), vlan.getVlanType().toString(), ip.isSystem(), ip.getClass().getName(), ip.getUuid());
                 }
             }
             // decrement resource count for dedicated public ip's

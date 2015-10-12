@@ -78,7 +78,7 @@ public interface GlobalLoadBalancerRule extends Identity, InternalIdentity, Cont
     public int getRegion();
 
     @Override
-    public long getAccountId();
+    public Long getAccountId();
 
     public State getState();
 

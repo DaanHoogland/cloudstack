@@ -86,7 +86,7 @@ public class ResetVMPasswordCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         UserVm vm = _responseGenerator.findUserVmById(getId());
         if (vm != null) {
             return vm.getAccountId();

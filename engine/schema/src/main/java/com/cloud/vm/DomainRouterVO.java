@@ -113,7 +113,7 @@ public class DomainRouterVO extends VMInstanceVO implements VirtualRouter {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -153,7 +153,7 @@ public class DomainRouterVO extends VMInstanceVO implements VirtualRouter {
     }
 
     @Override
-    public long getServiceOfferingId() {
+    public Long getServiceOfferingId() {
         return serviceOfferingId;
     }
 

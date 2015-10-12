@@ -69,7 +69,7 @@ public class DeleteVpnCustomerGatewayCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Site2SiteCustomerGateway gw = _entityMgr.findById(Site2SiteCustomerGateway.class, getId());
         if (gw != null) {
             return gw.getAccountId();

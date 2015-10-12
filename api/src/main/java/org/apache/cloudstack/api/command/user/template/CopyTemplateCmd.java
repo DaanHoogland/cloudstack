@@ -121,7 +121,7 @@ public class CopyTemplateCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         VirtualMachineTemplate template = _entityMgr.findById(VirtualMachineTemplate.class, getId());
         if (template != null) {
             return template.getAccountId();

@@ -59,7 +59,7 @@ public class DeleteVMSnapshotCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         VMSnapshot vmSnapshot = _entityMgr.findById(VMSnapshot.class, getId());
         if (vmSnapshot != null) {
             return vmSnapshot.getAccountId();

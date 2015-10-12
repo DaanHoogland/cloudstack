@@ -40,7 +40,6 @@ public interface StickinessPolicy extends InternalIdentity, Identity, Displayabl
 
     public List<Pair<String, String>> getParams(); /* get params in Map <string,String> format */
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 
 }

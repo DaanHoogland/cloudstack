@@ -71,12 +71,12 @@ public class VpnUserVO implements VpnUser {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -108,7 +108,7 @@ public class VpnUserVO implements VpnUser {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 

@@ -51,7 +51,7 @@ public class CopyVolumeCommand extends StorageNfsVersionCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return executeInSequence;
     }
 
@@ -59,7 +59,7 @@ public class CopyVolumeCommand extends StorageNfsVersionCommand {
         return volumePath;
     }
 
-    public long getVolumeId() {
+    public Long getVolumeId() {
         return volumeId;
     }
 
@@ -71,7 +71,7 @@ public class CopyVolumeCommand extends StorageNfsVersionCommand {
         return secondaryStorageURL;
     }
 
-    public boolean toSecondaryStorage() {
+    public Boolean toSecondaryStorage() {
         return toSecondaryStorage;
     }
 

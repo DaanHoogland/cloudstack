@@ -179,7 +179,7 @@ public class TemplateDataStoreVO implements StateObject<ObjectInDataStoreStateMa
     }
 
     @Override
-    public long getDataStoreId() {
+    public Long getDataStoreId() {
         return dataStoreId;
     }
 
@@ -348,7 +348,7 @@ public class TemplateDataStoreVO implements StateObject<ObjectInDataStoreStateMa
     }
 
     @Override
-    public long getObjectId() {
+    public Long getObjectId() {
         return getTemplateId();
     }
 

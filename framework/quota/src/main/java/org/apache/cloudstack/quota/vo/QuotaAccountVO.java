@@ -71,7 +71,7 @@ public class QuotaAccountVO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return accountId;
     }
 

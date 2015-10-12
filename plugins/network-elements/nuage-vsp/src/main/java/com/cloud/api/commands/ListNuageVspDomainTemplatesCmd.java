@@ -26,6 +26,7 @@ import com.cloud.exception.InvalidParameterValueException;
 import com.cloud.exception.ResourceAllocationException;
 import com.cloud.exception.ResourceUnavailableException;
 import com.cloud.network.manager.NuageVspManager;
+import com.cloud.user.Account;
 import com.cloud.utils.exception.CloudRuntimeException;
 import org.apache.cloudstack.acl.RoleType;
 import org.apache.cloudstack.api.APICommand;
@@ -112,8 +113,9 @@ public class ListNuageVspDomainTemplatesCmd extends BaseCmd {
         return APINAME.toLowerCase() + BaseCmd.RESPONSE_SUFFIX;
     }
 
-    @Override public long getEntityOwnerId() {
-        return 0; //not owned by anyone
+    @Override
+    public Long getEntityOwnerId() {
+        return Account.ACCOUNT_ID_ANONYMOUS_NORMAL; //not owned by anyone
     }
 
 }

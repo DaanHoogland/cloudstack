@@ -264,7 +264,6 @@ public class NetworkVO implements Network {
      * @param aclType TODO
      * @param specifyIpRanges TODO
      * @param vpcId TODO
-     * @param dataCenterId
      */
     public NetworkVO(long id, TrafficType trafficType, Mode mode, BroadcastDomainType broadcastDomainType, long networkOfferingId, long domainId, long accountId,
             long related, String name, String displayText, String networkDomain, GuestType guestType, long dcId, Long physicalNetworkId, ACLType aclType,
@@ -304,7 +303,7 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public boolean isRedundant() {
+    public Boolean isRedundant() {
         return this.redundant;
     }
 
@@ -313,7 +312,7 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public long getRelated() {
+    public Long getRelated() {
         return related;
     }
 
@@ -322,7 +321,7 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -332,17 +331,17 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getNetworkOfferingId() {
+    public Long getNetworkOfferingId() {
         return networkOfferingId;
     }
 
@@ -458,7 +457,7 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -564,12 +563,12 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public boolean isRestartRequired() {
+    public Boolean isRestartRequired() {
         return restartRequired;
     }
 
     @Override
-    public boolean getSpecifyIpRanges() {
+    public Boolean getSpecifyIpRanges() {
         return specifyIpRanges;
     }
 
@@ -606,7 +605,7 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public boolean isDisplay(){
+    public Boolean isDisplay(){
         return displayNetwork;
     }
 
@@ -626,7 +625,7 @@ public class NetworkVO implements Network {
     }
 
     @Override
-    public boolean isStrechedL2Network() {
+    public Boolean isStrechedL2Network() {
         return strechedL2Network;
     }
 
@@ -654,7 +653,7 @@ public class NetworkVO implements Network {
         this.vlanIdAsUUID = vlanIdAsUUID;
     }
 
-    public boolean isRollingRestart() {
+    public Boolean isRollingRestart() {
         return rollingRestart;
     }
 

@@ -97,8 +97,8 @@ public class DefaultLoginAPIAuthenticatorCmd extends BaseCmd implements APIAuthe
     }
 
     @Override
-    public long getEntityOwnerId() {
-        return Account.ACCOUNT_TYPE_NORMAL;
+    public Long getEntityOwnerId() {
+        return Account.ACCOUNT_ID_ANONYMOUS_NORMAL;
     }
 
     @Override

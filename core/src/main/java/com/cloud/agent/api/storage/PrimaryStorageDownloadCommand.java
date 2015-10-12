@@ -51,7 +51,7 @@ public class PrimaryStorageDownloadCommand extends AbstractDownloadCommand {
         return poolUuid;
     }
 
-    public long getPoolId() {
+    public Long getPoolId() {
         return poolId;
     }
 
@@ -84,7 +84,7 @@ public class PrimaryStorageDownloadCommand extends AbstractDownloadCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return true;
     }
 

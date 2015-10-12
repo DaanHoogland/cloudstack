@@ -102,12 +102,12 @@ public class AccountVO implements Account {
         needsCleanup = value;
     }
 
-    public boolean getNeedsCleanup() {
+    public Boolean getNeedsCleanup() {
         return needsCleanup;
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -125,7 +125,7 @@ public class AccountVO implements Account {
     }
 
     @Override
-    public short getType() {
+    public Short getType() {
         return type;
     }
 
@@ -142,7 +142,7 @@ public class AccountVO implements Account {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -174,7 +174,7 @@ public class AccountVO implements Account {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return id;
     }
 
@@ -202,7 +202,7 @@ public class AccountVO implements Account {
     }
 
     @Override
-    public boolean isDefault() {
+    public Boolean isDefault() {
         return isDefault;
     }
 

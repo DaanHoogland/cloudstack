@@ -31,7 +31,7 @@ public interface HAResource extends Partition {
         Unknown
     }
 
-    long getDataCenterId();
+    Long getDataCenterId();
     Long getClusterId();
     ResourceType resourceType();
 }

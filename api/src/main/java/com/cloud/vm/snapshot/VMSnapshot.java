@@ -71,37 +71,37 @@ public interface VMSnapshot extends ControlledEntity, Identity, InternalIdentity
     }
 
     @Override
-    long getId();
+    Long getId();
 
-    public String getName();
+    String getName();
 
-    public Long getVmId();
-
-    @Override
-    public State getState();
-
-    public Date getCreated();
-
-    public String getDescription();
-
-    public String getDisplayName();
-
-    public Long getParent();
-
-    public Boolean getCurrent();
-
-    public Type getType();
-
-    public long getUpdatedCount();
-
-    public void incrUpdatedCount();
-
-    public Date getUpdated();
-
-    public Date getRemoved();
+    Long getVmId();
 
     @Override
-    public long getAccountId();
+    State getState();
 
-    public long getServiceOfferingId();
+    Date getCreated();
+
+    String getDescription();
+
+    String getDisplayName();
+
+    Long getParent();
+
+    Boolean getCurrent();
+
+    Type getType();
+
+    Long getUpdatedCount();
+
+    void incrUpdatedCount();
+
+    Date getUpdated();
+
+    Date getRemoved();
+
+    @Override
+    Long getAccountId();
+
+    Long getServiceOfferingId();
 }

@@ -72,7 +72,7 @@ public class ShutDownVpcVspCommand extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 

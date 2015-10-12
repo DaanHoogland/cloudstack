@@ -262,7 +262,7 @@ public abstract class BaseCmd {
      *
      * @return the id of the account that owns the object being acted upon
      */
-    public abstract long getEntityOwnerId();
+    public abstract Long getEntityOwnerId();
 
     public Object getResponseObject() {
         return _responseObject;
@@ -363,7 +363,7 @@ public abstract class BaseCmd {
      * display flag is used to control the display of the resource only to the end user. It doesnt affect Root Admin.
      * @return display flag
      */
-    public boolean isDisplay(){
+    public Boolean isDisplay(){
         CallContext context = CallContext.current();
         Map<Object, Object> contextMap = context.getContextParameters();
         boolean isDisplay = true;

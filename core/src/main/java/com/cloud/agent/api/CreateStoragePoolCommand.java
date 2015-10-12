@@ -40,7 +40,7 @@ public class CreateStoragePoolCommand extends ModifyStoragePoolCommand {
         _createDatastore = createDatastore;
     }
 
-    public boolean getCreateDatastore() {
+    public Boolean getCreateDatastore() {
         return _createDatastore;
     }
 

@@ -114,7 +114,7 @@ public class ResourceTagVO implements ResourceTag {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -129,12 +129,12 @@ public class ResourceTagVO implements ResourceTag {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 

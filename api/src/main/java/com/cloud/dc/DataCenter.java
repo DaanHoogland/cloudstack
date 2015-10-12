@@ -69,7 +69,7 @@ public interface DataCenter extends InfrastructureEntity, Grouping, Partition {
 
     String getVpnProvider();
 
-    boolean isSecurityGroupEnabled();
+    Boolean isSecurityGroupEnabled();
 
     Map<String, String> getDetails();
 
@@ -79,5 +79,5 @@ public interface DataCenter extends InfrastructureEntity, Grouping, Partition {
 
     String getZoneToken();
 
-    boolean isLocalStorageEnabled();
+    Boolean isLocalStorageEnabled();
 }

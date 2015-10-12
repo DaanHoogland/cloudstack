@@ -35,9 +35,9 @@ public class SnapshotEntityImpl implements SnapshotEntity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override
@@ -77,15 +77,15 @@ public class SnapshotEntityImpl implements SnapshotEntity {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override
-    public long getVolumeId() {
+    public Long getVolumeId() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override
@@ -95,9 +95,9 @@ public class SnapshotEntityImpl implements SnapshotEntity {
     }
 
     @Override
-    public long getSnapshotId() {
+    public Long getSnapshotId() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override
@@ -113,21 +113,21 @@ public class SnapshotEntityImpl implements SnapshotEntity {
     }
 
     @Override
-    public boolean isRecursive() {
+    public Boolean isRecursive() {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public short getsnapshotType() {
+    public Short getsnapshotType() {
         // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         // TODO Auto-generated method stub
-        return 0;
+        return 0l;
     }
 
     @Override

@@ -42,7 +42,7 @@ public final class ResignatureCommand extends StorageSubSystemCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return executeInSequence;
     }
 }

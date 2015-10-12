@@ -237,7 +237,7 @@ public class LibvirtNetworkElementCommandWrapperTest {
 
     @Test
     public void testPrepareIpAssocVpcCommand() throws LibvirtException {
-        IpAddressTO ip = new IpAddressTO(1, "171.31.1.3",
+        IpAddressTO ip = new IpAddressTO(1l, "171.31.1.3",
                 true, false, false,
                 "vlan://untagged",
                 "172.31.1.1",
@@ -258,7 +258,7 @@ public class LibvirtNetworkElementCommandWrapperTest {
 
     @Test
     public void testVpcPrivateGateway() throws LibvirtException {
-        IpAddressTO ip = new IpAddressTO(1, "171.31.1.3",
+        IpAddressTO ip = new IpAddressTO(1l, "171.31.1.3",
                                          true, false, false,
                                          "vlan://untagged",
                                          "172.31.1.1",

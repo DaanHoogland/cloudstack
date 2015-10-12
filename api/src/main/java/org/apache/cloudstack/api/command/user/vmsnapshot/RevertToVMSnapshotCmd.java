@@ -64,7 +64,7 @@ public class RevertToVMSnapshotCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         VMSnapshot vmSnapshot = _entityMgr.findById(VMSnapshot.class, getVmSnapShotId());
         if (vmSnapshot != null) {
             return vmSnapshot.getAccountId();

@@ -166,7 +166,7 @@ public class AddNuageVspDeviceCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return CallContext.current().getCallingAccount().getId();
     }
 

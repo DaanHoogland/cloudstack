@@ -133,7 +133,7 @@ public class NicProfile implements InternalIdentity, Serializable {
     //
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -141,7 +141,7 @@ public class NicProfile implements InternalIdentity, Serializable {
         this.id = id;
     }
 
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
@@ -149,7 +149,7 @@ public class NicProfile implements InternalIdentity, Serializable {
         this.networkId = networkId;
     }
 
-    public long getVirtualMachineId() {
+    public Long getVirtualMachineId() {
         return vmId;
     }
 
@@ -253,7 +253,7 @@ public class NicProfile implements InternalIdentity, Serializable {
         this.strategy = strategy;
     }
 
-    public boolean isDefaultNic() {
+    public Boolean isDefaultNic() {
         return defaultNic;
     }
 
@@ -269,7 +269,7 @@ public class NicProfile implements InternalIdentity, Serializable {
         this.networkRate = networkRate;
     }
 
-    public boolean isSecurityGroupEnabled() {
+    public Boolean isSecurityGroupEnabled() {
         return isSecurityGroupEnabled;
     }
 

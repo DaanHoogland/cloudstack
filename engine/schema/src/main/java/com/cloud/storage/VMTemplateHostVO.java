@@ -109,7 +109,7 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
         return installPath;
     }
 
-    public long getHostId() {
+    public Long getHostId() {
         return hostId;
     }
 
@@ -118,7 +118,7 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
     }
 
     @Override
-    public long getTemplateId() {
+    public Long getTemplateId() {
         return templateId;
     }
 
@@ -128,7 +128,7 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
     }
 
     @Override
-    public int getDownloadPercent() {
+    public Integer getDownloadPercent() {
         return downloadPercent;
     }
 
@@ -143,7 +143,7 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -179,7 +179,7 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
         this.state = ObjectInDataStoreStateMachine.State.Allocated;
     }
 
-    public VMTemplateHostVO(long hostId, long templateId, Date lastUpdated, int downloadPercent, Status downloadState, String localDownloadPath, String errorString,
+    public VMTemplateHostVO(long hostId, long templateId, Date lastUpdated, short downloadPercent, Status downloadState, String localDownloadPath, String errorString,
             String jobId, String installPath, String downloadUrl) {
         super();
         this.hostId = hostId;
@@ -248,7 +248,7 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
         this.size = size;
     }
 
-    public long getSize() {
+    public Long getSize() {
         return size;
     }
 
@@ -256,7 +256,7 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
         this.physicalSize = physicalSize;
     }
 
-    public long getPhysicalSize() {
+    public Long getPhysicalSize() {
         return physicalSize;
     }
 
@@ -264,7 +264,7 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
         this.destroyed = destroyed;
     }
 
-    public boolean getDestroyed() {
+    public Boolean getDestroyed() {
         return destroyed;
     }
 
@@ -280,13 +280,13 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
         this.isCopy = isCopy;
     }
 
-    public boolean isCopy() {
+    public Boolean isCopy() {
         return isCopy;
     }
 
     @Override
-    public long getTemplateSize() {
-        return -1;
+    public Long getTemplateSize() {
+        return -1l;
     }
 
     @Override
@@ -300,7 +300,7 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
         return this.state;
     }
 
-    public long getUpdatedCount() {
+    public Long getUpdatedCount() {
         return this.updatedCount;
     }
 
@@ -317,12 +317,12 @@ public class VMTemplateHostVO implements VMTemplateStorageResourceAssoc, DataObj
     }
 
     @Override
-    public long getObjectId() {
+    public Long getObjectId() {
         return this.getTemplateId();
     }
 
     @Override
-    public long getDataStoreId() {
+    public Long getDataStoreId() {
         return this.getHostId();
     }
 

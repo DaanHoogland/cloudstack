@@ -19,6 +19,7 @@
 
 package com.cloud.agent.resource.virtualnetwork.model;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class FirewallRule {
@@ -26,7 +27,7 @@ public class FirewallRule {
     private String srcVlanTag;
     private String srcIp;
     private String protocol;
-    private int[] srcPortRange;
+    private Integer[] srcPortRange;
     private boolean revoked;
     private boolean alreadyAdded;
     private List<String> sourceCidrList;
@@ -43,7 +44,7 @@ public class FirewallRule {
         // Empty constructor for (de)serialization
     }
 
-    public FirewallRule(long id, String srcVlanTag, String srcIp, String protocol, int[] srcPortRange, boolean revoked, boolean alreadyAdded, List<String> sourceCidrList,
+    public FirewallRule(long id, String srcVlanTag, String srcIp, String protocol, Integer[] srcPortRange, boolean revoked, boolean alreadyAdded, List<String> sourceCidrList,
                         List<String> destCidrList, String purpose, Integer icmpType, Integer icmpCode, String trafficType, String guestCidr, boolean defaultEgressPolicy) {
         this.id = id;
         this.srcVlanTag = srcVlanTag;
@@ -94,11 +95,17 @@ public class FirewallRule {
         this.protocol = protocol;
     }
 
-    public int[] getSrcPortRange() {
+    public Integer[] getSrcPortRange() {
         return srcPortRange;
     }
 
     public void setSrcPortRange(int[] srcPortRange) {
+        this.srcPortRange = Arrays.stream(srcPortRange)
+                .boxed()
+                .toArray(Integer[]::new);
+    }
+
+    public void setSrcPortRange(Integer[] srcPortRange) {
         this.srcPortRange = srcPortRange;
     }
 

@@ -1496,7 +1496,7 @@ public class ConsoleProxyManagerImpl extends ManagerBase implements ConsoleProxy
             //get system ip and create static nat rule for the vm in case of basic networking with EIP/ELB
             _rulesMgr.getSystemIpAndEnableStaticNatForVm(profile.getVirtualMachine(), false);
             IPAddressVO ipaddr = _ipAddressDao.findByAssociatedVmId(profile.getVirtualMachine().getId());
-            if (ipaddr != null && ipaddr.getSystem()) {
+            if (ipaddr != null && ipaddr.isSystem()) {
                 ConsoleProxyVO consoleVm = _consoleProxyDao.findById(profile.getId());
                 // override CPVM guest IP with EIP, so that console url's will be prepared with EIP
                 consoleVm.setPublicIpAddress(ipaddr.getAddress().addr());
@@ -1525,7 +1525,7 @@ public class ConsoleProxyManagerImpl extends ManagerBase implements ConsoleProxy
     public void finalizeStop(VirtualMachineProfile profile, Answer answer) {
         //release elastic IP here if assigned
         IPAddressVO ip = _ipAddressDao.findByAssociatedVmId(profile.getId());
-        if (ip != null && ip.getSystem()) {
+        if (ip != null && ip.isSystem()) {
             CallContext ctx = CallContext.current();
             try {
                 _rulesMgr.disableStaticNat(ip.getId(), ctx.getCallingAccount(), ctx.getCallingUserId(), true);

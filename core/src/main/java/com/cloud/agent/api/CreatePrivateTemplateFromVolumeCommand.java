@@ -51,7 +51,7 @@ public class CreatePrivateTemplateFromVolumeCommand extends SnapshotCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 
@@ -73,7 +73,7 @@ public class CreatePrivateTemplateFromVolumeCommand extends SnapshotCommand {
         return _uniqueName;
     }
 
-    public long getTemplateId() {
+    public Long getTemplateId() {
         return _templateId;
     }
 

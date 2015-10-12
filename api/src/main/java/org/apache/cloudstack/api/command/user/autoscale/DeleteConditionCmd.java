@@ -91,7 +91,7 @@ public class DeleteConditionCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Condition condition = _entityMgr.findById(Condition.class, getId());
         if (condition != null) {
             return condition.getAccountId();

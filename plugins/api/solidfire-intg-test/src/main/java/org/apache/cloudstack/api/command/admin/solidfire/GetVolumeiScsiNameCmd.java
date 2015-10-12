@@ -48,7 +48,7 @@ public class GetVolumeiScsiNameCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return _util.getAccountIdForVolumeUuid(volumeUuid);
     }
 

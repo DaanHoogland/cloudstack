@@ -57,13 +57,13 @@ public interface DiskOffering extends InfrastructureEntity, Identity, InternalId
 
     String getUniqueName();
 
-    boolean isUseLocalStorage();
+    Boolean isUseLocalStorage();
 
     Long getDomainId();
 
     String getName();
 
-    boolean isSystemUse();
+    Boolean isSystemUse();
 
     String getDisplayText();
 
@@ -75,11 +75,11 @@ public interface DiskOffering extends InfrastructureEntity, Identity, InternalId
 
     Date getCreated();
 
-    boolean isCustomized();
+    Boolean isCustomized();
 
     void setDiskSize(long diskSize);
 
-    long getDiskSize();
+    Long getDiskSize();
 
     void setCustomizedIops(Boolean customizedIops);
 
@@ -93,7 +93,7 @@ public interface DiskOffering extends InfrastructureEntity, Identity, InternalId
 
     Long getMaxIops();
 
-    boolean isRecreatable();
+    Boolean isRecreatable();
 
     void setBytesReadRate(Long bytesReadRate);
 

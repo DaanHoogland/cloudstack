@@ -38,7 +38,7 @@ public final class AttachPrimaryDataStoreCmd extends StorageSubSystemCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 }

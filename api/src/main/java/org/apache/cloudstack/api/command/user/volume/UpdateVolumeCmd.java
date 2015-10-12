@@ -122,7 +122,7 @@ public class UpdateVolumeCmd extends BaseAsyncCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Volume volume = _responseGenerator.findVolumeById(getId());
         if (volume == null) {
             throw new InvalidParameterValueException("Invalid volume id was provided");

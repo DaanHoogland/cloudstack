@@ -98,12 +98,12 @@ public class ResourceTagJoinVO extends BaseViewVO implements ControlledViewEntit
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -118,12 +118,12 @@ public class ResourceTagJoinVO extends BaseViewVO implements ControlledViewEntit
     }
 
     @Override
-    public short getAccountType() {
+    public Short getAccountType() {
         return accountType;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -142,7 +142,7 @@ public class ResourceTagJoinVO extends BaseViewVO implements ControlledViewEntit
         return domainPath;
     }
 
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 
@@ -164,7 +164,7 @@ public class ResourceTagJoinVO extends BaseViewVO implements ControlledViewEntit
         return value;
     }
 
-    public long getResourceId() {
+    public Long getResourceId() {
         return resourceId;
     }
 

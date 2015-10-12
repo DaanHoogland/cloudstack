@@ -23,9 +23,9 @@ import org.apache.cloudstack.api.InternalIdentity;
 public interface RolePermission extends InternalIdentity, Identity {
     enum Permission {ALLOW, DENY}
 
-    long getRoleId();
+    Long getRoleId();
     Rule getRule();
     Permission getPermission();
     String getDescription();
-    long getSortOrder();
+    Long getSortOrder();
 }

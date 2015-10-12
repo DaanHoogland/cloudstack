@@ -217,7 +217,7 @@ public class CreateNetworkCmd extends BaseCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if(displayNetwork == null)
             return true;
         else
@@ -295,7 +295,7 @@ public class CreateNetworkCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Long accountId = _accountService.finalyzeAccountId(accountName, domainId, projectId, true);
         if (accountId == null) {
             return CallContext.current().getCallingAccount().getId();

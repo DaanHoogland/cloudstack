@@ -104,7 +104,7 @@ public class DisassociateIPAddrCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         if (ownerId == null) {
             IpAddress ip = getIpAddress(id);
             if (ip == null) {

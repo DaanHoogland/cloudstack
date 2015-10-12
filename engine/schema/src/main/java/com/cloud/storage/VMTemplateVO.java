@@ -284,7 +284,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public boolean isEnablePassword() {
+    public Boolean isEnablePassword() {
         return enablePassword;
     }
 
@@ -321,7 +321,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -339,7 +339,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public int getBits() {
+    public Integer getBits() {
         return bits;
     }
 
@@ -361,7 +361,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public boolean isPublicTemplate() {
+    public Boolean isPublicTemplate() {
         return publicTemplate;
     }
 
@@ -370,7 +370,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public boolean isFeatured() {
+    public Boolean isFeatured() {
         return featured;
     }
 
@@ -393,7 +393,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public boolean isRequiresHvm() {
+    public Boolean isRequiresHvm() {
         return requiresHvm;
     }
 
@@ -402,7 +402,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -425,7 +425,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public long getGuestOSId() {
+    public Long getGuestOSId() {
         return guestOSId;
     }
 
@@ -434,7 +434,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public boolean isBootable() {
+    public Boolean isBootable() {
         return bootable;
     }
 
@@ -455,7 +455,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public boolean isCrossZones() {
+    public Boolean isCrossZones() {
         return crossZones;
     }
 
@@ -469,7 +469,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public boolean isExtractable() {
+    public Boolean isExtractable() {
         return extractable;
     }
 
@@ -496,8 +496,8 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public long getDomainId() {
-        return -1;
+    public Long getDomainId() {
+        return -1l;
     }
 
     public void setAccountId(long accountId) {
@@ -559,7 +559,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
         sortKey = key;
     }
 
-    public int getSortKey() {
+    public Integer getSortKey() {
         return sortKey;
     }
 
@@ -568,12 +568,12 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public boolean isDynamicallyScalable() {
+    public Boolean isDynamicallyScalable() {
         return dynamicallyScalable;
     }
 
     @Override
-    public boolean isEnableSshKey() {
+    public Boolean isEnableSshKey() {
         return enableSshKey;
     }
 
@@ -590,7 +590,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
     }
 
     @Override
-    public long getUpdatedCount() {
+    public Long getUpdatedCount() {
         return updatedCount;
     }
 
@@ -612,7 +612,7 @@ public class VMTemplateVO implements VirtualMachineTemplate {
         this.updated = updated;
     }
 
-    public boolean isDirectDownload() {
+    public Boolean isDirectDownload() {
         return directDownload;
     }
 

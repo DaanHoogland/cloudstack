@@ -74,7 +74,7 @@ public class StartInternalLBVMCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         VirtualRouter router = _entityMgr.findById(VirtualRouter.class, getId());
         if (router != null && router.getRole() == Role.INTERNAL_LB_VM) {
             return router.getAccountId();

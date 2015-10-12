@@ -162,7 +162,7 @@ public class DomainJoinVO extends BaseViewVO implements InternalIdentity, Identi
 
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -204,7 +204,7 @@ public class DomainJoinVO extends BaseViewVO implements InternalIdentity, Identi
         this.name = name;
     }
 
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -220,7 +220,7 @@ public class DomainJoinVO extends BaseViewVO implements InternalIdentity, Identi
         this.path = path;
     }
 
-    public int getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
@@ -228,7 +228,7 @@ public class DomainJoinVO extends BaseViewVO implements InternalIdentity, Identi
         this.level = level;
     }
 
-    public int getChildCount() {
+    public Integer getChildCount() {
         return childCount;
     }
 
@@ -236,7 +236,7 @@ public class DomainJoinVO extends BaseViewVO implements InternalIdentity, Identi
         childCount = count;
     }
 
-    public long getNextChildSeq() {
+    public Long getNextChildSeq() {
         return nextChildSeq;
     }
 

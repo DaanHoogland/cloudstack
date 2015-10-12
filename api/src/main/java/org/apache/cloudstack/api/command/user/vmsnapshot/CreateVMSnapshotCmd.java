@@ -127,7 +127,7 @@ public class CreateVMSnapshotCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         UserVm userVM = _userVmService.getUserVm(vmId);
         return userVM.getAccountId();
     }

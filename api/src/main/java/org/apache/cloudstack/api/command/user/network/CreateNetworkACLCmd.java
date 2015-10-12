@@ -95,7 +95,7 @@ public class CreateNetworkACLCmd extends BaseAsyncCreateCmd {
     // ///////////////////////////////////////////////////
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if (display != null) {
             return display;
         } else {
@@ -175,7 +175,7 @@ public class CreateNetworkACLCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account caller = CallContext.current().getCallingAccount();
         return caller.getAccountId();
     }

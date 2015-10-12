@@ -155,7 +155,7 @@ public class SnapshotObject implements SnapshotInfo {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return snapshot.getId();
     }
 
@@ -201,12 +201,12 @@ public class SnapshotObject implements SnapshotInfo {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return snapshot.getAccountId();
     }
 
     @Override
-    public long getVolumeId() {
+    public Long getVolumeId() {
         return snapshot.getVolumeId();
     }
 
@@ -232,7 +232,7 @@ public class SnapshotObject implements SnapshotInfo {
     }
 
     @Override
-    public long getSnapshotId() {
+    public Long getSnapshotId() {
         return snapshot.getSnapshotId();
     }
 
@@ -260,17 +260,17 @@ public class SnapshotObject implements SnapshotInfo {
     }
 
     @Override
-    public boolean isRecursive() {
+    public Boolean isRecursive() {
         return snapshot.isRecursive();
     }
 
     @Override
-    public short getsnapshotType() {
+    public Short getsnapshotType() {
         return snapshot.getsnapshotType();
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return snapshot.getDomainId();
     }
 

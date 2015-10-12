@@ -16,6 +16,7 @@
 // under the License.
 package org.apache.cloudstack.api.command.admin.user;
 
+import com.cloud.user.Account;
 import org.apache.log4j.Logger;
 
 import org.apache.cloudstack.api.APICommand;
@@ -59,8 +60,8 @@ public class GetUserCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
-        return 0;
+    public Long getEntityOwnerId() {
+        return Account.ACCOUNT_ID_ANONYMOUS_NORMAL;
     }
 
     @Override

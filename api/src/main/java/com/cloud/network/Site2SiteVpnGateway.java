@@ -31,6 +31,5 @@ public interface Site2SiteVpnGateway extends ControlledEntity, Identity, Interna
 
     public Date getRemoved();
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 }

@@ -87,7 +87,7 @@ public class ProjectInvitationJoinVO extends BaseViewVO implements ControlledVie
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -97,7 +97,7 @@ public class ProjectInvitationJoinVO extends BaseViewVO implements ControlledVie
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -116,7 +116,7 @@ public class ProjectInvitationJoinVO extends BaseViewVO implements ControlledVie
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -153,7 +153,7 @@ public class ProjectInvitationJoinVO extends BaseViewVO implements ControlledVie
     }
 
     @Override
-    public short getAccountType() {
+    public Short getAccountType() {
         return accountType;
     }
 

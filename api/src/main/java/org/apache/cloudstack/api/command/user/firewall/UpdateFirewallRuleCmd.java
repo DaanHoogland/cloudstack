@@ -109,7 +109,7 @@ public class UpdateFirewallRuleCmd extends BaseAsyncCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         if (ownerId == null) {
             FirewallRule rule = _entityMgr.findById(FirewallRule.class, id);
             if (rule == null || rule.getTrafficType() != TrafficType.Ingress) {

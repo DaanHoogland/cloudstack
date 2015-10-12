@@ -92,7 +92,7 @@ public class MigrateNetworkCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Network network = _networkService.getNetwork(id);
         if (network == null) {
             throw new InvalidParameterValueException("Networkd id=" + id + " doesn't exist");

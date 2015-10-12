@@ -25,11 +25,11 @@ import org.apache.cloudstack.api.InternalIdentity;
 public interface Account extends ControlledEntity, InternalIdentity, Identity {
 
 
-    public enum State {
+    enum State {
         disabled, enabled, locked
     }
 
-    public static final short ACCOUNT_TYPE_NORMAL = 0;
+    short ACCOUNT_TYPE_NORMAL = 0;
     public static final short ACCOUNT_TYPE_ADMIN = 1;
     public static final short ACCOUNT_TYPE_DOMAIN_ADMIN = 2;
     public static final short ACCOUNT_TYPE_RESOURCE_DOMAIN_ADMIN = 3;
@@ -40,11 +40,12 @@ public interface Account extends ControlledEntity, InternalIdentity, Identity {
     public static final String ACCOUNT_STATE_ENABLED = "enabled";
     public static final String ACCOUNT_STATE_LOCKED = "locked";
 
-    public static final long ACCOUNT_ID_SYSTEM = 1;
+    long ACCOUNT_ID_SYSTEM = 1;
+    long ACCOUNT_ID_ANONYMOUS_NORMAL = 0;
 
     public String getAccountName();
 
-    public short getType();
+    public Short getType();
 
     public Long getRoleId();
 
@@ -59,6 +60,6 @@ public interface Account extends ControlledEntity, InternalIdentity, Identity {
     @Override
     public String getUuid();
 
-    boolean isDefault();
+    Boolean isDefault();
 
 }

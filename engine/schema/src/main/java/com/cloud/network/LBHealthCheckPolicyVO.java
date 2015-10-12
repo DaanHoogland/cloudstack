@@ -124,7 +124,7 @@ public class LBHealthCheckPolicyVO implements HealthCheckPolicy {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -166,7 +166,7 @@ public class LBHealthCheckPolicyVO implements HealthCheckPolicy {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 }

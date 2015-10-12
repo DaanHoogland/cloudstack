@@ -63,7 +63,7 @@ public class CrlVO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

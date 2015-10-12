@@ -72,14 +72,13 @@ public interface Snapshot extends ControlledEntity, Identity, InternalIdentity, 
 
     public static final long MANUAL_POLICY_ID = 0L;
 
-    @Override
-    long getAccountId();
+    @Override Long getAccountId();
 
-    long getVolumeId();
+    Long getVolumeId();
 
     String getName();
 
-    long getSnapshotId();
+    Long getSnapshotId();
 
     Date getCreated();
 
@@ -90,9 +89,9 @@ public interface Snapshot extends ControlledEntity, Identity, InternalIdentity, 
 
     HypervisorType getHypervisorType();
 
-    boolean isRecursive();
+    Boolean isRecursive();
 
-    short getsnapshotType();
+    Short getsnapshotType();
 
     LocationType getLocationType(); // This type is in reference to the location where the snapshot resides (ex. primary storage, archive on secondary storage, etc.)
 }

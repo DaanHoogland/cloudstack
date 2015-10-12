@@ -91,7 +91,7 @@ public class EventVO implements Event {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -141,7 +141,7 @@ public class EventVO implements Event {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -150,7 +150,7 @@ public class EventVO implements Event {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 

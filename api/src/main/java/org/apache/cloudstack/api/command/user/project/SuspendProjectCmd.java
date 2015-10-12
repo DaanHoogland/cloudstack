@@ -88,7 +88,7 @@ public class SuspendProjectCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Project project = _projectService.getProject(id);
         //verify input parameters
         if (project == null) {

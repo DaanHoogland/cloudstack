@@ -150,7 +150,7 @@ public class UpdateVpnCustomerGatewayCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Long accountId = _accountService.finalyzeAccountId(accountName, domainId, null, true);
         if (accountId == null) {
             accountId = CallContext.current().getCallingAccount().getId();

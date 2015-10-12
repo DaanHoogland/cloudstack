@@ -129,7 +129,7 @@ public class VolumeDataStoreVO implements StateObject<ObjectInDataStoreStateMach
     }
 
     @Override
-    public long getDataStoreId() {
+    public Long getDataStoreId() {
         return dataStoreId;
     }
 
@@ -336,7 +336,7 @@ public class VolumeDataStoreVO implements StateObject<ObjectInDataStoreStateMach
     }
 
     @Override
-    public long getObjectId() {
+    public Long getObjectId() {
         return getVolumeId();
     }
 

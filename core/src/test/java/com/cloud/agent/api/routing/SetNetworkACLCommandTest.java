@@ -36,9 +36,9 @@ public class SetNetworkACLCommandTest {
         //given
         List<NetworkACLTO> aclList = Lists.newArrayList();
 
-        aclList.add(new NetworkACLTO(3, null, null, null, null, false, false, null, null, null, null, false, 3));
-        aclList.add(new NetworkACLTO(1, null, null, null, null, false, false, null, null, null, null, false, 1));
-        aclList.add(new NetworkACLTO(2, null, null, null, null, false, false, null, null, null, null, false, 2));
+        aclList.add(new NetworkACLTO(3l, null, null, null, null, false, false, null, null, null, null, false, 3));
+        aclList.add(new NetworkACLTO(1l, null, null, null, null, false, false, null, null, null, null, false, 1));
+        aclList.add(new NetworkACLTO(2l, null, null, null, null, false, false, null, null, null, null, false, 2));
 
         SetNetworkACLCommand cmd = new SetNetworkACLCommand(aclList, null);
 
@@ -47,7 +47,7 @@ public class SetNetworkACLCommandTest {
 
         //then
         for(int i=0; i< aclList.size();i++){
-            assertEquals(aclList.get(i).getNumber(), i+1);
+            assertEquals((long)aclList.get(i).getNumber(), i+1);
         }
     }
 }

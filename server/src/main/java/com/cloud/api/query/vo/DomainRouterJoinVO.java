@@ -253,7 +253,7 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -267,7 +267,7 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -282,12 +282,12 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
     }
 
     @Override
-    public short getAccountType() {
+    public Short getAccountType() {
         return accountType;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -354,7 +354,7 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
         return clusterId;
     }
 
-    public long getTemplateId() {
+    public Long getTemplateId() {
         return templateId;
     }
 
@@ -370,7 +370,7 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
         return serviceOfferingName;
     }
 
-    public long getVpcId() {
+    public Long getVpcId() {
         return vpcId;
     }
 
@@ -378,11 +378,11 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
         return vpcName;
     }
 
-    public long getNicId() {
+    public Long getNicId() {
         return nicId;
     }
 
-    public boolean isDefaultNic() {
+    public Boolean isDefaultNic() {
         return isDefaultNic;
     }
 
@@ -410,7 +410,7 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
         return isolationUri;
     }
 
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
@@ -426,11 +426,11 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
         return trafficType;
     }
 
-    public long getServiceOfferingId() {
+    public Long getServiceOfferingId() {
         return serviceOfferingId;
     }
 
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 
@@ -464,7 +464,7 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
         return jobUuid;
     }
 
-    public int getJobStatus() {
+    public Integer getJobStatus() {
         return jobStatus;
     }
 
@@ -472,7 +472,7 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
         return podId;
     }
 
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -496,7 +496,7 @@ public class DomainRouterJoinVO extends BaseViewVO implements ControlledViewEnti
         return redundantState;
     }
 
-    public boolean isRedundantRouter() {
+    public Boolean isRedundantRouter() {
         return isRedundantRouter;
     }
 

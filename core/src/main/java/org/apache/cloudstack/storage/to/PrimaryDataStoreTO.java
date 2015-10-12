@@ -66,7 +66,7 @@ public class PrimaryDataStoreTO implements DataStoreTO {
         this.isManaged = dataStore.isManaged();
     }
 
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
@@ -121,7 +121,7 @@ public class PrimaryDataStoreTO implements DataStoreTO {
         this.path = path;
     }
 
-    public int getPort() {
+    public Integer getPort() {
         return port;
     }
 
@@ -155,7 +155,7 @@ public class PrimaryDataStoreTO implements DataStoreTO {
         this.fullCloneFlag = fullCloneFlag;
     }
 
-    public boolean isManaged() {
+    public Boolean isManaged() {
         return isManaged;
     }
 }

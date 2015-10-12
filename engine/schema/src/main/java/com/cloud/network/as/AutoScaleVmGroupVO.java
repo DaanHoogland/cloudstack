@@ -117,7 +117,7 @@ public class AutoScaleVmGroupVO implements AutoScaleVmGroup, InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -126,12 +126,12 @@ public class AutoScaleVmGroupVO implements AutoScaleVmGroup, InternalIdentity {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -221,7 +221,7 @@ public class AutoScaleVmGroupVO implements AutoScaleVmGroup, InternalIdentity {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 

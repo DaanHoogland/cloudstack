@@ -126,30 +126,30 @@ public class SnapshotVO implements Snapshot {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getVolumeId() {
+    public Long getVolumeId() {
         return volumeId;
     }
 
-    public long getDiskOfferingId() {
+    public Long getDiskOfferingId() {
         return diskOfferingId;
     }
 
@@ -163,12 +163,12 @@ public class SnapshotVO implements Snapshot {
     }
 
     @Override
-    public long getSnapshotId() {
+    public Long getSnapshotId() {
         return id;
     }
 
     @Override
-    public short getsnapshotType() {
+    public Short getsnapshotType() {
         return snapshotType;
     }
 
@@ -199,14 +199,14 @@ public class SnapshotVO implements Snapshot {
     }
 
     @Override
-    public boolean isRecursive() {
+    public Boolean isRecursive() {
         if (snapshotType >= Type.HOURLY.ordinal() && snapshotType <= Type.MONTHLY.ordinal()) {
             return true;
         }
         return false;
     }
 
-    public long getSize() {
+    public Long getSize() {
         return size;
     }
 

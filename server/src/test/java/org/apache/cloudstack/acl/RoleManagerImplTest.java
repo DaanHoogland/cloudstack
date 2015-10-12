@@ -52,7 +52,7 @@ public class RoleManagerImplTest {
 
     @Mock
     private RoleVO roleVoMock;
-    private long roleMockId = 1l;
+    private Long roleMockId = 1l;
 
     @Before
     public void beforeTest() {

@@ -70,7 +70,7 @@ public class UpdateVMGroupCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         InstanceGroup group = _entityMgr.findById(InstanceGroup.class, getId());
         if (group != null) {
             return group.getAccountId();

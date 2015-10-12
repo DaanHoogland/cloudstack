@@ -76,7 +76,7 @@ public class PrivateIpVO implements InternalIdentity {
         return ipAddress;
     }
 
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
@@ -85,11 +85,11 @@ public class PrivateIpVO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public long getMacAddress() {
+    public Long getMacAddress() {
         return macAddress;
     }
 
@@ -97,7 +97,7 @@ public class PrivateIpVO implements InternalIdentity {
         return vpcId;
     }
 
-    public boolean isSourceNat() {
+    public Boolean isSourceNat() {
         return sourceNat;
     }
 

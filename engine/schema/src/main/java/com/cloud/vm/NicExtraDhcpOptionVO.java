@@ -76,7 +76,7 @@ public class NicExtraDhcpOptionVO implements NicExtraDhcpOption {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 }

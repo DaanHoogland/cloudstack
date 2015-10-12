@@ -3360,10 +3360,10 @@ public class JuniperSrxResource implements ServerResource {
 
     }
 
-    private void updateBytesMap(Map<String, long[]> bytesMap, UsageFilter filter, String usageAnswerKey, long additionalBytes) {
-        long[] bytesSentAndReceived = bytesMap.get(usageAnswerKey);
+    private void updateBytesMap(Map<String, Long[]> bytesMap, UsageFilter filter, String usageAnswerKey, long additionalBytes) {
+        Long[] bytesSentAndReceived = bytesMap.get(usageAnswerKey);
         if (bytesSentAndReceived == null) {
-            bytesSentAndReceived = new long[] {0, 0};
+            bytesSentAndReceived = new Long[] {0l, 0l};
         }
 
         int index = 0;
@@ -3420,7 +3420,7 @@ public class JuniperSrxResource implements ServerResource {
         }
     }
 
-    private Map<String, long[]> getBytesMap(ExternalNetworkResourceUsageAnswer answer, UsageFilter filter, String usageAnswerKey) {
+    private Map<String, Long[]> getBytesMap(ExternalNetworkResourceUsageAnswer answer, UsageFilter filter, String usageAnswerKey) {
         if (filter.equals(_usageFilterVlanInput) || filter.equals(_usageFilterVlanOutput)) {
             return answer.guestVlanBytes;
         } else if (filter.equals(_usageFilterIPInput) || filter.equals(_usageFilterIPOutput)) {
@@ -3441,7 +3441,7 @@ public class JuniperSrxResource implements ServerResource {
             return;
         }
         String usageAnswerKey = getUsageAnswerKey(filter, counterName);
-        Map<String, long[]> bytesMap = getBytesMap(answer, filter, usageAnswerKey);
+        Map<String, Long[]> bytesMap = getBytesMap(answer, filter, usageAnswerKey);
         updateBytesMap(bytesMap, filter, usageAnswerKey, byteCount);
     }
 

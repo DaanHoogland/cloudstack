@@ -77,7 +77,7 @@ public class StopNetScalerVMCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         VirtualRouter vm = _entityMgr.findById(VirtualRouter.class, getId());
         if (vm != null && vm.getRole() == Role.NETSCALER_VM) {
             return vm.getAccountId();

@@ -99,7 +99,7 @@ public class DomainVO implements Domain {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -135,7 +135,7 @@ public class DomainVO implements Domain {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -159,7 +159,7 @@ public class DomainVO implements Domain {
     }
 
     @Override
-    public int getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
@@ -168,7 +168,7 @@ public class DomainVO implements Domain {
     }
 
     @Override
-    public int getChildCount() {
+    public Integer getChildCount() {
         return childCount;
     }
 

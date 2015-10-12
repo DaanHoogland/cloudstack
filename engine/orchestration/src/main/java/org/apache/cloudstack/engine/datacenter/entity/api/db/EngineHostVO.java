@@ -544,7 +544,7 @@ public class EngineHostVO implements EngineHost, Identity {
     }
 
     @Override
-    public long getLastPinged() {
+    public Long getLastPinged() {
         return lastPinged;
     }
 
@@ -554,7 +554,7 @@ public class EngineHostVO implements EngineHost, Identity {
     }
 
     @Override
-    public long getTotalSize() {
+    public Long getTotalSize() {
         return totalSize;
     }
 
@@ -583,7 +583,7 @@ public class EngineHostVO implements EngineHost, Identity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -598,7 +598,7 @@ public class EngineHostVO implements EngineHost, Identity {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -724,16 +724,16 @@ public class EngineHostVO implements EngineHost, Identity {
     }
 
     @Override
-    public boolean isDisabled() {
+    public Boolean isDisabled() {
         return (getResourceState() == ResourceState.Disabled);
     }
 
     @Override
-    public boolean isInMaintenanceStates() {
+    public Boolean isInMaintenanceStates() {
         return (getResourceState() == ResourceState.Maintenance || getResourceState() == ResourceState.ErrorInMaintenance || getResourceState() == ResourceState.PrepareForMaintenance);
     }
 
-    public long getUpdated() {
+    public Long getUpdated() {
         return updated;
     }
 

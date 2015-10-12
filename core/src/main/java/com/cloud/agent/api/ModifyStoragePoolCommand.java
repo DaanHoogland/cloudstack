@@ -43,7 +43,7 @@ public class ModifyStoragePoolCommand extends Command {
         this(add, pool, LOCAL_PATH_PREFIX + File.separator + UUID.nameUUIDFromBytes((pool.getHostAddress() + pool.getPath()).getBytes()));
     }
 
-    public boolean getAdd() {
+    public Boolean getAdd() {
         return add;
     }
 
@@ -68,7 +68,7 @@ public class ModifyStoragePoolCommand extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 }

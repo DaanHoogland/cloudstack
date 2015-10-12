@@ -31,10 +31,9 @@ public interface AutoScaleVmGroup extends ControlledEntity, InternalIdentity, Di
     String State_Disabled = "disabled";
 
     @Override
-    long getId();
+    Long getId();
 
-    @Override
-    long getAccountId();
+    @Override Long getAccountId();
 
     Long getLoadBalancerId();
 
@@ -54,7 +53,6 @@ public interface AutoScaleVmGroup extends ControlledEntity, InternalIdentity, Di
 
     String getUuid();
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 
 }

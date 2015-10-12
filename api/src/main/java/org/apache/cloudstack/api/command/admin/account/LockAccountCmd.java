@@ -75,7 +75,7 @@ public class LockAccountCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         final Account account = _accountService.getActiveAccountByName(getAccountName(), getDomainId());
         if (account != null) {
             return account.getAccountId();

@@ -70,7 +70,7 @@ public class NuageVspDeviceVO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -78,11 +78,11 @@ public class NuageVspDeviceVO implements InternalIdentity {
         return uuid;
     }
 
-    public long getHostId() {
+    public Long getHostId() {
         return hostId;
     }
 
-    public long getPhysicalNetworkId() {
+    public Long getPhysicalNetworkId() {
         return physicalNetworkId;
     }
 

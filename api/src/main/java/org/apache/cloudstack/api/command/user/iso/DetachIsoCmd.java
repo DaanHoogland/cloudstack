@@ -65,7 +65,7 @@ public class DetachIsoCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         UserVm vm = _entityMgr.findById(UserVm.class, getVirtualMachineId());
         if (vm != null) {
             return vm.getAccountId();

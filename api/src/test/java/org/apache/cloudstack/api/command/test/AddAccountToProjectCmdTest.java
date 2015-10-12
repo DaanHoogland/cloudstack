@@ -106,7 +106,7 @@ public class AddAccountToProjectCmdTest extends TestCase {
         Mockito.when(projectService.getProjectOwner(Matchers.anyLong())).thenReturn(account);
         addAccountToProjectCmd._projectService = projectService;
 
-        Assert.assertEquals(2L, addAccountToProjectCmd.getEntityOwnerId());
+        Assert.assertEquals((Long)2L, addAccountToProjectCmd.getEntityOwnerId());
 
     }
 

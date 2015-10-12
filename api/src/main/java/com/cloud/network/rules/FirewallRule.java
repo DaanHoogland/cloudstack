@@ -69,7 +69,7 @@ public interface FirewallRule extends ControlledEntity, Identity, InternalIdenti
 
     State getState();
 
-    long getNetworkId();
+    Long getNetworkId();
 
     Long getSourceIpAddressId();
 
@@ -90,7 +90,6 @@ public interface FirewallRule extends ControlledEntity, Identity, InternalIdenti
      */
     TrafficType getTrafficType();
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 
 }

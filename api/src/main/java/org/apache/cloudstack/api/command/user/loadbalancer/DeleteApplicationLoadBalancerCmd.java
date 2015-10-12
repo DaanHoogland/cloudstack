@@ -63,7 +63,7 @@ public class DeleteApplicationLoadBalancerCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         ApplicationLoadBalancerRule lb = _entityMgr.findById(ApplicationLoadBalancerRule.class, getId());
         if (lb != null) {
             return lb.getAccountId();

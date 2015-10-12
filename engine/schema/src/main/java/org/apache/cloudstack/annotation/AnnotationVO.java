@@ -80,7 +80,7 @@ public class AnnotationVO implements Annotation {
     // access
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

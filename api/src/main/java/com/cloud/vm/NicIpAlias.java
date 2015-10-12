@@ -32,17 +32,17 @@ public interface NicIpAlias extends ControlledEntity, Identity, InternalIdentity
     }
 
     @Override
-    long getId();
+    Long getId();
 
-    long getNicId();
+    Long getNicId();
 
     String getIp4Address();
 
     String getIp6Address();
 
-    long getNetworkId();
+    Long getNetworkId();
 
-    long getVmId();
+    Long getVmId();
 
     Long getAliasCount();
 

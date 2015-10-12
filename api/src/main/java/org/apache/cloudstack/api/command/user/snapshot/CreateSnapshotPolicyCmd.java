@@ -93,7 +93,7 @@ public class CreateSnapshotPolicyCmd extends BaseCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if(display == null)
             return true;
         else
@@ -110,7 +110,7 @@ public class CreateSnapshotPolicyCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Volume volume = _entityMgr.findById(Volume.class, getVolumeId());
         if (volume == null) {
             throw new InvalidParameterValueException("Unable to find volume by id=" + volumeId);

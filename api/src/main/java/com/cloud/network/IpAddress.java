@@ -48,21 +48,21 @@ public interface IpAddress extends ControlledEntity, Identity, InternalIdentity,
         StaticNat, Lb
     }
 
-    long getDataCenterId();
+    Long getDataCenterId();
 
     Ip getAddress();
 
     Date getAllocatedTime();
 
-    boolean isSourceNat();
+    Boolean isSourceNat();
 
-    long getVlanId();
+    Long getVlanId();
 
-    boolean isOneToOneNat();
+    Boolean isOneToOneNat();
 
     State getState();
 
-    boolean readyToUse();
+    Boolean readyToUse();
 
     Long getAssociatedWithNetworkId();
 
@@ -76,17 +76,17 @@ public interface IpAddress extends ControlledEntity, Identity, InternalIdentity,
 
     Long getAllocatedInDomainId();
 
-    boolean getSystem();
+    Boolean isSystem();
 
     Long getVpcId();
 
     String getVmIp();
 
-    boolean isPortable();
+    Boolean isPortable();
 
     Long getNetworkId();
 
-    boolean isDisplay();
+    Boolean isDisplay();
 
     public Date getRemoved();
 

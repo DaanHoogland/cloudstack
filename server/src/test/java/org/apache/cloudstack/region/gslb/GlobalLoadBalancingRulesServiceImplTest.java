@@ -978,29 +978,29 @@ public class GlobalLoadBalancingRulesServiceImplTest extends TestCase {
 
     public class CreateGlobalLoadBalancerRuleCmdExtn extends CreateGlobalLoadBalancerRuleCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 
     public class AssignToGlobalLoadBalancerRuleCmdExtn extends AssignToGlobalLoadBalancerRuleCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 
     public class RemoveFromGlobalLoadBalancerRuleCmdExtn extends RemoveFromGlobalLoadBalancerRuleCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 
     public class DeleteGlobalLoadBalancerRuleCmdExtn extends DeleteGlobalLoadBalancerRuleCmd {
         @Override
-        public long getEntityOwnerId() {
-            return 1;
+        public Long getEntityOwnerId() {
+            return Account.ACCOUNT_ID_SYSTEM;
         }
     }
 }

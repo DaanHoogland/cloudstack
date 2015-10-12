@@ -67,7 +67,7 @@ public class CreateVpnGatewayCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if (display != null) {
             return display;
         } else {
@@ -85,7 +85,7 @@ public class CreateVpnGatewayCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Vpc vpc = _entityMgr.findById(Vpc.class, vpcId);
         return vpc.getAccountId();
     }

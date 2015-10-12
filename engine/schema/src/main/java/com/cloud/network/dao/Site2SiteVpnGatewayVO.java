@@ -71,7 +71,7 @@ public class Site2SiteVpnGatewayVO implements Site2SiteVpnGateway {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -108,12 +108,12 @@ public class Site2SiteVpnGatewayVO implements Site2SiteVpnGateway {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -126,7 +126,7 @@ public class Site2SiteVpnGatewayVO implements Site2SiteVpnGateway {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 

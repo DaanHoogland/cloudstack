@@ -55,7 +55,7 @@ public class GetApiLimitCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account account = CallContext.current().getCallingAccount();
         if (account != null) {
             return account.getId();

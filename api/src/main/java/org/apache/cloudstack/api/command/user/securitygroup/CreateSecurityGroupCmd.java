@@ -95,7 +95,7 @@ public class CreateSecurityGroupCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account account = CallContext.current().getCallingAccount();
         if ((account == null) || _accountService.isAdmin(account.getId())) {
             if ((domainId != null) && (accountName != null)) {

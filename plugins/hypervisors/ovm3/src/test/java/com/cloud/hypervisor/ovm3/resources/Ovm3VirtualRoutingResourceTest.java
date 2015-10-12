@@ -205,7 +205,7 @@ public class Ovm3VirtualRoutingResourceTest {
     private IpAddressTO[] getIp(String mac) {
         String br[] = xen.getVmNicBridge().split("[.]");
         List<IpAddressTO> ips = new ArrayList<IpAddressTO>();
-        IpAddressTO ip = new IpAddressTO(1, routerip, true, true, true, "vlan://"
+        IpAddressTO ip = new IpAddressTO(1l, routerip, true, true, true, "vlan://"
                 + br[1], "64.1.1.1", "255.255.255.0", mac, 1000, false);
         ip.setTrafficType(TrafficType.Public);
         ips.add(ip);

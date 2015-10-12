@@ -363,18 +363,18 @@ public interface Network extends ControlledEntity, StateObject<Network.State>, I
 
     String getIp6Cidr();
 
-    long getDataCenterId();
+    Long getDataCenterId();
 
-    long getNetworkOfferingId();
+    Long getNetworkOfferingId();
 
     @Override
     State getState();
 
-    boolean isRedundant();
+    Boolean isRedundant();
 
-    boolean isRollingRestart();
+    Boolean isRollingRestart();
 
-    long getRelated();
+    Long getRelated();
 
     URI getBroadcastUri();
 
@@ -394,14 +394,14 @@ public interface Network extends ControlledEntity, StateObject<Network.State>, I
 
     ACLType getAclType();
 
-    boolean isRestartRequired();
+    Boolean isRestartRequired();
 
-    boolean getSpecifyIpRanges();
+    Boolean getSpecifyIpRanges();
 
     @Deprecated
     boolean getDisplayNetwork();
 
-    boolean isDisplay();
+    Boolean isDisplay();
 
     String getGuruName();
 
@@ -414,7 +414,7 @@ public interface Network extends ControlledEntity, StateObject<Network.State>, I
 
     void setNetworkACLId(Long networkACLId);
 
-    boolean isStrechedL2Network();
+    Boolean isStrechedL2Network();
 
     String getExternalId();
 }

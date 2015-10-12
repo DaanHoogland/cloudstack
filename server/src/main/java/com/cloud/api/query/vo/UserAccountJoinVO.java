@@ -132,7 +132,7 @@ public class UserAccountJoinVO extends BaseViewVO implements InternalIdentity, I
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -141,7 +141,7 @@ public class UserAccountJoinVO extends BaseViewVO implements InternalIdentity, I
         return uuid;
     }
 
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -153,7 +153,7 @@ public class UserAccountJoinVO extends BaseViewVO implements InternalIdentity, I
         return accountName;
     }
 
-    public short getAccountType() {
+    public Short getAccountType() {
         return accountType;
     }
 
@@ -161,7 +161,7 @@ public class UserAccountJoinVO extends BaseViewVO implements InternalIdentity, I
         return accountRoleId;
     }
 
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -225,11 +225,11 @@ public class UserAccountJoinVO extends BaseViewVO implements InternalIdentity, I
         return registrationToken;
     }
 
-    public boolean isRegistered() {
+    public Boolean isRegistered() {
         return registered;
     }
 
-    public int getLoginAttempts() {
+    public Integer getLoginAttempts() {
         return loginAttempts;
     }
 
@@ -241,11 +241,11 @@ public class UserAccountJoinVO extends BaseViewVO implements InternalIdentity, I
         return jobUuid;
     }
 
-    public int getJobStatus() {
+    public Integer getJobStatus() {
         return jobStatus;
     }
 
-    public boolean isDefault() {
+    public Boolean isDefault() {
         return isDefault;
     }
 

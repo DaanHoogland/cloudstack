@@ -70,7 +70,7 @@ public class MonitoringServiceVO implements MonitoringService {
     String uuid = UUID.randomUUID().toString();
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -100,13 +100,13 @@ public class MonitoringServiceVO implements MonitoringService {
     }
 
     @Override
-    public long getAccountId() {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    public Long getAccountId() {
+        return 0l;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
-    public long getDomainId() {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    public Long getDomainId() {
+        return 0l;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public boolean isDefaultService() {

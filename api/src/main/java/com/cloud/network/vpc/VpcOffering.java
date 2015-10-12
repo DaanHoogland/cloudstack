@@ -49,7 +49,7 @@ public interface VpcOffering extends InternalIdentity, Identity {
      *
      * @return true if offering is default - came with the cloudStack fresh install; false otherwise
      */
-    boolean isDefault();
+    Boolean isDefault();
 
     /**
      * @return service offering id used by VPC virtual router
@@ -59,13 +59,13 @@ public interface VpcOffering extends InternalIdentity, Identity {
     /**
      * @return true if the offering provides a distributed router capable of one-hop forwarding
      */
-    boolean supportsDistributedRouter();
+    Boolean supportsDistributedRouter();
 
     /**
      * @return true if VPC created with the offering can span multiple zones in the region
      */
-    boolean offersRegionLevelVPC();
+    Boolean offersRegionLevelVPC();
 
-    boolean getRedundantRouter();
+    Boolean getRedundantRouter();
 
 }

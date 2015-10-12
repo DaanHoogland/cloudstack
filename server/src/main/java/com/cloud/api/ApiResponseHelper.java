@@ -790,7 +790,7 @@ public class ApiResponseHelper implements ResponseGenerator {
             ipResponse.setZoneName(zone.getName());
         }
         ipResponse.setSourceNat(ipAddr.isSourceNat());
-        ipResponse.setIsSystem(ipAddr.getSystem());
+        ipResponse.setIsSystem(ipAddr.isSystem());
 
         // get account information
         if (ipAddr.getAllocatedToAccountId() != null) {
@@ -867,7 +867,7 @@ public class ApiResponseHelper implements ResponseGenerator {
             }
         }
 
-        if (ipAddr.getSystem()) {
+        if (ipAddr.isSystem()) {
             if (ipAddr.isOneToOneNat()) {
                 ipResponse.setPurpose(IpAddress.Purpose.StaticNat.toString());
             } else {

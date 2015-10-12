@@ -62,7 +62,7 @@ public class UserVmCloneSettingVO implements InternalIdentity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 }

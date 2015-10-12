@@ -35,7 +35,7 @@ public interface Vlan extends InfrastructureEntity, InternalIdentity, Identity {
 
     public String getVlanNetmask();
 
-    public long getDataCenterId();
+    public Long getDataCenterId();
 
     public String getIpRange();
 

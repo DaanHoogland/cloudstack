@@ -210,8 +210,8 @@ class FakeCmd extends BaseCmd {
         return null;
     }
     @Override
-    public long getEntityOwnerId() {
-        return 0;
+    public Long getEntityOwnerId() {
+        return Account.ACCOUNT_ID_ANONYMOUS_NORMAL;
     }
 }
 

@@ -35,14 +35,14 @@ import java.util.Map;
  */
 public interface VirtualMachine extends RunningOn, ControlledEntity, Partition, Displayable, StateObject<VirtualMachine.State> {
 
-    public enum PowerState {
+    enum PowerState {
         PowerUnknown,
         PowerOn,
         PowerOff,
         PowerReportMissing
     }
 
-    public enum State {
+    enum State {
         Starting(true, "VM is being started.  At this state, you should find host id filled which means it's being started on that host."),
         Running(false, "VM is running.  host id has the host that it is running on."),
         Stopping(true, "VM is being stopped.  host id has the host that it is being stopped on."),
@@ -183,9 +183,9 @@ public interface VirtualMachine extends RunningOn, ControlledEntity, Partition, 
         }
     }
 
-    static final String IsDynamicScalingEnabled = "enable.dynamic.scaling";
+    String IsDynamicScalingEnabled = "enable.dynamic.scaling";
 
-    public enum Event {
+    enum Event {
         CreateRequested,
         StartRequested,
         StopRequested,
@@ -210,7 +210,7 @@ public interface VirtualMachine extends RunningOn, ControlledEntity, Partition, 
         FollowAgentPowerOffReport,
     };
 
-    public enum Type {
+    enum Type {
         User(false), DomainRouter(true), ConsoleProxy(true), SecondaryStorageVm(true), ElasticIpVm(true), ElasticLoadBalancerVm(true), InternalLoadBalancerVm(true),
         NetScalerVm(true),
 
@@ -266,21 +266,16 @@ public interface VirtualMachine extends RunningOn, ControlledEntity, Partition, 
     String getVncPassword();
 
     /**
-     * @return the state of the virtual machine
-     */
-    // State getState();
-
-    /**
      * @return template id.
      */
-    long getTemplateId();
+    Long getTemplateId();
 
     /**
      * returns the guest OS ID
      *
      * @return guestOSId
      */
-    long getGuestOSId();
+    Long getGuestOSId();
 
     /**
      * @return pod id.
@@ -290,7 +285,7 @@ public interface VirtualMachine extends RunningOn, ControlledEntity, Partition, 
     /**
      * @return data center id.
      */
-    long getDataCenterId();
+    Long getDataCenterId();
 
     /**
      * @return id of the host it was assigned last time.
@@ -303,19 +298,19 @@ public interface VirtualMachine extends RunningOn, ControlledEntity, Partition, 
     /**
      * @return should HA be enabled for this machine?
      */
-    boolean isHaEnabled();
+    Boolean isHaEnabled();
 
     /**
      * @return should limit CPU usage to the service offering?
      */
-    boolean limitCpuUse();
+    Boolean limitCpuUse();
 
     /**
      * @return date when machine was created
      */
     Date getCreated();
 
-    long getServiceOfferingId();
+    Long getServiceOfferingId();
 
     Long getDiskOfferingId();
 
@@ -325,9 +320,8 @@ public interface VirtualMachine extends RunningOn, ControlledEntity, Partition, 
 
     Map<String, String> getDetails();
 
-    long getUpdated();
+    Long getUpdated();
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 
 }

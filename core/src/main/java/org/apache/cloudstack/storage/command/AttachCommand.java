@@ -49,7 +49,7 @@ public final class AttachCommand extends StorageSubSystemCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 

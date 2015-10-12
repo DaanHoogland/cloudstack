@@ -47,12 +47,12 @@ public class ReservationContextImpl implements ReservationContext {
     }
 
     @Override
-    public long getDomainId() {
-        return 0;
+    public Long getDomainId() {
+        return 0l;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return _caller.getAccountId();
     }
 

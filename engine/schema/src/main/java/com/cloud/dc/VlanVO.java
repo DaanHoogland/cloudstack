@@ -104,7 +104,7 @@ public class VlanVO implements Vlan {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -124,7 +124,7 @@ public class VlanVO implements Vlan {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 

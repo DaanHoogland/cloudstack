@@ -155,7 +155,7 @@ public class VolumeHostVO implements InternalIdentity, DataObjectInStore {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -261,7 +261,7 @@ public class VolumeHostVO implements InternalIdentity, DataObjectInStore {
         this.size = size;
     }
 
-    public long getSize() {
+    public Long getSize() {
         return size;
     }
 
@@ -269,7 +269,7 @@ public class VolumeHostVO implements InternalIdentity, DataObjectInStore {
         this.physicalSize = physicalSize;
     }
 
-    public long getPhysicalSize() {
+    public Long getPhysicalSize() {
         return physicalSize;
     }
 
@@ -277,7 +277,7 @@ public class VolumeHostVO implements InternalIdentity, DataObjectInStore {
         this.destroyed = destroyed;
     }
 
-    public boolean getDestroyed() {
+    public Boolean getDestroyed() {
         return destroyed;
     }
 
@@ -297,8 +297,8 @@ public class VolumeHostVO implements InternalIdentity, DataObjectInStore {
         this.format = format;
     }
 
-    public long getVolumeSize() {
-        return -1;
+    public Long getVolumeSize() {
+        return -1l;
     }
 
     @Override
@@ -306,7 +306,7 @@ public class VolumeHostVO implements InternalIdentity, DataObjectInStore {
         return new StringBuilder("VolumeHost[").append(id).append("-").append(volumeId).append("-").append(hostId).append(installPath).append("]").toString();
     }
 
-    public long getUpdatedCount() {
+    public Long getUpdatedCount() {
         return this.updatedCount;
     }
 
@@ -329,12 +329,12 @@ public class VolumeHostVO implements InternalIdentity, DataObjectInStore {
     }
 
     @Override
-    public long getObjectId() {
+    public Long getObjectId() {
         return this.getVolumeId();
     }
 
     @Override
-    public long getDataStoreId() {
+    public Long getDataStoreId() {
         return this.getHostId();
     }
 

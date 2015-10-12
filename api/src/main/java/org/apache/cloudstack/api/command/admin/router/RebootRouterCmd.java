@@ -67,7 +67,7 @@ public class RebootRouterCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         VirtualRouter router = _entityMgr.findById(VirtualRouter.class, getId());
         if (router != null) {
             return router.getAccountId();

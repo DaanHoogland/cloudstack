@@ -39,7 +39,7 @@ public class ListInfrastructureCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return CallContext.current().getCallingAccountId();
     }
 

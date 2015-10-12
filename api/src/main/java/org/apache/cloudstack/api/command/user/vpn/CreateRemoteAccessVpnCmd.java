@@ -122,7 +122,7 @@ public class CreateRemoteAccessVpnCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         IpAddress ip = _networkService.getIp(publicIpId);
 
         if (ip == null) {
@@ -195,7 +195,7 @@ public class CreateRemoteAccessVpnCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if(display == null)
             return true;
         else

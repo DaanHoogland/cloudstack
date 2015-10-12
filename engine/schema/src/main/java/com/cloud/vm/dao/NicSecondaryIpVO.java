@@ -88,12 +88,12 @@ public class NicSecondaryIpVO implements NicSecondaryIp {
     long vmId;
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     @Override
-    public long getNicId() {
+    public Long getNicId() {
         return nicId;
     }
 
@@ -103,12 +103,12 @@ public class NicSecondaryIpVO implements NicSecondaryIp {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -122,7 +122,7 @@ public class NicSecondaryIpVO implements NicSecondaryIp {
     }
 
     @Override
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
@@ -136,7 +136,7 @@ public class NicSecondaryIpVO implements NicSecondaryIp {
     }
 
     @Override
-    public long getVmId() {
+    public Long getVmId() {
         return vmId;
     }
 

@@ -118,12 +118,12 @@ public class GlobalLoadBalancerRuleVO implements GlobalLoadBalancerRule {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -157,7 +157,7 @@ public class GlobalLoadBalancerRuleVO implements GlobalLoadBalancerRule {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

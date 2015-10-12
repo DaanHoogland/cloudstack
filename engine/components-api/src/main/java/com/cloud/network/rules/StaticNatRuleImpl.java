@@ -70,22 +70,22 @@ public class StaticNatRuleImpl implements StaticNatRule {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -145,7 +145,7 @@ public class StaticNatRuleImpl implements StaticNatRule {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return forDisplay;
     }
 

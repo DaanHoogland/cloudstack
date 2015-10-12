@@ -27,11 +27,11 @@ public interface GuestOS extends InternalIdentity, Identity {
 
     String getDisplayName();
 
-    long getCategoryId();
+    Long getCategoryId();
 
     Date getCreated();
 
     Date getRemoved();
 
-    boolean isUserDefined();
+    Boolean isUserDefined();
 }

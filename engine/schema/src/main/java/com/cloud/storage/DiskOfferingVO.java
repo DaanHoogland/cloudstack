@@ -240,12 +240,12 @@ public class DiskOfferingVO implements DiskOffering {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     @Override
-    public boolean isCustomized() {
+    public Boolean isCustomized() {
         return customized;
     }
 
@@ -299,7 +299,7 @@ public class DiskOfferingVO implements DiskOffering {
     }
 
     @Override
-    public boolean isUseLocalStorage() {
+    public Boolean isUseLocalStorage() {
         return useLocalStorage;
     }
 
@@ -314,7 +314,7 @@ public class DiskOfferingVO implements DiskOffering {
     }
 
     @Override
-    public boolean isRecreatable() {
+    public Boolean isRecreatable() {
         return recreatable;
     }
 
@@ -332,7 +332,7 @@ public class DiskOfferingVO implements DiskOffering {
     }
 
     @Override
-    public boolean isSystemUse() {
+    public Boolean isSystemUse() {
         return systemUse;
     }
 
@@ -355,7 +355,7 @@ public class DiskOfferingVO implements DiskOffering {
     }
 
     @Override
-    public long getDiskSize() {
+    public Long getDiskSize() {
         return diskSize;
     }
 
@@ -450,7 +450,7 @@ public class DiskOfferingVO implements DiskOffering {
         sortKey = key;
     }
 
-    public int getSortKey() {
+    public Integer getSortKey() {
         return sortKey;
     }
 
@@ -458,7 +458,7 @@ public class DiskOfferingVO implements DiskOffering {
         this.recreatable = recreatable;
     }
 
-    public boolean getDisplayOffering() {
+    public Boolean getDisplayOffering() {
         return displayOffering;
     }
 
@@ -516,7 +516,7 @@ public class DiskOfferingVO implements DiskOffering {
         return hypervisorSnapshotReserve;
     }
 
-    public boolean isShared() {
+    public Boolean isShared() {
         return !useLocalStorage;
     }
 }

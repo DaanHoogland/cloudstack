@@ -128,7 +128,7 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -138,12 +138,12 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return ownerId;
     }
 
@@ -153,12 +153,12 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public boolean isRedundant() {
+    public Boolean isRedundant() {
         return this.isRedundant;
     }
 
     @Override
-    public boolean isRollingRestart() {
+    public Boolean isRollingRestart() {
         return isRollingRestart;
     }
 
@@ -198,12 +198,12 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public long getNetworkOfferingId() {
+    public Long getNetworkOfferingId() {
         return networkOfferingId;
     }
 
     @Override
-    public long getRelated() {
+    public Long getRelated() {
         return related;
     }
 
@@ -223,7 +223,7 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -248,13 +248,13 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public boolean isRestartRequired() {
+    public Boolean isRestartRequired() {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public boolean getSpecifyIpRanges() {
+    public Boolean getSpecifyIpRanges() {
         // TODO Auto-generated method stub
         return false;
     }
@@ -265,7 +265,7 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public boolean isDisplay(){
+    public Boolean isDisplay(){
         return displayNetwork;
     }
 
@@ -305,7 +305,7 @@ public class NetworkProfile implements Network {
     }
 
     @Override
-    public boolean isStrechedL2Network() {
+    public Boolean isStrechedL2Network() {
         return false;
     }
 

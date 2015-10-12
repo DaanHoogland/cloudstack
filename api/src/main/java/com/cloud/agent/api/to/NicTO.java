@@ -40,7 +40,7 @@ public class NicTO extends NetworkTO {
         this.deviceId = deviceId;
     }
 
-    public int getDeviceId() {
+    public Integer getDeviceId() {
         return deviceId;
     }
 
@@ -56,7 +56,7 @@ public class NicTO extends NetworkTO {
         return networkRateMulticastMbps;
     }
 
-    public boolean isDefaultNic() {
+    public Boolean isDefaultNic() {
         return defaultNic;
     }
 
@@ -68,7 +68,7 @@ public class NicTO extends NetworkTO {
         this.pxeDisable = pxeDisable;
     }
 
-    public boolean getPxeDisable() {
+    public Boolean getPxeDisable() {
         return pxeDisable;
     }
 
@@ -111,7 +111,7 @@ public class NicTO extends NetworkTO {
         this.details = details;
     }
 
-    public boolean isDpdkDisabled() {
+    public Boolean isDpdkDisabled() {
         return dpdkDisabled;
     }
 

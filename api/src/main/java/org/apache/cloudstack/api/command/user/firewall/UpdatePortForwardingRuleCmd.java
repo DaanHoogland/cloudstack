@@ -109,7 +109,7 @@ public class UpdatePortForwardingRuleCmd extends BaseAsyncCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         PortForwardingRule rule = _entityMgr.findById(PortForwardingRule.class, getId());
         if (rule != null) {
             return rule.getAccountId();

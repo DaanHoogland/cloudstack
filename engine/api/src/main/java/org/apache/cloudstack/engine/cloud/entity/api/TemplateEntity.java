@@ -23,7 +23,7 @@ import org.apache.cloudstack.engine.entity.api.CloudStackEntity;
 import com.cloud.template.VirtualMachineTemplate;
 
 public interface TemplateEntity extends CloudStackEntity, VirtualMachineTemplate {
-    public long getPhysicalSize();
+    public Long getPhysicalSize();
 
-    public long getVirtualSize();
+    public Long getVirtualSize();
 }

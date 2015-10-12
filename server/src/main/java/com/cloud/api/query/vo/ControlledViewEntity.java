@@ -29,7 +29,7 @@ public interface ControlledViewEntity extends ControlledEntity, InternalIdentity
 
     public String getDomainPath();
 
-    public short getAccountType();
+    public Short getAccountType();
 
     public String getAccountUuid();
 

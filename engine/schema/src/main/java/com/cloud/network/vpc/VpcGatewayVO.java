@@ -104,7 +104,7 @@ public class VpcGatewayVO implements VpcGateway {
      * @param netmask TODO
      * @param accountId TODO
      * @param domainId TODO
-     * @param account_id
+     * @param accountId
      * @param sourceNat
      */
     public VpcGatewayVO(String ip4Address, Type type, long vpcId, long zoneId, long networkId, String broadcastUri, String gateway, String netmask, long accountId,
@@ -132,7 +132,7 @@ public class VpcGatewayVO implements VpcGateway {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -152,12 +152,12 @@ public class VpcGatewayVO implements VpcGateway {
     }
 
     @Override
-    public long getZoneId() {
+    public Long getZoneId() {
         return zoneId;
     }
 
     @Override
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return networkId;
     }
 
@@ -184,12 +184,12 @@ public class VpcGatewayVO implements VpcGateway {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -203,7 +203,7 @@ public class VpcGatewayVO implements VpcGateway {
     }
 
     @Override
-    public boolean getSourceNat() {
+    public Boolean getSourceNat() {
         return sourceNat;
     }
 
@@ -212,7 +212,7 @@ public class VpcGatewayVO implements VpcGateway {
     }
 
     @Override
-    public long getNetworkACLId() {
+    public Long getNetworkACLId() {
         return networkACLId;
     }
 

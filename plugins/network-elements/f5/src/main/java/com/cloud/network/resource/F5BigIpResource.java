@@ -1045,10 +1045,10 @@ public class F5BigIpResource implements ServerResource {
 
                 virtualServerIp = stripRouteDomainFromAddress(virtualServerIp);
 
-                long[] bytesSentAndReceived = answer.ipBytes.get(virtualServerIp);
+                Long[] bytesSentAndReceived = answer.ipBytes.get(virtualServerIp);
 
                 if (bytesSentAndReceived == null) {
-                    bytesSentAndReceived = new long[] {0, 0};
+                    bytesSentAndReceived = new Long[] {0l, 0l};
                 }
 
                 for (CommonStatistic stat : entry.getStatistics()) {

@@ -75,7 +75,7 @@ public class ListNuageVspGlobalDomainTemplateCmd  extends BaseCmd {
         return APINAME.toLowerCase() + BaseCmd.RESPONSE_SUFFIX;
     }
 
-    @Override public long getEntityOwnerId() {
+    @Override public Long getEntityOwnerId() {
         return Account.ACCOUNT_ID_SYSTEM;
     }
 }

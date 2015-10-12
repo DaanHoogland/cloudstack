@@ -78,7 +78,7 @@ public class CreateNetworkACLListCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if (display != null) {
             return display;
         } else {
@@ -115,7 +115,7 @@ public class CreateNetworkACLListCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Vpc vpc = _entityMgr.findById(Vpc.class, getVpcId());
         if (vpc == null) {
             throw new InvalidParameterValueException("Invalid vpcId is given");

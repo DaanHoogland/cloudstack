@@ -55,7 +55,7 @@ public class GetUserKeysCmd extends BaseCmd{
         return APINAME.toLowerCase() + BaseCmd.RESPONSE_SUFFIX;
     }
 
-    public long getEntityOwnerId(){
+    public Long getEntityOwnerId(){
         User user = _entityMgr.findById(User.class, getID());
         if(user != null){
             return user.getAccountId();

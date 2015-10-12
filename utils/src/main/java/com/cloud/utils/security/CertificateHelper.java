@@ -47,6 +47,8 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.ArrayUtils;
+
 public class CertificateHelper {
     public static byte[] buildAndSaveKeystore(final String alias, final String cert, final String privateKey, final String storePassword) throws KeyStoreException, CertificateException,
     NoSuchAlgorithmException, InvalidKeySpecException, IOException {
@@ -62,7 +64,7 @@ public class CertificateHelper {
         }
     }
 
-    public static byte[] buildAndSaveKeystore(final List<Ternary<String, String, String>> certs, final String storePassword) throws KeyStoreException, NoSuchAlgorithmException,
+    public static Byte[] buildAndSaveKeystore(final List<Ternary<String, String, String>> certs, final String storePassword) throws KeyStoreException, NoSuchAlgorithmException,
     CertificateException, IOException, InvalidKeySpecException {
         Preconditions.checkNotNull(certs, "List of certificates to be saved in keystore cannot be null");
         char password[] = null;
@@ -70,7 +72,7 @@ public class CertificateHelper {
             password = storePassword.toCharArray();
         }
         final KeyStore ks = KeyStore.getInstance("JKS");
-        ks.load(null, password);
+        ks.load(null, storePassword != null ? storePassword.toCharArray() : null);
 
         //name,cert,key
         for (final Ternary<String, String, String> cert : certs) {
@@ -90,7 +92,7 @@ public class CertificateHelper {
 
         try (final ByteArrayOutputStream os = new ByteArrayOutputStream()) {
             ks.store(os, password);
-            return os.toByteArray();
+            return ArrayUtils.toObject(os.toByteArray());
         }
     }
 

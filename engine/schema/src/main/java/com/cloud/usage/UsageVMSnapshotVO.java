@@ -75,15 +75,15 @@ public class UsageVMSnapshotVO implements InternalIdentity {
         this.processed = processed;
     }
 
-    public long getZoneId() {
+    public Long getZoneId() {
         return zoneId;
     }
 
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -91,7 +91,7 @@ public class UsageVMSnapshotVO implements InternalIdentity {
         return diskOfferingId;
     }
 
-    public long getSize() {
+    public Long getSize() {
         return size;
     }
 
@@ -111,12 +111,12 @@ public class UsageVMSnapshotVO implements InternalIdentity {
         this.created = created;
     }
 
-    public long getVmId() {
+    public Long getVmId() {
         return vmId;
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 

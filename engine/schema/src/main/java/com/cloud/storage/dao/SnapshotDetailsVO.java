@@ -58,7 +58,7 @@ public class SnapshotDetailsVO implements ResourceDetail {
     }
 
     @Override
-    public long getResourceId() {
+    public Long getResourceId() {
         return resourceId;
     }
 
@@ -73,12 +73,12 @@ public class SnapshotDetailsVO implements ResourceDetail {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 }

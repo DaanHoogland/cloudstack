@@ -88,7 +88,7 @@ public class AssignCertToLoadBalancerCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         LoadBalancer lb = _entityMgr.findById(LoadBalancer.class, getLbRuleId());
         if (lb == null) {
             return Account.ACCOUNT_ID_SYSTEM; // bad id given, parent this command to SYSTEM so ERROR events are tracked

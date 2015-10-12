@@ -83,7 +83,7 @@ public class MigrateVolumeCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Volume volume = _entityMgr.findById(Volume.class, getVolumeId());
         if (volume != null) {
             return volume.getAccountId();

@@ -141,7 +141,7 @@ public class AddIpToVmNicCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Nic nic = _entityMgr.findById(Nic.class, nicId);
         if (nic == null) {
             throw new InvalidParameterValueException("Can't find nic for id specified");

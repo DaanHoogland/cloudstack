@@ -59,7 +59,7 @@ public class ActivateProjectCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Project project = _projectService.getProject(getId());
         //verify input parameters
         if (project == null) {

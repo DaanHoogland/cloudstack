@@ -107,7 +107,7 @@ public class SnapshotDataStoreVO implements StateObject<ObjectInDataStoreStateMa
     }
 
     @Override
-    public long getDataStoreId() {
+    public Long getDataStoreId() {
         return dataStoreId;
     }
 
@@ -238,7 +238,7 @@ public class SnapshotDataStoreVO implements StateObject<ObjectInDataStoreStateMa
     }
 
     @Override
-    public long getObjectId() {
+    public Long getObjectId() {
         return getSnapshotId();
     }
 

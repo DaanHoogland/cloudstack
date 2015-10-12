@@ -228,5 +228,5 @@ public interface Volume extends ControlledEntity, Identity, InternalIdentity, Ba
     @Deprecated
     boolean isDisplayVolume();
 
-    boolean isDisplay();
+    Boolean isDisplay();
 }

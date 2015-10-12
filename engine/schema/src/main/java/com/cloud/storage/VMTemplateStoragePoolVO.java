@@ -101,7 +101,7 @@ public class VMTemplateStoragePoolVO implements VMTemplateStorageResourceAssoc, 
     }
 
     @Override
-    public long getTemplateSize() {
+    public Long getTemplateSize() {
         return templateSize;
     }
 
@@ -114,7 +114,7 @@ public class VMTemplateStoragePoolVO implements VMTemplateStorageResourceAssoc, 
     }
 
     @Override
-    public long getTemplateId() {
+    public Long getTemplateId() {
         return templateId;
     }
 
@@ -124,7 +124,7 @@ public class VMTemplateStoragePoolVO implements VMTemplateStorageResourceAssoc, 
     }
 
     @Override
-    public int getDownloadPercent() {
+    public Integer getDownloadPercent() {
         return downloadPercent;
     }
 
@@ -139,7 +139,7 @@ public class VMTemplateStoragePoolVO implements VMTemplateStorageResourceAssoc, 
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -286,12 +286,12 @@ public class VMTemplateStoragePoolVO implements VMTemplateStorageResourceAssoc, 
     }
 
     @Override
-    public long getObjectId() {
+    public Long getObjectId() {
         return this.getTemplateId();
     }
 
     @Override
-    public long getDataStoreId() {
+    public Long getDataStoreId() {
         return this.getPoolId();
     }
 

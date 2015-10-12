@@ -134,7 +134,7 @@ public class ResizeVolumeCmd extends BaseAsyncCmd {
     }
 
    @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
 
         Volume volume = _entityMgr.findById(Volume.class, getEntityId());
         if (volume == null) {

@@ -105,7 +105,7 @@ public class AffinityGroupJoinVO extends BaseViewVO implements ControlledViewEnt
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -123,7 +123,7 @@ public class AffinityGroupJoinVO extends BaseViewVO implements ControlledViewEnt
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -138,12 +138,12 @@ public class AffinityGroupJoinVO extends BaseViewVO implements ControlledViewEnt
     }
 
     @Override
-    public short getAccountType() {
+    public Short getAccountType() {
         return accountType;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
@@ -162,7 +162,7 @@ public class AffinityGroupJoinVO extends BaseViewVO implements ControlledViewEnt
         return domainPath;
     }
 
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 
@@ -180,7 +180,7 @@ public class AffinityGroupJoinVO extends BaseViewVO implements ControlledViewEnt
         return description;
     }
 
-    public long getVmId() {
+    public Long getVmId() {
         return vmId;
     }
 

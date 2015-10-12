@@ -81,7 +81,7 @@ public class SslCertVO implements SslCert {
 
     // Getters
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -106,7 +106,7 @@ public class SslCertVO implements SslCert {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -116,7 +116,7 @@ public class SslCertVO implements SslCert {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 

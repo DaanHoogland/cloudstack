@@ -37,12 +37,12 @@ public class PingCommand extends Command {
         return hostType;
     }
 
-    public long getHostId() {
+    public Long getHostId() {
         return hostId;
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 

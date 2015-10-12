@@ -165,7 +165,7 @@ public class VolumeObject implements VolumeInfo {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return volumeVO.isDisplay();
     }
 
@@ -249,7 +249,7 @@ public class VolumeObject implements VolumeInfo {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return volumeVO.getId();
     }
 
@@ -460,12 +460,12 @@ public class VolumeObject implements VolumeInfo {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return volumeVO.getAccountId();
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return volumeVO.getDomainId();
     }
 

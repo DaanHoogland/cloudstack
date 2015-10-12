@@ -118,7 +118,7 @@ public class EnableStaticNatCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         UserVm userVm = _entityMgr.findById(UserVm.class, getVirtualMachineId());
         if (userVm != null) {
             return userVm.getAccountId();

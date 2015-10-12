@@ -16,6 +16,7 @@
 // under the License.
 package org.apache.cloudstack.api.command.admin.alert;
 
+import com.cloud.user.Account;
 import org.apache.cloudstack.alert.AlertService;
 import org.apache.cloudstack.alert.AlertService.AlertType;
 import org.apache.cloudstack.api.APICommand;
@@ -115,7 +116,7 @@ public class GenerateAlertCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
-        return 0;
+    public Long getEntityOwnerId() {
+        return Account.ACCOUNT_ID_ANONYMOUS_NORMAL;
     }
 }

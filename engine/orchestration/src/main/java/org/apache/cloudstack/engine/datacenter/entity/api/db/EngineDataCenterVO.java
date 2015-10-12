@@ -320,7 +320,7 @@ public class EngineDataCenterVO implements EngineDataCenter, Identity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -372,7 +372,7 @@ public class EngineDataCenterVO implements EngineDataCenter, Identity {
     }
 
     @Override
-    public boolean isSecurityGroupEnabled() {
+    public Boolean isSecurityGroupEnabled() {
         return securityGroupEnabled;
     }
 
@@ -381,7 +381,7 @@ public class EngineDataCenterVO implements EngineDataCenter, Identity {
     }
 
     @Override
-    public boolean isLocalStorageEnabled() {
+    public Boolean isLocalStorageEnabled() {
         return localStorageEnabled;
     }
 
@@ -454,7 +454,7 @@ public class EngineDataCenterVO implements EngineDataCenter, Identity {
         this.uuid = uuid;
     }
 
-    public long getMacAddress() {
+    public Long getMacAddress() {
         return macAddress;
     }
 

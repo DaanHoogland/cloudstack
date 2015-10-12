@@ -27,9 +27,9 @@ public interface Cluster extends Grouping, Partition {
 
     String getName();
 
-    long getDataCenterId();
+    Long getDataCenterId();
 
-    long getPodId();
+    Long getPodId();
 
     HypervisorType getHypervisorType();
 

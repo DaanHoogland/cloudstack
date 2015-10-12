@@ -555,7 +555,7 @@ public class RulesManagerImpl extends ManagerBase implements RulesManager, Rules
                 }
 
                 // Check permissions
-                if (ipAddress.getSystem()) {
+                if (ipAddress.isSystem()) {
                     // when system is enabling static NAT on system IP's (for EIP) ignore VM state
                     checkIpAndUserVm(ipAddress, vm, caller, true);
                 } else {
@@ -1218,7 +1218,7 @@ public class RulesManagerImpl extends ManagerBase implements RulesManager, Rules
         IPAddressVO ipAddress = _ipAddressDao.findById(ipId);
         checkIpAndUserVm(ipAddress, null, caller, false);
 
-        if (ipAddress.getSystem()) {
+        if (ipAddress.isSystem()) {
             InvalidParameterValueException ex = new InvalidParameterValueException("Can't disable static nat for system IP address with specified id");
             ex.addProxyObject(ipAddress.getUuid(), "ipId");
             throw ex;
@@ -1281,7 +1281,7 @@ public class RulesManagerImpl extends ManagerBase implements RulesManager, Rules
         }
 
         if (success) {
-            boolean isIpSystem = ipAddress.getSystem();
+            boolean isIpSystem = ipAddress.isSystem();
             ipAddress.setOneToOneNat(false);
             ipAddress.setAssociatedWithVmId(null);
             ipAddress.setRuleState(null);

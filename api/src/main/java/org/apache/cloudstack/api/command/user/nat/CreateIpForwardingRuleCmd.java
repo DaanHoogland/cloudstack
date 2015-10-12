@@ -162,7 +162,7 @@ public class CreateIpForwardingRuleCmd extends BaseAsyncCreateCmd implements Sta
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account account = CallContext.current().getCallingAccount();
 
         if (account != null) {
@@ -198,7 +198,7 @@ public class CreateIpForwardingRuleCmd extends BaseAsyncCreateCmd implements Sta
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         throw new UnsupportedOperationException("Don't call me");
     }
 
@@ -237,18 +237,18 @@ public class CreateIpForwardingRuleCmd extends BaseAsyncCreateCmd implements Sta
     }
 
     @Override
-    public long getNetworkId() {
-        return -1;
+    public Long getNetworkId() {
+        return -1l;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         IpAddress ip = _networkService.getIp(ipAddressId);
         return ip.getDomainId();
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         IpAddress ip = _networkService.getIp(ipAddressId);
         return ip.getAccountId();
     }
@@ -319,7 +319,7 @@ public class CreateIpForwardingRuleCmd extends BaseAsyncCreateCmd implements Sta
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return true;
     }
 

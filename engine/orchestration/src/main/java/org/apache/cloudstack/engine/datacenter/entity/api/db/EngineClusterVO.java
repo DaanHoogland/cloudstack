@@ -124,7 +124,7 @@ public class EngineClusterVO implements EngineCluster, Identity {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -134,12 +134,12 @@ public class EngineClusterVO implements EngineCluster, Identity {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
     @Override
-    public long getPodId() {
+    public Long getPodId() {
         return podId;
     }
 

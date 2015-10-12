@@ -153,7 +153,7 @@ public class UpdateAutoScaleVmGroupCmd extends BaseAsyncCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         AutoScaleVmGroup autoScaleVmGroup = _entityMgr.findById(AutoScaleVmGroup.class, getId());
         if (autoScaleVmGroup != null) {
             return autoScaleVmGroup.getAccountId();

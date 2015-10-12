@@ -185,7 +185,7 @@ public class CreateApplicationLoadBalancerCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return getAccountId();
     }
 

@@ -120,7 +120,7 @@ public class StoragePoolVO implements StoragePool {
     private HypervisorType hypervisor;
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -196,12 +196,12 @@ public class StoragePoolVO implements StoragePool {
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
     @Override
-    public long getUsedBytes() {
+    public Long getUsedBytes() {
         return usedBytes;
     }
 
@@ -215,7 +215,7 @@ public class StoragePoolVO implements StoragePool {
     }
 
     @Override
-    public long getCapacityBytes() {
+    public Long getCapacityBytes() {
         return capacityBytes;
     }
 
@@ -232,7 +232,7 @@ public class StoragePoolVO implements StoragePool {
     }
 
     @Override
-    public boolean isManaged() {
+    public Boolean isManaged() {
         return managed;
     }
 
@@ -310,7 +310,7 @@ public class StoragePoolVO implements StoragePool {
     }
 
     @Override
-    public int getPort() {
+    public Integer getPort() {
         return port;
     }
 
@@ -364,17 +364,17 @@ public class StoragePoolVO implements StoragePool {
     }
 
     @Override
-    public boolean isShared() {
+    public Boolean isShared() {
         return scope == ScopeType.HOST ? false : true;
     }
 
     @Override
-    public boolean isLocal() {
+    public Boolean isLocal() {
         return !isShared();
     }
 
     @Override
-    public boolean isInMaintenance() {
+    public Boolean isInMaintenance() {
         return status == StoragePoolStatus.PrepareForMaintenance || status == StoragePoolStatus.Maintenance || status == StoragePoolStatus.ErrorInMaintenance ||
             removed != null;
     }

@@ -105,7 +105,7 @@ public class UpdateGlobalLoadBalancerRuleCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         GlobalLoadBalancerRule lb = _entityMgr.findById(GlobalLoadBalancerRule.class, getId());
         if (lb != null) {
             return lb.getAccountId();

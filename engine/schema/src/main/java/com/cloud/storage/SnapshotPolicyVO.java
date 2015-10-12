@@ -77,7 +77,7 @@ public class SnapshotPolicyVO implements SnapshotPolicy {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -145,7 +145,7 @@ public class SnapshotPolicyVO implements SnapshotPolicy {
         this.uuid = uuid;
     }
 
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 

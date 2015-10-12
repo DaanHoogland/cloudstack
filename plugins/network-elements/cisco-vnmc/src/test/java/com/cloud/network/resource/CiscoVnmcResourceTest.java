@@ -116,7 +116,7 @@ public class CiscoVnmcResourceTest {
     @Test
     public void testSourceNat() throws ConfigurationException, Exception {
         long vlanId = 123;
-        IpAddressTO ip = new IpAddressTO(1, "1.2.3.4", true, false, false, null, "1.2.3.1", "255.255.255.0", null, null, false);
+        IpAddressTO ip = new IpAddressTO(1l, "1.2.3.4", true, false, false, null, "1.2.3.1", "255.255.255.0", null, null, false);
         SetSourceNatCommand cmd = new SetSourceNatCommand(ip, true);
         cmd.setContextParam(NetworkElementCommand.GUEST_VLAN_TAG, Long.toString(vlanId));
         cmd.setContextParam(NetworkElementCommand.GUEST_NETWORK_CIDR, "1.2.3.4/32");
@@ -170,9 +170,9 @@ public class CiscoVnmcResourceTest {
     public void testStaticNat() throws ConfigurationException, Exception {
         long vlanId = 123;
         List<StaticNatRuleTO> rules = new ArrayList<StaticNatRuleTO>();
-        StaticNatRuleTO active = new StaticNatRuleTO(0, "1.2.3.4", null, null, "5.6.7.8", null, null, null, false, false);
+        StaticNatRuleTO active = new StaticNatRuleTO(0l, "1.2.3.4", null, null, "5.6.7.8", null, null, null, false, false);
         rules.add(active);
-        StaticNatRuleTO revoked = new StaticNatRuleTO(0, "1.2.3.4", null, null, "5.6.7.8", null, null, null, true, false);
+        StaticNatRuleTO revoked = new StaticNatRuleTO(0l, "1.2.3.4", null, null, "5.6.7.8", null, null, null, true, false);
         rules.add(revoked);
 
         SetStaticNatRulesCommand cmd = new SetStaticNatRulesCommand(rules, null);

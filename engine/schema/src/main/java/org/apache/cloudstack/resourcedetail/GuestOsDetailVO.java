@@ -55,7 +55,7 @@ public class GuestOsDetailVO implements ResourceDetail {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -70,12 +70,12 @@ public class GuestOsDetailVO implements ResourceDetail {
     }
 
     @Override
-    public long getResourceId() {
+    public Long getResourceId() {
         return resourceId;
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 }

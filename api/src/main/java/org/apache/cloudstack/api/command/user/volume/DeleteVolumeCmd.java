@@ -70,7 +70,7 @@ public class DeleteVolumeCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Volume volume = _entityMgr.findById(Volume.class, getId());
         if (volume != null) {
             return volume.getAccountId();

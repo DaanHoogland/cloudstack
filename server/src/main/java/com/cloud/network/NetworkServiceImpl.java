@@ -938,7 +938,7 @@ public class NetworkServiceImpl extends ManagerBase implements  NetworkService {
         }
 
         // don't allow releasing system ip address
-        if (ipVO.getSystem()) {
+        if (ipVO.isSystem()) {
             throwInvalidIdException("Can't release system IP address with specified id", ipVO.getUuid(), "systemIpAddrId");
         }
 

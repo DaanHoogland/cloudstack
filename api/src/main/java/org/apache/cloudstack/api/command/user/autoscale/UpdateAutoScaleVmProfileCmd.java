@@ -145,7 +145,7 @@ public class UpdateAutoScaleVmProfileCmd extends BaseAsyncCustomIdCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         AutoScaleVmProfile vmProfile = _entityMgr.findById(AutoScaleVmProfile.class, getId());
         if (vmProfile != null) {
             return vmProfile.getAccountId();

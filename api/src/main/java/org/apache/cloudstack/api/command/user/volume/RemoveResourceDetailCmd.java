@@ -16,6 +16,7 @@
 // under the License.
 package org.apache.cloudstack.api.command.user.volume;
 
+import com.cloud.user.Account;
 import org.apache.log4j.Logger;
 
 import org.apache.cloudstack.api.APICommand;
@@ -82,9 +83,9 @@ public class RemoveResourceDetailCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         //FIXME - validate the owner here
-        return 1;
+        return Account.ACCOUNT_ID_SYSTEM;
     }
 
     @Override

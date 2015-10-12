@@ -103,7 +103,7 @@ public class CreateLBHealthCheckPolicyCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if(display == null)
             return true;
         else
@@ -132,7 +132,7 @@ public class CreateLBHealthCheckPolicyCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Account account = CallContext.current().getCallingAccount();
         if (account != null) {
             return account.getId();

@@ -59,7 +59,7 @@ public class DeleteProjectInvitationCmd extends BaseAsyncCmd {
     // ///////////// API Implementation///////////////////
     // ///////////////////////////////////////////////////
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         // TODO - return project entity ownerId
         return Account.ACCOUNT_ID_SYSTEM; // no account info given, parent this command to SYSTEM so ERROR events are
 // tracked

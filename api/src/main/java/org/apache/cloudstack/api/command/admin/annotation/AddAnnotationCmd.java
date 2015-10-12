@@ -80,7 +80,7 @@ public class AddAnnotationCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return CallContext.current().getCallingAccount().getAccountId();
     }
 }

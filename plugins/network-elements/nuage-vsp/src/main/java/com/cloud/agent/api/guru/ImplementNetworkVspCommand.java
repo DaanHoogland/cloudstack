@@ -51,7 +51,7 @@ public class ImplementNetworkVspCommand extends Command {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 
@@ -88,7 +88,7 @@ public class ImplementNetworkVspCommand extends Command {
                 .toString();
     }
 
-    public boolean isVsdManaged() {
+    public Boolean isVsdManaged() {
         return _isVsdManaged;
     }
 }

@@ -71,7 +71,7 @@ public class InstanceGroupVO implements InstanceGroup {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -81,12 +81,12 @@ public class InstanceGroupVO implements InstanceGroup {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 

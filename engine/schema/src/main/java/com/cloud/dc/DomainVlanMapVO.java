@@ -49,7 +49,7 @@ public class DomainVlanMapVO implements InternalIdentity {
 
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

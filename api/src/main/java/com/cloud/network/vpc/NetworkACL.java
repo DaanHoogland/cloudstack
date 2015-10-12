@@ -32,10 +32,9 @@ public interface NetworkACL extends InternalIdentity, Identity, Displayable {
     Long getVpcId();
 
     @Override
-    long getId();
+    Long getId();
 
     String getName();
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 }

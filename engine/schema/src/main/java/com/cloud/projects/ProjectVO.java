@@ -95,12 +95,12 @@ public class ProjectVO implements Project, Identity, InternalIdentity {
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

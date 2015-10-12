@@ -113,21 +113,21 @@ public interface Nic extends Identity, InternalIdentity {
 
     ReservationStrategy getReservationStrategy();
 
-    boolean isDefaultNic();
+    Boolean isDefaultNic();
 
     String getMacAddress();
 
     /**
      * @return network profile id that this
      */
-    long getNetworkId();
+    Long getNetworkId();
 
     /**
      * @return the vm instance id that this nic belongs to.
      */
-    long getInstanceId();
+    Long getInstanceId();
 
-    int getDeviceId();
+    Integer getDeviceId();
 
     Mode getMode();
 
@@ -139,7 +139,8 @@ public interface Nic extends Identity, InternalIdentity {
 
     AddressFormat getAddressFormat();
 
-    boolean getSecondaryIp();
+    // Q: should this be called isSecondaryIp() ? what is the semantic of this method ?
+    Boolean getSecondaryIp();
 
     //
     // IPv4

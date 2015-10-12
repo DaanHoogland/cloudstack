@@ -93,7 +93,7 @@ public class CreateVpnConnectionCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         if (display != null) {
             return display;
         } else {
@@ -111,13 +111,13 @@ public class CreateVpnConnectionCmd extends BaseAsyncCreateCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         Site2SiteVpnGateway  vpnGw = getVpnGateway();
         if (vpnGw != null) {
             Vpc vpc = _entityMgr.findById(Vpc.class, getVpnGateway().getVpcId());
             return vpc.getAccountId();
         }
-        return -1;
+        return -1l;
     }
 
     @Override

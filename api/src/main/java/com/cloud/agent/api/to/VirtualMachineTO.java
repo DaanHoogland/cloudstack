@@ -111,7 +111,7 @@ public class VirtualMachineTO {
     protected VirtualMachineTO() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -119,7 +119,7 @@ public class VirtualMachineTO {
         this.id = id;
     }
 
-    public boolean isEnableDynamicallyScaleVm() {
+    public Boolean isEnableDynamicallyScaleVm() {
         return enableDynamicallyScaleVm;
     }
 
@@ -147,7 +147,7 @@ public class VirtualMachineTO {
         this.bootloader = bootloader;
     }
 
-    public int getCpus() {
+    public Integer getCpus() {
         return cpus;
     }
 
@@ -167,11 +167,11 @@ public class VirtualMachineTO {
         return maxSpeed;
     }
 
-    public boolean getLimitCpuUse() {
+    public Boolean getLimitCpuUse() {
         return limitCpuUse;
     }
 
-    public long getMinRam() {
+    public Long getMinRam() {
         return minRam;
     }
 
@@ -180,7 +180,7 @@ public class VirtualMachineTO {
         this.maxRam = maxRam;
     }
 
-    public long getMaxRam() {
+    public Long getMaxRam() {
         return maxRam;
     }
 

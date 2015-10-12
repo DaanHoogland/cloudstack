@@ -108,7 +108,7 @@ public class ListSslCertsCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return CallContext.current().getCallingAccount().getId();
     }
 }

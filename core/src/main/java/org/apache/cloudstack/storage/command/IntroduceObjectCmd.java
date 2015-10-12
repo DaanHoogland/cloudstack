@@ -33,7 +33,7 @@ public class IntroduceObjectCmd extends StorageSubSystemCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 

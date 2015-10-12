@@ -680,7 +680,7 @@ public class OvmResourceBase implements ServerResource, HypervisorResource {
             Double txBytes = Double.parseDouble(res.get("txBytes"));
             Double totalMemory = Double.parseDouble(res.get("totalMemory"));
             Double freeMemory = Double.parseDouble(res.get("freeMemory"));
-            HostStatsEntry hostStats = new HostStatsEntry(cmd.getHostId(), cpuUtil, rxBytes, txBytes, "host", totalMemory, freeMemory, 0, 0);
+            HostStatsEntry hostStats = new HostStatsEntry(cmd.getHostId(), cpuUtil, rxBytes, txBytes, "host", totalMemory, freeMemory, 0.0, 0.0);
             return new GetHostStatsAnswer(cmd, hostStats);
         } catch (Exception e) {
             s_logger.debug("Get host stats of " + cmd.getHostName() + " failed", e);

@@ -49,17 +49,17 @@ public interface StoragePool extends Identity, InternalIdentity {
     /**
      * @return availability zone.
      */
-    long getDataCenterId();
+    Long getDataCenterId();
 
     /**
      * @return capacity of storage poolin bytes
      */
-    long getCapacityBytes();
+    Long getCapacityBytes();
 
     /**
      * @return available storage in bytes
      */
-    long getUsedBytes();
+    Long getUsedBytes();
 
     Long getCapacityIops();
 
@@ -83,27 +83,27 @@ public interface StoragePool extends Identity, InternalIdentity {
     /**
      * @return the storage pool represents a shared storage resource
      */
-    boolean isShared();
+    Boolean isShared();
 
     /**
      * @return the storage pool represents a local storage resource
      */
-    boolean isLocal();
+    Boolean isLocal();
 
     /**
      * @return the storage pool status
      */
     StoragePoolStatus getStatus();
 
-    int getPort();
+    Integer getPort();
 
     Long getPodId();
 
     String getStorageProviderName();
 
-    boolean isInMaintenance();
+    Boolean isInMaintenance();
 
     Hypervisor.HypervisorType getHypervisor();
 
-    boolean isManaged();
+    Boolean isManaged();
 }

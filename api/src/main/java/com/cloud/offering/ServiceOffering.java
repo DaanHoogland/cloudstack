@@ -55,8 +55,7 @@ public interface ServiceOffering extends DiskOffering, InfrastructureEntity, Int
     /**
      * @return is this a system service offering
      */
-    @Override
-    boolean isSystemUse();
+    @Override Boolean isSystemUse();
 
     /**
      * @return # of cpu.
@@ -101,8 +100,7 @@ public interface ServiceOffering extends DiskOffering, InfrastructureEntity, Int
     /**
      * @return whether or not the service offering requires local storage
      */
-    @Override
-    boolean isUseLocalStorage();
+    @Override Boolean isUseLocalStorage();
 
     @Override
     Long getDomainId();

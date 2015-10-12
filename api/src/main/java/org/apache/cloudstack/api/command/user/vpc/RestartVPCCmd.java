@@ -79,7 +79,7 @@ public class RestartVPCCmd extends BaseAsyncCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         final Vpc vpc = _entityMgr.findById(Vpc.class, getId());
         if (vpc != null) {
             return vpc.getAccountId();

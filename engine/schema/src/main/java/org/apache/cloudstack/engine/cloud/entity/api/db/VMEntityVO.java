@@ -213,12 +213,12 @@ public class VMEntityVO implements VirtualMachine, FiniteStateObject<State, Virt
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -228,12 +228,12 @@ public class VMEntityVO implements VirtualMachine, FiniteStateObject<State, Virt
     }
 
     @Override
-    public long getUpdated() {
+    public Long getUpdated() {
         return updated;
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -261,7 +261,7 @@ public class VMEntityVO implements VirtualMachine, FiniteStateObject<State, Virt
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterIdToDeployIn;
     }
 
@@ -305,7 +305,7 @@ public class VMEntityVO implements VirtualMachine, FiniteStateObject<State, Virt
     }
 
     @Override
-    public long getServiceOfferingId() {
+    public Long getServiceOfferingId() {
         return serviceOfferingId;
     }
 
@@ -326,9 +326,9 @@ public class VMEntityVO implements VirtualMachine, FiniteStateObject<State, Virt
     }
 
     @Override
-    public long getTemplateId() {
+    public Long getTemplateId() {
         if (templateId == null) {
-            return -1;
+            return -1l;
         } else {
             return templateId;
         }
@@ -339,7 +339,7 @@ public class VMEntityVO implements VirtualMachine, FiniteStateObject<State, Virt
     }
 
     @Override
-    public long getGuestOSId() {
+    public Long getGuestOSId() {
         return guestOSId;
     }
 
@@ -374,12 +374,12 @@ public class VMEntityVO implements VirtualMachine, FiniteStateObject<State, Virt
     }
 
     @Override
-    public boolean isHaEnabled() {
+    public Boolean isHaEnabled() {
         return haEnabled;
     }
 
     @Override
-    public boolean limitCpuUse() {
+    public Boolean limitCpuUse() {
         return limitCpuUse;
     }
 
@@ -409,7 +409,7 @@ public class VMEntityVO implements VirtualMachine, FiniteStateObject<State, Virt
         dataCenterIdToDeployIn = dataCenterId;
     }
 
-    public boolean isRemoved() {
+    public Boolean isRemoved() {
         return removed != null;
     }
 
@@ -543,7 +543,7 @@ public class VMEntityVO implements VirtualMachine, FiniteStateObject<State, Virt
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return display;
     }
 

@@ -229,12 +229,12 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return domainId;
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -244,12 +244,12 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
     }
 
     @Override
-    public long getUpdated() {
+    public Long getUpdated() {
         return updated;
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -281,7 +281,7 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
     }
 
     @Override
-    public long getDataCenterId() {
+    public Long getDataCenterId() {
         return dataCenterId;
     }
 
@@ -334,7 +334,7 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
     }
 
     @Override
-    public long getServiceOfferingId() {
+    public Long getServiceOfferingId() {
         return serviceOfferingId;
     }
 
@@ -355,9 +355,9 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
     }
 
     @Override
-    public long getTemplateId() {
+    public Long getTemplateId() {
         if (templateId == null) {
-            return -1;
+            return -1l;
         } else {
             return templateId;
         }
@@ -368,7 +368,7 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
     }
 
     @Override
-    public long getGuestOSId() {
+    public Long getGuestOSId() {
         return guestOSId;
     }
 
@@ -403,17 +403,17 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
     }
 
     @Override
-    public boolean isHaEnabled() {
+    public Boolean isHaEnabled() {
         return haEnabled;
     }
 
     //FIXME - Remove this and use isDisplay() instead
-    public boolean isDisplayVm() {
+    public Boolean isDisplayVm() {
         return displayVm;
     }
 
     @Override
-    public boolean isDisplay() {
+    public Boolean isDisplay() {
         return displayVm;
     }
 
@@ -422,7 +422,7 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
     }
 
     @Override
-    public boolean limitCpuUse() {
+    public Boolean limitCpuUse() {
         return limitCpuUse;
     }
 
@@ -452,7 +452,7 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
         this.dataCenterId = dataCenterId;
     }
 
-    public boolean isRemoved() {
+    public Boolean isRemoved() {
         return removed != null;
     }
 
@@ -553,7 +553,7 @@ public class VMInstanceVO implements VirtualMachine, FiniteStateObject<State, Vi
         powerStateUpdateTime = updateTime;
     }
 
-    public int getPowerStateUpdateCount() {
+    public Integer getPowerStateUpdateCount() {
         return powerStateUpdateCount;
     }
 

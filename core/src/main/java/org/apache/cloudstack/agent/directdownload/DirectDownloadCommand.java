@@ -69,7 +69,7 @@ public abstract class DirectDownloadCommand extends StorageSubSystemCommand {
     }
 
     @Override
-    public boolean executeInSequence() {
+    public Boolean executeInSequence() {
         return false;
     }
 }

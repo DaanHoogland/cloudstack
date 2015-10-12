@@ -291,7 +291,7 @@ public class ServiceOfferingVO extends DiskOfferingVO implements ServiceOffering
     }
 
     @Override
-    public int getSortKey() {
+    public Integer getSortKey() {
         return sortKey;
     }
 

@@ -77,7 +77,7 @@ public class DeleteGlobalLoadBalancerRuleCmd extends BaseAsyncCmd {
     public GlobalLoadBalancingRulesService _gslbService;
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         GlobalLoadBalancerRule lb = _entityMgr.findById(GlobalLoadBalancerRule.class, getGlobalLoadBalancerId());
         if (lb != null) {
             return lb.getAccountId();

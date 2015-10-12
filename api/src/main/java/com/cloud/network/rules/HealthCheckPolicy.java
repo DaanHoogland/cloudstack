@@ -40,7 +40,6 @@ public interface HealthCheckPolicy extends InternalIdentity, Identity, Displayab
 
     public boolean isRevoke();
 
-    @Override
-    boolean isDisplay();
+    @Override Boolean isDisplay();
 
 }

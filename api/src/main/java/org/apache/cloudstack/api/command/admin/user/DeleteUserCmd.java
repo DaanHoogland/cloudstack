@@ -68,7 +68,7 @@ public class DeleteUserCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         User user = _entityMgr.findById(User.class, getId());
         if (user != null) {
             return user.getAccountId();

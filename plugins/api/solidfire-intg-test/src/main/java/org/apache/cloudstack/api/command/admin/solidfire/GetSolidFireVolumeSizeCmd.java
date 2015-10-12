@@ -50,7 +50,7 @@ public class GetSolidFireVolumeSizeCmd extends BaseCmd {
     }
 
     @Override
-    public long getEntityOwnerId() {
+    public Long getEntityOwnerId() {
         return util.getAccountIdForVolumeUuid(volumeUuid);
     }
 

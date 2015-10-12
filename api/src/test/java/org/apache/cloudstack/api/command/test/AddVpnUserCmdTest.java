@@ -53,7 +53,7 @@ public class AddVpnUserCmdTest extends TestCase {
             }
 
             @Override
-            public long getEntityOwnerId() {
+            public Long getEntityOwnerId() {
                 return 2L;
             }
 

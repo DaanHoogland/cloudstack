@@ -89,7 +89,7 @@ public class OutOfBandManagementVO implements OutOfBandManagement {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

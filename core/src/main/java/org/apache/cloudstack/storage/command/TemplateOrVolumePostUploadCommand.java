@@ -105,7 +105,7 @@ public class TemplateOrVolumePostUploadCommand {
         this.localPath = localPath;
     }
 
-    public boolean getRequiresHvm() {
+    public Boolean getRequiresHvm() {
         return requiresHvm;
     }
 
@@ -121,7 +121,7 @@ public class TemplateOrVolumePostUploadCommand {
         this.imageFormat = imageFormat;
     }
 
-    public long getEntityId() {
+    public Long getEntityId() {
         return entityId;
     }
 
@@ -197,7 +197,7 @@ public class TemplateOrVolumePostUploadCommand {
         this.accountId = accountId;
     }
 
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -213,7 +213,7 @@ public class TemplateOrVolumePostUploadCommand {
         this.processTimeout = processTimeout;
     }
 
-    public long getProcessTimeout() {
+    public Long getProcessTimeout() {
         return processTimeout;
     }
 }

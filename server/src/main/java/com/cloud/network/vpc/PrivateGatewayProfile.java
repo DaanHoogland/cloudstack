@@ -32,7 +32,7 @@ public class PrivateGatewayProfile implements PrivateGateway {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return vpcGateway.getId();
     }
 
@@ -52,12 +52,12 @@ public class PrivateGatewayProfile implements PrivateGateway {
     }
 
     @Override
-    public long getZoneId() {
+    public Long getZoneId() {
         return vpcGateway.getZoneId();
     }
 
     @Override
-    public long getNetworkId() {
+    public Long getNetworkId() {
         return vpcGateway.getNetworkId();
     }
 
@@ -87,12 +87,12 @@ public class PrivateGatewayProfile implements PrivateGateway {
     }
 
     @Override
-    public long getAccountId() {
+    public Long getAccountId() {
         return vpcGateway.getAccountId();
     }
 
     @Override
-    public long getDomainId() {
+    public Long getDomainId() {
         return vpcGateway.getDomainId();
     }
 
@@ -102,12 +102,12 @@ public class PrivateGatewayProfile implements PrivateGateway {
     }
 
     @Override
-    public boolean getSourceNat() {
+    public Boolean getSourceNat() {
         return vpcGateway.getSourceNat();
     }
 
     @Override
-    public long getNetworkACLId() {
+    public Long getNetworkACLId() {
         return vpcGateway.getNetworkACLId();
     }
 
