@@ -223,7 +223,7 @@ public class RequestTest extends TestCase {
 
         logger.setLevel(Level.DEBUG);
         String log = sreq.log("Debug", true, Level.DEBUG);
-        assertNull("did not expect a string for this level.", log);
+        assertNull("did not expect a string for this level." + log , log);
 
         log = sreq.log("Debug", false, Level.DEBUG);
         assert (log != null);
@@ -244,7 +244,7 @@ public class RequestTest extends TestCase {
         String json;
         String hostguid = "hostguid";
         String hostname = "hostname";
-        Long hostId = 101l;
+        long hostId = 101l;
 
         cmd_in = new GetHostStatsCommand(hostguid, hostname, hostId);
         json = gson.toJson(cmd_in, GetHostStatsCommand.class);
