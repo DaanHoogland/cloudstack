@@ -29,12 +29,12 @@ import com.cloud.hypervisor.Hypervisor.HypervisorType;
 import com.cloud.network.Networks.RouterPrivateIpStrategy;
 
 public class StartupRoutingCommand extends StartupCommand {
-    Integer cpuSockets;
-    int cpus;
-    long speed;
-    long memory;
-    long dom0MinMemory;
-    boolean poolSync;
+    Integer cpuSockets = 0;
+    Integer cpus = 0;
+    Long speed = 0l;
+    Long memory = 0l;
+    Long dom0MinMemory = 0l;
+    Boolean poolSync = Boolean.FALSE;
     private boolean supportsClonedVolumes;
 
     String caps;
