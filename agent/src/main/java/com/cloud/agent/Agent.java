@@ -161,7 +161,7 @@ public class Agent implements HandlerFactory, IAgentControl {
         Runtime.getRuntime().addShutdownHook(_shutdownThread);
 
         _ugentTaskPool =
-                new ThreadPoolExecutor(shell.getPingRetries(), 2 * shell.getPingRetries(), 10, TimeUnit.MINUTES, new SynchronousQueue<Runnable>(), new NamedThreadFactory(
+                new ThreadPoolExecutor(_shell.getPingRetries(), 2 * _shell.getPingRetries(), 10, TimeUnit.MINUTES, new SynchronousQueue<Runnable>(), new NamedThreadFactory(
                         "UgentTask"));
 
         _executor =
@@ -174,7 +174,7 @@ public class Agent implements HandlerFactory, IAgentControl {
         _resource = resource;
         _link = null;
 
-        resource.setAgentControl(this);
+        _resource.setAgentControl(this);
 
         final String value = _shell.getPersistentProperty(getResourceName(), "id");
         _id = value != null ? Long.parseLong(value) : null;
@@ -200,7 +200,7 @@ public class Agent implements HandlerFactory, IAgentControl {
         Runtime.getRuntime().addShutdownHook(_shutdownThread);
 
         _ugentTaskPool =
-                new ThreadPoolExecutor(shell.getPingRetries(), 2 * shell.getPingRetries(), 10, TimeUnit.MINUTES, new SynchronousQueue<Runnable>(), new NamedThreadFactory(
+                new ThreadPoolExecutor(_shell.getPingRetries(), 2 * _shell.getPingRetries(), 10, TimeUnit.MINUTES, new SynchronousQueue<Runnable>(), new NamedThreadFactory(
                         "UgentTask"));
 
         _executor =
