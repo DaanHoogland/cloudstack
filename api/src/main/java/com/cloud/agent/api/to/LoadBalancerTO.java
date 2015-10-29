@@ -392,7 +392,7 @@ public class LoadBalancerTO {
 
     public static class ConditionTO implements Serializable {
         private static final long serialVersionUID = 2L;
-        private final long threshold;
+        private final Long threshold;
         private final String relationalOperator;
         private final CounterTO counter;
 
@@ -433,7 +433,7 @@ public class LoadBalancerTO {
             this.revoked = revoked;
         }
 
-        public long getId() {
+        public Long getId() {
             return id;
         }
 
