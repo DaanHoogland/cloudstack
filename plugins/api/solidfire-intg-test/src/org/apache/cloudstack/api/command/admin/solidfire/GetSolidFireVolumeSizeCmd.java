@@ -14,12 +14,7 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
-package org.apache.cloudstack.api.command.user.solidfire;
-
-import com.cloud.storage.Volume;
-import com.cloud.user.Account;
-import com.cloud.storage.dao.VolumeDao;
-import com.cloud.storage.StoragePool;
+package org.apache.cloudstack.api.command.admin.solidfire;
 
 import javax.inject.Inject;
 
@@ -29,10 +24,9 @@ import org.apache.cloudstack.api.ApiConstants;
 import org.apache.cloudstack.api.APICommand;
 import org.apache.cloudstack.api.BaseCmd;
 import org.apache.cloudstack.api.Parameter;
-import org.apache.cloudstack.api.response.ApiSolidFireVolumeSizeResponse;
-import org.apache.cloudstack.context.CallContext;
-import org.apache.cloudstack.solidfire.ApiSolidFireService;
-import org.apache.cloudstack.storage.datastore.db.PrimaryDataStoreDao;
+import org.apache.cloudstack.api.response.solidfire.ApiSolidFireVolumeSizeResponse;
+import org.apache.cloudstack.solidfire.SolidFireIntegrationTestManager;
+import org.apache.cloudstack.util.solidfire.SolidFireIntegrationTestUtil;
 
 @APICommand(name = "getSolidFireVolumeSize", responseObject = ApiSolidFireVolumeSizeResponse.class, description = "Get the SF volume size including Hypervisor Snapshot Reserve",
         requestHasSensitiveInfo = false, responseHasSensitiveInfo = false)
@@ -41,13 +35,10 @@ public class GetSolidFireVolumeSizeCmd extends BaseCmd {
     private static final String s_name = "getsolidfirevolumesizeresponse";
 
     @Parameter(name = ApiConstants.VOLUME_ID, type = CommandType.STRING, description = "Volume UUID", required = true)
-    private String volumeUuid;
-    @Parameter(name = ApiConstants.STORAGE_ID, type = CommandType.STRING, description = "Storage Pool UUID", required = true)
-    private String storagePoolUuid;
+    private String _volumeUuid;
 
-    @Inject private ApiSolidFireService _apiSolidFireService;
-    @Inject private VolumeDao _volumeDao;
-    @Inject private PrimaryDataStoreDao _storagePoolDao;
+    @Inject private SolidFireIntegrationTestManager _manager;
+    @Inject private SolidFireIntegrationTestUtil _util;
 
     /////////////////////////////////////////////////////
     /////////////// API Implementation///////////////////
@@ -60,21 +51,16 @@ public class GetSolidFireVolumeSizeCmd extends BaseCmd {
 
     @Override
     public long getEntityOwnerId() {
-        Account account = CallContext.current().getCallingAccount();
-
-        if (account != null) {
-            return account.getId();
-        }
-
-        return Account.ACCOUNT_ID_SYSTEM; // no account info given, parent this command to SYSTEM so ERROR events are tracked
+        return _util.getAccountIdForVolumeUuid(_volumeUuid);
     }
 
     @Override
     public void execute() {
-        Volume volume = _volumeDao.findByUuid(volumeUuid);
-        StoragePool storagePool = _storagePoolDao.findByUuid(storagePoolUuid);
+        s_logger.info("'GetSolidFireVolumeSizeCmd.execute' method invoked");
 
-        ApiSolidFireVolumeSizeResponse response = _apiSolidFireService.getSolidFireVolumeSize(volume, storagePool);
+        long sfVolumeSize = _manager.getSolidFireVolumeSize(_volumeUuid);
+
+        ApiSolidFireVolumeSizeResponse response = new ApiSolidFireVolumeSizeResponse(sfVolumeSize);
 
         response.setResponseName(getCommandName());
         response.setObjectName("apisolidfirevolumesize");

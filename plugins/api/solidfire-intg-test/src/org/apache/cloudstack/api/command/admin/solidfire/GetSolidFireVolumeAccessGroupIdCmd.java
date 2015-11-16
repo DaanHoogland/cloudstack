@@ -14,12 +14,9 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
-package org.apache.cloudstack.api.command.user.solidfire;
+package org.apache.cloudstack.api.command.admin.solidfire;
 
 import com.cloud.user.Account;
-import com.cloud.org.Cluster;
-import com.cloud.storage.StoragePool;
-import com.cloud.dc.dao.ClusterDao;
 
 import javax.inject.Inject;
 
@@ -29,10 +26,10 @@ import org.apache.cloudstack.api.ApiConstants;
 import org.apache.cloudstack.api.APICommand;
 import org.apache.cloudstack.api.BaseCmd;
 import org.apache.cloudstack.api.Parameter;
-import org.apache.cloudstack.api.response.ApiSolidFireVolumeAccessGroupIdResponse;
+import org.apache.cloudstack.api.response.solidfire.ApiSolidFireVolumeAccessGroupIdResponse;
 import org.apache.cloudstack.context.CallContext;
-import org.apache.cloudstack.solidfire.ApiSolidFireService;
-import org.apache.cloudstack.storage.datastore.db.PrimaryDataStoreDao;
+import org.apache.cloudstack.solidfire.SolidFireIntegrationTestManager;
+import org.apache.cloudstack.util.solidfire.SolidFireIntegrationTestUtil;
 
 @APICommand(name = "getSolidFireVolumeAccessGroupId", responseObject = ApiSolidFireVolumeAccessGroupIdResponse.class, description = "Get the SF Volume Access Group ID",
         requestHasSensitiveInfo = false, responseHasSensitiveInfo = false)
@@ -41,13 +38,12 @@ public class GetSolidFireVolumeAccessGroupIdCmd extends BaseCmd {
     private static final String s_name = "getsolidfirevolumeaccessgroupidresponse";
 
     @Parameter(name = ApiConstants.CLUSTER_ID, type = CommandType.STRING, description = "Cluster UUID", required = true)
-    private String clusterUuid;
+    private String _clusterUuid;
     @Parameter(name = ApiConstants.STORAGE_ID, type = CommandType.STRING, description = "Storage Pool UUID", required = true)
-    private String storagePoolUuid;
+    private String _storagePoolUuid;
 
-    @Inject private ApiSolidFireService _apiSolidFireService;
-    @Inject private ClusterDao _clusterDao;
-    @Inject private PrimaryDataStoreDao _storagePoolDao;
+    @Inject private SolidFireIntegrationTestManager _manager;
+    @Inject private SolidFireIntegrationTestUtil _util;
 
     /////////////////////////////////////////////////////
     /////////////// API Implementation///////////////////
@@ -71,10 +67,11 @@ public class GetSolidFireVolumeAccessGroupIdCmd extends BaseCmd {
 
     @Override
     public void execute() {
-        Cluster cluster = _clusterDao.findByUuid(clusterUuid);
-        StoragePool storagePool = _storagePoolDao.findByUuid(storagePoolUuid);
+        s_logger.info("'GetSolidFireVolumeAccessGroupIdCmd.execute' method invoked");
 
-        ApiSolidFireVolumeAccessGroupIdResponse response = _apiSolidFireService.getSolidFireVolumeAccessGroupId(cluster.getId(), storagePool.getId());
+        long sfVagId = _manager.getSolidFireVolumeAccessGroupId(_clusterUuid, _storagePoolUuid);
+
+        ApiSolidFireVolumeAccessGroupIdResponse response = new ApiSolidFireVolumeAccessGroupIdResponse(sfVagId);
 
         response.setResponseName(getCommandName());
         response.setObjectName("apisolidfirevolumeaccessgroupid");

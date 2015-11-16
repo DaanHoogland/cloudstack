@@ -14,10 +14,7 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
-package org.apache.cloudstack.api.command.user.solidfire;
-
-import com.cloud.user.Account;
-import com.cloud.user.dao.AccountDao;
+package org.apache.cloudstack.api.command.admin.solidfire;
 
 import javax.inject.Inject;
 
@@ -27,11 +24,9 @@ import org.apache.cloudstack.api.ApiConstants;
 import org.apache.cloudstack.api.APICommand;
 import org.apache.cloudstack.api.BaseCmd;
 import org.apache.cloudstack.api.Parameter;
-import org.apache.cloudstack.api.response.ApiSolidFireAccountIdResponse;
-import org.apache.cloudstack.context.CallContext;
-import org.apache.cloudstack.solidfire.ApiSolidFireService;
-import org.apache.cloudstack.storage.datastore.db.PrimaryDataStoreDao;
-import org.apache.cloudstack.storage.datastore.db.StoragePoolVO;
+import org.apache.cloudstack.api.response.solidfire.ApiSolidFireAccountIdResponse;
+import org.apache.cloudstack.solidfire.SolidFireIntegrationTestManager;
+import org.apache.cloudstack.util.solidfire.SolidFireIntegrationTestUtil;
 
 @APICommand(name = "getSolidFireAccountId", responseObject = ApiSolidFireAccountIdResponse.class, description = "Get SolidFire Account ID",
         requestHasSensitiveInfo = false, responseHasSensitiveInfo = false)
@@ -40,13 +35,12 @@ public class GetSolidFireAccountIdCmd extends BaseCmd {
     private static final String s_name = "getsolidfireaccountidresponse";
 
     @Parameter(name = ApiConstants.ACCOUNT_ID, type = CommandType.STRING, description = "CloudStack Account UUID", required = true)
-    private String accountUuid;
+    private String _csAccountUuid;
     @Parameter(name = ApiConstants.STORAGE_ID, type = CommandType.STRING, description = "Storage Pool UUID", required = true)
-    private String storagePoolUuid;
+    private String _storagePoolUuid;
 
-    @Inject private ApiSolidFireService _apiSolidFireService;
-    @Inject private AccountDao _accountDao;
-    @Inject private PrimaryDataStoreDao _storagePoolDao;
+    @Inject private SolidFireIntegrationTestManager _manager;
+    @Inject private SolidFireIntegrationTestUtil _util;
 
     /////////////////////////////////////////////////////
     /////////////// API Implementation///////////////////
@@ -59,21 +53,16 @@ public class GetSolidFireAccountIdCmd extends BaseCmd {
 
     @Override
     public long getEntityOwnerId() {
-        Account account = CallContext.current().getCallingAccount();
-
-        if (account != null) {
-            return account.getId();
-        }
-
-        return Account.ACCOUNT_ID_SYSTEM; // no account info given, parent this command to SYSTEM so ERROR events are tracked
+        return _util.getAccountIdForAccountUuid(_csAccountUuid);
     }
 
     @Override
     public void execute() {
-        Account account = _accountDao.findByUuid(accountUuid);
-        StoragePoolVO storagePool = _storagePoolDao.findByUuid(storagePoolUuid);
+        s_logger.info("'GetSolidFireAccountIdCmd.execute' method invoked");
 
-        ApiSolidFireAccountIdResponse response = _apiSolidFireService.getSolidFireAccountId(account.getId(), storagePool.getId());
+        long sfAccountId = _manager.getSolidFireAccountId(_csAccountUuid, _storagePoolUuid);
+
+        ApiSolidFireAccountIdResponse response = new ApiSolidFireAccountIdResponse(sfAccountId);
 
         response.setResponseName(getCommandName());
         response.setObjectName("apisolidfireaccountid");

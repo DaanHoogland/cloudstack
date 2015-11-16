@@ -30,6 +30,10 @@ import org.springframework.stereotype.Component;
 
 import com.cloud.dc.ClusterVO;
 import com.cloud.dc.HostPodVO;
+import com.cloud.host.DetailVO;
+import com.cloud.host.HostVO;
+import com.cloud.host.dao.HostDao;
+import com.cloud.host.dao.HostDetailsDao;
 import com.cloud.hypervisor.Hypervisor.HypervisorType;
 import com.cloud.org.Grouping;
 import com.cloud.utils.db.GenericDaoBase;
@@ -56,6 +60,10 @@ public class ClusterDaoImpl extends GenericDaoBase<ClusterVO, Long> implements C
 
     private static final String GET_POD_CLUSTER_MAP_PREFIX = "SELECT pod_id, id FROM cloud.cluster WHERE cluster.id IN( ";
     private static final String GET_POD_CLUSTER_MAP_SUFFIX = " )";
+    @Inject
+    private HostDao _hostDao;
+    @Inject
+    private HostDetailsDao _hostDetailsDao;
     @Inject
     protected HostPodDao _hostPodDao;
 
@@ -259,5 +267,42 @@ public class ClusterDaoImpl extends GenericDaoBase<ClusterVO, Long> implements C
         SearchCriteria<Long> sc = ClusterIdSearch.create();
         sc.setParameters("dataCenterId", zoneId);
         return customSearch(sc, null);
+    }
+
+    @Override
+    public boolean computeClusterSupportsResign(long clusterId) {
+        ClusterVO cluster = findById(clusterId);
+
+        if (cluster == null || cluster.getAllocationState() != Grouping.AllocationState.Enabled) {
+            return false;
+        }
+
+        List<HostVO> hosts = _hostDao.findByClusterId(clusterId);
+
+        if (hosts == null) {
+            return false;
+        }
+
+        for (HostVO host : hosts) {
+            if (host == null) {
+                return false;
+            }
+
+            DetailVO hostDetail = _hostDetailsDao.findDetail(host.getId(), "supportsResign");
+
+            if (hostDetail == null) {
+                return false;
+            }
+
+            String value = hostDetail.getValue();
+
+            Boolean booleanValue = Boolean.valueOf(value);
+
+            if (booleanValue == false) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

@@ -14,7 +14,7 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
-package org.apache.cloudstack.api.response;
+package org.apache.cloudstack.api.response.solidfire;
 
 import com.cloud.serializer.Param;
 
@@ -25,13 +25,9 @@ import org.apache.cloudstack.api.BaseResponse;
 public class ApiSolidFireVolumeAccessGroupIdResponse extends BaseResponse {
     @SerializedName("solidFireVolumeAccessGroupId")
     @Param(description = "SolidFire Volume Access Group Id")
-    private long solidFireVolumeAccessGroupId;
+    private long _solidFireVolumeAccessGroupId;
 
     public ApiSolidFireVolumeAccessGroupIdResponse(long sfVolumeAccessGroupId) {
-        solidFireVolumeAccessGroupId = sfVolumeAccessGroupId;
-    }
-
-    public long getSolidFireAccessGroupId() {
-        return solidFireVolumeAccessGroupId;
+        _solidFireVolumeAccessGroupId = sfVolumeAccessGroupId;
     }
 }

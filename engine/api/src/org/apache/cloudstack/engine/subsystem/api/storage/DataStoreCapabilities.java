@@ -18,7 +18,18 @@
  */
 package org.apache.cloudstack.engine.subsystem.api.storage;
 
+/**
+ * STORAGE_SYSTEM_SNAPSHOT = indicates that this driver takes CloudStack volume snapshots on its own system (as either back-end snapshots or back-end clones)
+ *
+ * CAN_CREATE_VOLUME_FROM_SNAPSHOT = indicates that this driver supports the "cloneOfSnapshot" property of cloud.snapshot_details (for creating a back-end volume
+ *     from a back-end snapshot or a back-end clone) and that it supports the invocation of the createAsync method where a SnapshotInfo is passed in while using
+ *     the "tempVolume" property of snapshot_details
+ *
+ * CAN_CREATE_VOLUME_FROM_VOLUME = indicates that this driver supports the "cloneOfSnapshot" property of cloud.snapshot_details (for creating a volume from a volume)
+ */
 public enum DataStoreCapabilities {
     VOLUME_SNAPSHOT_QUIESCEVM,
-    STORAGE_SYSTEM_SNAPSHOT // indicates to the StorageSystemSnapshotStrategy that this driver takes snapshots on its own system
+    STORAGE_SYSTEM_SNAPSHOT,
+    CAN_CREATE_VOLUME_FROM_SNAPSHOT,
+    CAN_CREATE_VOLUME_FROM_VOLUME
 }

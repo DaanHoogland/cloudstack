@@ -35,7 +35,7 @@ public class StartupRoutingCommand extends StartupCommand {
     long memory;
     long dom0MinMemory;
     boolean poolSync;
-
+    private boolean _supportsClonedVolumes;
 
     String caps;
     String pool;
@@ -179,5 +179,13 @@ public class StartupRoutingCommand extends StartupCommand {
 
     public void setGpuGroupDetails(HashMap<String, HashMap<String, VgpuTypesInfo>> groupDetails) {
         this.groupDetails = groupDetails;
+    }
+
+    public boolean getSupportsClonedVolumes() {
+        return _supportsClonedVolumes;
+    }
+
+    public void setSupportsClonedVolumes(boolean supportsClonedVolumes) {
+        _supportsClonedVolumes = supportsClonedVolumes;
     }
 }

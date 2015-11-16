@@ -662,11 +662,13 @@ listApis=15
 getApiLimit=15
 resetApiLimit=1
 
-#### API SolidFire Service Command
-getSolidFireAccountId=15
-getSolidFireVolumeSize=15
-getSolidFireVolumeAccessGroupId=15
-getSolidFireVolumeIscsiName=15
+#### API SolidFire Integration-Test Service Commands
+getSolidFireAccountId=1
+getSolidFireVolumeAccessGroupId=1
+getSolidFireVolumeSize=1
+getPathForVolume=1
+getVolumeiScsiName=1
+getVolumeSnapshotDetails=1
 
 #### Region commands
 addRegion=1

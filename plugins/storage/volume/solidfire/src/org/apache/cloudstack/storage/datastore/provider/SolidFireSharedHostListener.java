@@ -22,7 +22,6 @@ import javax.inject.Inject;
 
 import org.apache.cloudstack.engine.subsystem.api.storage.DataStoreManager;
 import org.apache.cloudstack.engine.subsystem.api.storage.HypervisorHostListener;
-import org.apache.cloudstack.storage.datastore.db.PrimaryDataStoreDao;
 import org.apache.log4j.Logger;
 
 import com.cloud.agent.AgentManager;
@@ -43,7 +42,6 @@ public class SolidFireSharedHostListener implements HypervisorHostListener {
     @Inject private DataStoreManager dataStoreMgr;
     @Inject private AlertManager alertMgr;
     @Inject private StoragePoolHostDao storagePoolHostDao;
-    @Inject private PrimaryDataStoreDao primaryStoreDao;
 
     @Override
     public boolean hostConnect(long hostId, long storagePoolId) {

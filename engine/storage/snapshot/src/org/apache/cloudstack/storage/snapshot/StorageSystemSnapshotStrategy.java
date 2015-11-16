@@ -16,9 +16,12 @@
 // under the License.
 package org.apache.cloudstack.storage.snapshot;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.inject.Inject;
 
@@ -43,9 +46,11 @@ import org.apache.cloudstack.storage.datastore.db.StoragePoolVO;
 
 import com.cloud.agent.AgentManager;
 import com.cloud.agent.api.to.DiskTO;
+import com.cloud.dc.dao.ClusterDao;
 import com.cloud.exception.InvalidParameterValueException;
 import com.cloud.host.HostVO;
 import com.cloud.host.dao.HostDao;
+import com.cloud.host.dao.HostDetailsDao;
 import com.cloud.hypervisor.Hypervisor.HypervisorType;
 import com.cloud.org.Cluster;
 import com.cloud.org.Grouping.AllocationState;
@@ -72,8 +77,10 @@ public class StorageSystemSnapshotStrategy extends SnapshotStrategyBase {
     private static final Logger s_logger = Logger.getLogger(StorageSystemSnapshotStrategy.class);
 
     @Inject private AgentManager _agentMgr;
+    @Inject private ClusterDao _clusterDao;
     @Inject private DataStoreManager _dataStoreMgr;
     @Inject private HostDao _hostDao;
+    @Inject private HostDetailsDao _hostDetailsDao;
     @Inject private ManagementService _mgr;
     @Inject private PrimaryDataStoreDao _storagePoolDao;
     @Inject private SnapshotDao _snapshotDao;
@@ -176,7 +183,24 @@ public class StorageSystemSnapshotStrategy extends SnapshotStrategyBase {
         try {
             volumeInfo.stateTransit(Volume.Event.SnapshotRequested);
 
-            // tell the storage driver to create a back-end volume (eventually used to create a new SR on and to copy the VM snapshot VDI to)
+            // only XenServer is currently supported
+            HostVO hostVO = getHost(volumeInfo.getId());
+
+            boolean canStorageSystemCreateVolumeFromSnapshot = canStorageSystemCreateVolumeFromSnapshot(volumeInfo.getPoolId());
+            boolean computeClusterSupportsResign = _clusterDao.computeClusterSupportsResign(hostVO.getClusterId());
+
+            // if canStorageSystemCreateVolumeFromSnapshot && computeClusterSupportsResign, then take a back-end snapshot or create a back-end clone;
+            // else, just create a new back-end volume (eventually used to create a new SR on and to copy a VDI to)
+
+            if (canStorageSystemCreateVolumeFromSnapshot && computeClusterSupportsResign) {
+                SnapshotDetailsVO snapshotDetail = new SnapshotDetailsVO(snapshotInfo.getId(),
+                    "takeSnapshot",
+                    Boolean.TRUE.toString(),
+                    false);
+
+                _snapshotDetailsDao.persist(snapshotDetail);
+            }
+
             result = snapshotSvr.takeSnapshot(snapshotInfo);
 
             if (result.isFailed()) {
@@ -185,9 +209,9 @@ public class StorageSystemSnapshotStrategy extends SnapshotStrategyBase {
                 throw new CloudRuntimeException(result.getResult());
             }
 
-            // send a command to XenServer to create a VM snapshot on the applicable SR (get back the VDI UUID of the VM snapshot)
-
-            performSnapshotAndCopyOnHostSide(volumeInfo, snapshotInfo);
+            if (!canStorageSystemCreateVolumeFromSnapshot || !computeClusterSupportsResign) {
+                performSnapshotAndCopyOnHostSide(volumeInfo, snapshotInfo);
+            }
 
             markAsBackedUp((SnapshotObject)result.getSnashot());
         }
@@ -203,6 +227,22 @@ public class StorageSystemSnapshotStrategy extends SnapshotStrategyBase {
         }
 
         return snapshotInfo;
+    }
+
+    private boolean canStorageSystemCreateVolumeFromSnapshot(long storagePoolId) {
+        boolean supportsCloningVolumeFromSnapshot = false;
+
+        DataStore dataStore = _dataStoreMgr.getDataStore(storagePoolId, DataStoreRole.Primary);
+
+        Map<String, String> mapCapabilities = dataStore.getDriver().getCapabilities();
+
+        if (mapCapabilities != null) {
+            String value = mapCapabilities.get(DataStoreCapabilities.CAN_CREATE_VOLUME_FROM_SNAPSHOT.toString());
+
+            supportsCloningVolumeFromSnapshot = Boolean.valueOf(value);
+        }
+
+        return supportsCloningVolumeFromSnapshot;
     }
 
     private void performSnapshotAndCopyOnHostSide(VolumeInfo volumeInfo, SnapshotInfo snapshotInfo) {
@@ -233,7 +273,15 @@ public class StorageSystemSnapshotStrategy extends SnapshotStrategyBase {
             sourceDetails = getSourceDetails(volumeInfo);
         }
 
-        HostVO hostVO = getHost(hostId, volumeVO);
+        HostVO hostVO = hostId != null ? _hostDao.findById(hostId) : getHost(volumeInfo.getDataCenterId(), false);
+
+        if (hostVO == null) {
+            final String errMsg = "Unable to locate an applicable host";
+
+            s_logger.error("performSnapshotAndCopyOnHostSide: " + errMsg);
+
+            throw new CloudRuntimeException(errMsg);
+        }
 
         long storagePoolId = volumeVO.getPoolId();
         StoragePoolVO storagePoolVO = _storagePoolDao.findById(storagePoolId);
@@ -296,7 +344,7 @@ public class StorageSystemSnapshotStrategy extends SnapshotStrategyBase {
     }
 
     private Map<String, String> getSourceDetails(VolumeInfo volumeInfo) {
-        Map<String, String> sourceDetails = new HashMap<String, String>();
+        Map<String, String> sourceDetails = new HashMap<>();
 
         VolumeVO volumeVO = _volumeDao.findById(volumeInfo.getId());
 
@@ -320,7 +368,7 @@ public class StorageSystemSnapshotStrategy extends SnapshotStrategyBase {
     }
 
     private Map<String, String> getDestDetails(StoragePoolVO storagePoolVO, SnapshotInfo snapshotInfo) {
-        Map<String, String> destDetails = new HashMap<String, String>();
+        Map<String, String> destDetails = new HashMap<>();
 
         destDetails.put(DiskTO.STORAGE_HOST, storagePoolVO.getHostAddress());
         destDetails.put(DiskTO.STORAGE_PORT, String.valueOf(storagePoolVO.getPort()));
@@ -347,38 +395,87 @@ public class StorageSystemSnapshotStrategy extends SnapshotStrategyBase {
         return null;
     }
 
-    private HostVO getHost(Long hostId, VolumeVO volumeVO) {
-        HostVO hostVO = _hostDao.findById(hostId);
+    private HostVO getHost(long volumeId) {
+        VolumeVO volumeVO = _volumeDao.findById(volumeId);
+
+        Long vmInstanceId = volumeVO.getInstanceId();
+        VMInstanceVO vmInstanceVO = _vmInstanceDao.findById(vmInstanceId);
+
+        Long hostId = null;
+
+        // if the volume to snapshot is associated with a VM
+        if (vmInstanceVO != null) {
+            hostId = vmInstanceVO.getHostId();
+
+            // if the VM is not associated with a host
+            if (hostId == null) {
+                hostId = vmInstanceVO.getLastHostId();
+            }
+        }
+
+        return getHost(volumeVO.getDataCenterId(), hostId);
+    }
+
+    private HostVO getHost(long zoneId, Long hostId) {
+        HostVO hostVO = getHost(zoneId, true);
 
         if (hostVO != null) {
             return hostVO;
         }
 
-        // pick a host in any XenServer cluster that's in the applicable zone
+        hostVO = _hostDao.findById(hostId);
 
-        long zoneId = volumeVO.getDataCenterId();
-
-        List<? extends Cluster> clusters = _mgr.searchForClusters(zoneId, new Long(0), Long.MAX_VALUE, HypervisorType.XenServer.toString());
-
-        if (clusters == null) {
-            throw new CloudRuntimeException("Unable to locate an applicable cluster");
+        if (hostVO != null) {
+            return hostVO;
         }
 
+        hostVO = getHost(zoneId, false);
+
+        if (hostVO != null) {
+            return hostVO;
+        }
+
+        throw new CloudRuntimeException("Unable to locate an applicable host");
+    }
+
+    private HostVO getHost(long zoneId, boolean computeClusterMustSupportResign) {
+        List<? extends Cluster> clusters = _mgr.searchForClusters(zoneId, 0L, Long.MAX_VALUE, HypervisorType.XenServer.toString());
+
+        if (clusters == null) {
+            clusters = new ArrayList<>();
+        }
+
+        Collections.shuffle(clusters, new Random(System.nanoTime()));
+
+        clusters:
         for (Cluster cluster : clusters) {
             if (cluster.getAllocationState() == AllocationState.Enabled) {
                 List<HostVO> hosts = _hostDao.findByClusterId(cluster.getId());
 
                 if (hosts != null) {
+                    Collections.shuffle(hosts, new Random(System.nanoTime()));
+
                     for (HostVO host : hosts) {
                         if (host.getResourceState() == ResourceState.Enabled) {
-                            return host;
+                            if (computeClusterMustSupportResign) {
+                                if (_clusterDao.computeClusterSupportsResign(cluster.getId())) {
+                                    return host;
+                                }
+                                else {
+                                    // no other host in the cluster in question should be able to satisfy our requirements here, so move on to the next cluster
+                                    continue clusters;
+                                }
+                            }
+                            else {
+                                return host;
+                            }
                         }
                     }
                 }
             }
         }
 
-        throw new CloudRuntimeException("Unable to locate an applicable cluster");
+        return null;
     }
 
     private void markAsBackedUp(SnapshotObject snapshotObj) {
@@ -417,7 +514,7 @@ public class StorageSystemSnapshotStrategy extends SnapshotStrategyBase {
 
             if (mapCapabilities != null) {
                 String value = mapCapabilities.get(DataStoreCapabilities.STORAGE_SYSTEM_SNAPSHOT.toString());
-                Boolean supportsStorageSystemSnapshots = new Boolean(value);
+                Boolean supportsStorageSystemSnapshots = Boolean.valueOf(value);
 
                 if (supportsStorageSystemSnapshots) {
                     return StrategyPriority.HIGHEST;
