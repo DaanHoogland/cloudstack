@@ -25,19 +25,19 @@ import org.apache.cloudstack.api.BaseResponse;
 public class ApiVolumeSnapshotDetailsResponse extends BaseResponse {
     @SerializedName("volumeSnapshotId")
     @Param(description = "CloudStack Volume Snapshot ID")
-    private long _volumeSnapshotId;
+    private long volumeSnapshotId;
 
     @SerializedName("snapshotDetailsName")
     @Param(description = "Snapshot Details Name")
-    private String _volumeSnapshotDetailsName;
+    private String volumeSnapshotDetailsName;
 
     @SerializedName("snapshotDetailsValue")
     @Param(description = "Snapshot Details Value")
-    private String _volumeSnapshotDetailsValue;
+    private String volumeSnapshotDetailsValue;
 
     public ApiVolumeSnapshotDetailsResponse(long volumeSnapshotId, String volumeSnapshotDetailsName, String volumeSnapshotDetailsValue) {
-        _volumeSnapshotId = volumeSnapshotId;
-        _volumeSnapshotDetailsName = volumeSnapshotDetailsName;
-        _volumeSnapshotDetailsValue = volumeSnapshotDetailsValue;
+        this.volumeSnapshotId = volumeSnapshotId;
+        this.volumeSnapshotDetailsName = volumeSnapshotDetailsName;
+        this.volumeSnapshotDetailsValue = volumeSnapshotDetailsValue;
     }
 }

@@ -25,9 +25,9 @@ import org.apache.cloudstack.api.BaseResponse;
 public class ApiSolidFireVolumeAccessGroupIdResponse extends BaseResponse {
     @SerializedName("solidFireVolumeAccessGroupId")
     @Param(description = "SolidFire Volume Access Group Id")
-    private long _solidFireVolumeAccessGroupId;
+    private long solidFireVolumeAccessGroupId;
 
     public ApiSolidFireVolumeAccessGroupIdResponse(long sfVolumeAccessGroupId) {
-        _solidFireVolumeAccessGroupId = sfVolumeAccessGroupId;
+        solidFireVolumeAccessGroupId = sfVolumeAccessGroupId;
     }
 }

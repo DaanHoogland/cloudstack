@@ -23,9 +23,9 @@ import com.cloud.agent.api.Answer;
 import com.cloud.storage.Storage.ImageFormat;
 
 public class ResignatureAnswer extends Answer {
-    private long _size;
-    private String _path;
-    private ImageFormat _format;
+    private long size;
+    private String path;
+    private ImageFormat format;
 
     public ResignatureAnswer() {
     }
@@ -35,26 +35,26 @@ public class ResignatureAnswer extends Answer {
     }
 
     public void setSize(long size) {
-        _size = size;
+        this.size = size;
     }
 
     public long getSize() {
-        return _size;
+        return size;
     }
 
     public void setPath(String path) {
-        _path = path;
+    	this.path = path;
     }
 
     public String getPath() {
-        return _path;
+        return path;
     }
 
     public void setFormat(ImageFormat format) {
-        _format = format;
+    	this.format = format;
     }
 
     public ImageFormat getFormat() {
-        return _format;
+        return format;
     }
 }

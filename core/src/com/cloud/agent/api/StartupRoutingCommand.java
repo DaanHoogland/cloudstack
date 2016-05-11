@@ -35,7 +35,7 @@ public class StartupRoutingCommand extends StartupCommand {
     long memory;
     long dom0MinMemory;
     boolean poolSync;
-    private boolean _supportsClonedVolumes;
+    private boolean supportsClonedVolumes;
 
     String caps;
     String pool;
@@ -182,10 +182,10 @@ public class StartupRoutingCommand extends StartupCommand {
     }
 
     public boolean getSupportsClonedVolumes() {
-        return _supportsClonedVolumes;
+        return supportsClonedVolumes;
     }
 
-    public void setSupportsClonedVolumes(boolean supportsClonedVolumes) {
-        _supportsClonedVolumes = supportsClonedVolumes;
+    public void setSupportsClonedVolumes(boolean willSupportsClonedVolumes) {
+        this.supportsClonedVolumes = willSupportsClonedVolumes;
     }
 }

@@ -37,22 +37,19 @@ import com.cloud.utils.exception.CloudRuntimeException;
 
 @Component
 public class SolidFireIntegrationTestManagerImpl implements SolidFireIntegrationTestManager {
-    // private static final Logger s_logger = Logger.getLogger(SolidFireIntegrationTestManagerImpl.class);
 
-    @Inject private AccountDetailsDao _accountDetailsDao;
-    @Inject private ClusterDetailsDao _clusterDetailsDao;
-    @Inject private DataStoreProviderManager _dataStoreProviderMgr;
-    @Inject private PrimaryDataStoreDao _storagePoolDao;
-    @Inject private SolidFireIntegrationTestUtil _util;
-    @Inject private VolumeDao _volumeDao;
-    @Inject private VolumeDetailsDao _volumeDetailsDao;
+    @Inject private AccountDetailsDao accountDetailsDao;
+    @Inject private ClusterDetailsDao clusterDetailsDao;
+    @Inject private SolidFireIntegrationTestUtil util;
+    @Inject private VolumeDao volumeDao;
+    @Inject private VolumeDetailsDao volumeDetailsDao;
 
     @Override
     public long getSolidFireAccountId(String csAccountUuid, String storagePoolUuid) {
-        long csAccountId = _util.getAccountIdForAccountUuid(csAccountUuid);
-        long storagePoolId = _util.getStoragePoolIdForStoragePoolUuid(storagePoolUuid);
+        long csAccountId = util.getAccountIdForAccountUuid(csAccountUuid);
+        long storagePoolId = util.getStoragePoolIdForStoragePoolUuid(storagePoolUuid);
 
-        AccountDetailVO accountDetail = _accountDetailsDao.findDetail(csAccountId, SolidFireUtil.getAccountKey(storagePoolId));
+        AccountDetailVO accountDetail = accountDetailsDao.findDetail(csAccountId, SolidFireUtil.getAccountKey(storagePoolId));
         String sfAccountId = accountDetail.getValue();
 
         return Long.parseLong(sfAccountId);
@@ -60,10 +57,10 @@ public class SolidFireIntegrationTestManagerImpl implements SolidFireIntegration
 
     @Override
     public long getSolidFireVolumeAccessGroupId(String csClusterUuid, String storagePoolUuid) {
-        long csClusterId = _util.getClusterIdForClusterUuid(csClusterUuid);
-        long storagePoolId = _util.getStoragePoolIdForStoragePoolUuid(storagePoolUuid);
+        long csClusterId = util.getClusterIdForClusterUuid(csClusterUuid);
+        long storagePoolId = util.getStoragePoolIdForStoragePoolUuid(storagePoolUuid);
 
-        ClusterDetailsVO clusterDetails = _clusterDetailsDao.findDetail(csClusterId, SolidFireUtil.getVagKey(storagePoolId));
+        ClusterDetailsVO clusterDetails = clusterDetailsDao.findDetail(csClusterId, SolidFireUtil.getVagKey(storagePoolId));
         String sfVagId = clusterDetails.getValue();
 
         return Long.parseLong(sfVagId);
@@ -71,9 +68,9 @@ public class SolidFireIntegrationTestManagerImpl implements SolidFireIntegration
 
     @Override
     public long getSolidFireVolumeSize(String volumeUuid) {
-        VolumeVO volume = _volumeDao.findByUuid(volumeUuid);
+        VolumeVO volume = volumeDao.findByUuid(volumeUuid);
 
-        VolumeDetailVO volumeDetail = _volumeDetailsDao.findDetail(volume.getId(), SolidFireUtil.VOLUME_SIZE);
+        VolumeDetailVO volumeDetail = volumeDetailsDao.findDetail(volume.getId(), SolidFireUtil.VOLUME_SIZE);
 
         if (volumeDetail != null && volumeDetail.getValue() != null) {
             return Long.parseLong(volumeDetail.getValue());

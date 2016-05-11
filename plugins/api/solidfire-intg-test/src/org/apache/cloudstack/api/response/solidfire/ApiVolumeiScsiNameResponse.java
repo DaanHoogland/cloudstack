@@ -25,9 +25,9 @@ import org.apache.cloudstack.api.BaseResponse;
 public class ApiVolumeiScsiNameResponse extends BaseResponse {
     @SerializedName("volumeiScsiName")
     @Param(description = "Volume iSCSI Name")
-    private String _volumeiScsiName;
+    private String volumeiScsiName;
 
     public ApiVolumeiScsiNameResponse(String volumeiScsiName) {
-        _volumeiScsiName = volumeiScsiName;
+        this.volumeiScsiName = volumeiScsiName;
     }
 }

@@ -211,8 +211,6 @@ public class StorageManagerImpl extends ManagerBase implements StorageManager, C
     @Inject
     protected HostDao _hostDao;
     @Inject
-    private HostDetailsDao _hostDetailsDao;
-    @Inject
     protected SnapshotDao _snapshotDao;
     @Inject
     protected StoragePoolHostDao _storagePoolHostDao;

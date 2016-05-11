@@ -166,11 +166,15 @@ import com.xensource.xenapi.XenAPIObject;
  */
 public abstract class CitrixResourceBase implements ServerResource, HypervisorResource, VirtualRouterDeployer {
     /**
-     * RELVMOISCSI = used for resigning metadata (like SR UUID and VDI UUID when a
-     * particular storage manager is installed on a XenServer host (for back-end snapshots to work))
+     * used to describe what type of resource a storage device is of
      */
     public enum SRType {
-        EXT, FILE, ISCSI, ISO, LVM, LVMOHBA, LVMOISCSI, RELVMOISCSI, NFS;
+        EXT, FILE, ISCSI, ISO, LVM, LVMOHBA, LVMOISCSI,
+        /**
+         * used for resigning metadata (like SR UUID and VDI UUID when a
+         * particular storage manager is installed on a XenServer host (for back-end snapshots to work))
+         */
+        RELVMOISCSI, NFS;
 
         String _str;
 
@@ -1807,7 +1811,7 @@ public abstract class CitrixResourceBase implements ServerResource, HypervisorRe
                         result.second() != null && result.second().length() > 0;
 
                 cmd.setSupportsClonedVolumes(supportsClonedVolumes);
-            } catch (Exception ex) {
+            } catch (NumberFormatException ex) {
                 s_logger.warn("Issue sending 'xe sm-list' via SSH to XenServer host: " + ex.getMessage());
             }
         } catch (final XmlRpcException e) {

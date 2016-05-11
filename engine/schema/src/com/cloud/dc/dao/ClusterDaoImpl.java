@@ -61,11 +61,11 @@ public class ClusterDaoImpl extends GenericDaoBase<ClusterVO, Long> implements C
     private static final String GET_POD_CLUSTER_MAP_PREFIX = "SELECT pod_id, id FROM cloud.cluster WHERE cluster.id IN( ";
     private static final String GET_POD_CLUSTER_MAP_SUFFIX = " )";
     @Inject
-    private HostDao _hostDao;
+    private HostDao hostDao;
     @Inject
-    private HostDetailsDao _hostDetailsDao;
+    private HostDetailsDao hostDetailsDao;
     @Inject
-    protected HostPodDao _hostPodDao;
+    protected HostPodDao hostPodDao;
 
     public ClusterDaoImpl() {
         super();
@@ -222,7 +222,7 @@ public class ClusterDaoImpl extends GenericDaoBase<ClusterVO, Long> implements C
     @Override
     public List<Long> listClustersWithDisabledPods(long zoneId) {
 
-        GenericSearchBuilder<HostPodVO, Long> disabledPodIdSearch = _hostPodDao.createSearchBuilder(Long.class);
+        GenericSearchBuilder<HostPodVO, Long> disabledPodIdSearch = hostPodDao.createSearchBuilder(Long.class);
         disabledPodIdSearch.selectFields(disabledPodIdSearch.entity().getId());
         disabledPodIdSearch.and("dataCenterId", disabledPodIdSearch.entity().getDataCenterId(), Op.EQ);
         disabledPodIdSearch.and("allocationState", disabledPodIdSearch.entity().getAllocationState(), Op.EQ);
@@ -277,7 +277,7 @@ public class ClusterDaoImpl extends GenericDaoBase<ClusterVO, Long> implements C
             return false;
         }
 
-        List<HostVO> hosts = _hostDao.findByClusterId(clusterId);
+        List<HostVO> hosts = hostDao.findByClusterId(clusterId);
 
         if (hosts == null) {
             return false;
@@ -288,7 +288,7 @@ public class ClusterDaoImpl extends GenericDaoBase<ClusterVO, Long> implements C
                 return false;
             }
 
-            DetailVO hostDetail = _hostDetailsDao.findDetail(host.getId(), "supportsResign");
+            DetailVO hostDetail = hostDetailsDao.findDetail(host.getId(), "supportsResign");
 
             if (hostDetail == null) {
                 return false;

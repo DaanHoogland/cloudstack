@@ -31,16 +31,16 @@ import org.apache.cloudstack.util.solidfire.SolidFireIntegrationTestUtil;
 @APICommand(name = "getSolidFireAccountId", responseObject = ApiSolidFireAccountIdResponse.class, description = "Get SolidFire Account ID",
         requestHasSensitiveInfo = false, responseHasSensitiveInfo = false)
 public class GetSolidFireAccountIdCmd extends BaseCmd {
-    private static final Logger s_logger = Logger.getLogger(GetSolidFireAccountIdCmd.class.getName());
-    private static final String s_name = "getsolidfireaccountidresponse";
+    private static final Logger LOGGER = Logger.getLogger(GetSolidFireAccountIdCmd.class.getName());
+    private static final String NAME = "getsolidfireaccountidresponse";
 
     @Parameter(name = ApiConstants.ACCOUNT_ID, type = CommandType.STRING, description = "CloudStack Account UUID", required = true)
-    private String _csAccountUuid;
+    private String csAccountUuid;
     @Parameter(name = ApiConstants.STORAGE_ID, type = CommandType.STRING, description = "Storage Pool UUID", required = true)
-    private String _storagePoolUuid;
+    private String storagePoolUuid;
 
-    @Inject private SolidFireIntegrationTestManager _manager;
-    @Inject private SolidFireIntegrationTestUtil _util;
+    @Inject private SolidFireIntegrationTestManager manager;
+    @Inject private SolidFireIntegrationTestUtil util;
 
     /////////////////////////////////////////////////////
     /////////////// API Implementation///////////////////
@@ -48,19 +48,19 @@ public class GetSolidFireAccountIdCmd extends BaseCmd {
 
     @Override
     public String getCommandName() {
-        return s_name;
+        return NAME;
     }
 
     @Override
     public long getEntityOwnerId() {
-        return _util.getAccountIdForAccountUuid(_csAccountUuid);
+        return util.getAccountIdForAccountUuid(csAccountUuid);
     }
 
     @Override
     public void execute() {
-        s_logger.info("'GetSolidFireAccountIdCmd.execute' method invoked");
+        LOGGER.info("'GetSolidFireAccountIdCmd.execute' method invoked");
 
-        long sfAccountId = _manager.getSolidFireAccountId(_csAccountUuid, _storagePoolUuid);
+        long sfAccountId = manager.getSolidFireAccountId(csAccountUuid, storagePoolUuid);
 
         ApiSolidFireAccountIdResponse response = new ApiSolidFireAccountIdResponse(sfAccountId);
 

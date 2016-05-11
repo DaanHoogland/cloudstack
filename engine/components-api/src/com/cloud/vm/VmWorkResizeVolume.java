@@ -19,56 +19,56 @@ package com.cloud.vm;
 public class VmWorkResizeVolume extends VmWork {
     private static final long serialVersionUID = 6112366316907642498L;
 
-    private long _volumeId;
-    private long _currentSize;
-    private long _newSize;
-    private Long _newMinIops;
-    private Long _newMaxIops;
-    private Integer _newHypervisorSnapshotReserve;
-    private Long _newServiceOfferingId;
-    private boolean _shrinkOk;
+    private long volumeId;
+    private long currentSize;
+    private long newSize;
+    private Long newMinIops;
+    private Long newMaxIops;
+    private Integer newHypervisorSnapshotReserve;
+    private Long newServiceOfferingId;
+    private boolean shrinkOk;
 
     public VmWorkResizeVolume(long userId, long accountId, long vmId, String handlerName, long volumeId, long currentSize, long newSize,
                               Long newMinIops, Long newMaxIops, Integer newHypervisorSnapshotReserve, Long newServiceOfferingId, boolean shrinkOk) {
         super(userId, accountId, vmId, handlerName);
 
-        _volumeId = volumeId;
-        _currentSize = currentSize;
-        _newSize = newSize;
-        _newMinIops = newMinIops;
-        _newMaxIops = newMaxIops;
-        _newHypervisorSnapshotReserve = newHypervisorSnapshotReserve;
-        _newServiceOfferingId = newServiceOfferingId;
-        _shrinkOk = shrinkOk;
+        this.volumeId = volumeId;
+        this.currentSize = currentSize;
+        this.newSize = newSize;
+        this.newMinIops = newMinIops;
+        this.newMaxIops = newMaxIops;
+        this.newHypervisorSnapshotReserve = newHypervisorSnapshotReserve;
+        this.newServiceOfferingId = newServiceOfferingId;
+        this.shrinkOk = shrinkOk;
     }
 
     public long getVolumeId() {
-        return _volumeId;
+        return volumeId;
     }
 
     public long getCurrentSize() {
-        return _currentSize;
+        return currentSize;
     }
 
     public long getNewSize() {
-        return _newSize;
+        return newSize;
     }
 
     public Long getNewMinIops() {
-        return _newMinIops;
+        return newMinIops;
     }
 
     public Long getNewMaxIops() {
-        return _newMaxIops;
+        return newMaxIops;
     }
 
     public Long getNewServiceOfferingId() {
-        return _newServiceOfferingId;
+        return newServiceOfferingId;
     }
 
     public boolean isShrinkOk() {
-        return _shrinkOk;
+        return shrinkOk;
     }
 
-    public Integer getNewHypervisorSnapshotReserve() { return _newHypervisorSnapshotReserve; }
+    public Integer getNewHypervisorSnapshotReserve() { return newHypervisorSnapshotReserve; }
 }

@@ -24,25 +24,25 @@ import com.cloud.utils.Utils;
 import java.util.Map;
 
 public final class ResignatureCommand extends StorageSubSystemCommand {
-    private final Map<String, String> _details;
+    private final Map<String, String> details;
 
-    private boolean _executeInSequence = true;
+    private boolean executeInSequence = true;
 
     public ResignatureCommand(final Map<String, String> details) {
-        _details = Utils.getImmutableMap(details);
+        this.details = Utils.getImmutableMap(details);
     }
 
     public Map<String, String> getDetails() {
-        return _details;
+        return details;
     }
 
     @Override
     public void setExecuteInSequence(final boolean executeInSequence) {
-        _executeInSequence = executeInSequence;
+        this.executeInSequence = executeInSequence;
     }
 
     @Override
     public boolean executeInSequence() {
-        return _executeInSequence;
+        return executeInSequence;
     }
 }

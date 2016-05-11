@@ -192,22 +192,13 @@ public class TemplateObject implements TemplateInfo {
                     VMTemplateStoragePoolVO templatePoolRef = templatePoolDao.findByPoolTemplate(getDataStore().getId(), getId());
                     templatePoolRef.setDownloadPercent(100);
 
-                    // In the case of managed storage, the template size may already be specified (by the storage plug-in), so do not overwrite it.
-                    if (templatePoolRef.getTemplateSize() == 0 && newTemplate.getSize() != null) {
-                        templatePoolRef.setTemplateSize(newTemplate.getSize());
-                    }
+                    setTemplateSizeIfNeeded(newTemplate, templatePoolRef);
 
                     templatePoolRef.setDownloadState(Status.DOWNLOADED);
 
-                    // In the case of managed storage, the local download path may already be specified (by the storage plug-in), so do not overwrite it.
-                    if (Strings.isNullOrEmpty(templatePoolRef.getLocalDownloadPath())) {
-                        templatePoolRef.setLocalDownloadPath(newTemplate.getPath());
-                    }
+                    setDownloadPathIfNeeded(newTemplate, templatePoolRef);
 
-                    // In the case of managed storage, the install path may already be specified (by the storage plug-in), so do not overwrite it.
-                    if (Strings.isNullOrEmpty(templatePoolRef.getInstallPath())) {
-                        templatePoolRef.setInstallPath(newTemplate.getPath());
-                    }
+                    setInstallPathIfNeeded(newTemplate, templatePoolRef);
 
                     templatePoolDao.update(templatePoolRef.getId(), templatePoolRef);
                 }
@@ -256,6 +247,33 @@ public class TemplateObject implements TemplateInfo {
             }
         }
     }
+
+	/**
+	 * In the case of managed storage, the install path may already be specified (by the storage plug-in), so do not overwrite it.
+	 */
+	private void setInstallPathIfNeeded(TemplateObjectTO template, VMTemplateStoragePoolVO templatePoolRef) {
+		if (Strings.isNullOrEmpty(templatePoolRef.getInstallPath())) {
+		    templatePoolRef.setInstallPath(template.getPath());
+		}
+	}
+
+	/**
+	 * In the case of managed storage, the local download path may already be specified (by the storage plug-in), so do not overwrite it.
+	 */
+	private void setDownloadPathIfNeeded(TemplateObjectTO template, VMTemplateStoragePoolVO templatePoolRef) {
+		if (Strings.isNullOrEmpty(templatePoolRef.getLocalDownloadPath())) {
+		    templatePoolRef.setLocalDownloadPath(template.getPath());
+		}
+	}
+
+	/**
+	 *  In the case of managed storage, the template size may already be specified (by the storage plug-in), so do not overwrite it.
+	 */
+	private void setTemplateSizeIfNeeded(TemplateObjectTO template, VMTemplateStoragePoolVO templatePoolRef) {
+		if (templatePoolRef.getTemplateSize() == 0 && template.getSize() != null) {
+		    templatePoolRef.setTemplateSize(template.getSize());
+		}
+	}
 
     @Override
     public void incRefCount() {

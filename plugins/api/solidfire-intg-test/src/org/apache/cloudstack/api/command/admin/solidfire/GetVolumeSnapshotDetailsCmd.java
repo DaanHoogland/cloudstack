@@ -34,13 +34,13 @@ import org.apache.cloudstack.util.solidfire.SolidFireIntegrationTestUtil;
         requestHasSensitiveInfo = false, responseHasSensitiveInfo = false)
 
 public class GetVolumeSnapshotDetailsCmd extends BaseCmd {
-    private static final Logger s_logger = Logger.getLogger(GetVolumeSnapshotDetailsCmd.class.getName());
-    private static final String s_name = "getvolumesnapshotdetailsresponse";
+    private static final Logger LOGGER = Logger.getLogger(GetVolumeSnapshotDetailsCmd.class.getName());
+    private static final String NAME = "getvolumesnapshotdetailsresponse";
 
     @Parameter(name = ApiConstants.SNAPSHOT_ID, type = CommandType.STRING, description = "CloudStack Snapshot UUID", required = true)
-    private String _snapshotUuid;
+    private String snapshotUuid;
 
-    @Inject private SolidFireIntegrationTestUtil _util;
+    @Inject private SolidFireIntegrationTestUtil util;
 
     /////////////////////////////////////////////////////
     /////////////// API Implementation///////////////////
@@ -48,19 +48,19 @@ public class GetVolumeSnapshotDetailsCmd extends BaseCmd {
 
     @Override
     public String getCommandName() {
-        return s_name;
+        return NAME;
     }
 
     @Override
     public long getEntityOwnerId() {
-        return _util.getAccountIdForSnapshotUuid(_snapshotUuid);
+        return util.getAccountIdForSnapshotUuid(snapshotUuid);
     }
 
     @Override
     public void execute() {
-        s_logger.info("'" + GetVolumeSnapshotDetailsCmd.class.getSimpleName() + ".execute' method invoked");
+        LOGGER.info("'" + GetVolumeSnapshotDetailsCmd.class.getSimpleName() + ".execute' method invoked");
 
-        List<ApiVolumeSnapshotDetailsResponse> responses = _util.getSnapshotDetails(_snapshotUuid);
+        List<ApiVolumeSnapshotDetailsResponse> responses = util.getSnapshotDetails(snapshotUuid);
 
         ListResponse<ApiVolumeSnapshotDetailsResponse> listReponse = new ListResponse<>();
 

@@ -25,9 +25,9 @@ import org.apache.cloudstack.api.BaseResponse;
 public class ApiSolidFireVolumeSizeResponse extends BaseResponse {
     @SerializedName("solidFireVolumeSize")
     @Param(description = "SolidFire Volume Size Including Hypervisor Snapshot Reserve")
-    private long _solidFireVolumeSize;
+    private long solidFireVolumeSize;
 
     public ApiSolidFireVolumeSizeResponse(long sfVolumeSize) {
-        _solidFireVolumeSize = sfVolumeSize;
+        solidFireVolumeSize = sfVolumeSize;
     }
 }

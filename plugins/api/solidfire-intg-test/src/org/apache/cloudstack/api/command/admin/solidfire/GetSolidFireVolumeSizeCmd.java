@@ -31,14 +31,14 @@ import org.apache.cloudstack.util.solidfire.SolidFireIntegrationTestUtil;
 @APICommand(name = "getSolidFireVolumeSize", responseObject = ApiSolidFireVolumeSizeResponse.class, description = "Get the SF volume size including Hypervisor Snapshot Reserve",
         requestHasSensitiveInfo = false, responseHasSensitiveInfo = false)
 public class GetSolidFireVolumeSizeCmd extends BaseCmd {
-    private static final Logger s_logger = Logger.getLogger(GetSolidFireVolumeSizeCmd.class.getName());
-    private static final String s_name = "getsolidfirevolumesizeresponse";
+    private static final Logger LOGGER = Logger.getLogger(GetSolidFireVolumeSizeCmd.class.getName());
+    private static final String NAME = "getsolidfirevolumesizeresponse";
 
     @Parameter(name = ApiConstants.VOLUME_ID, type = CommandType.STRING, description = "Volume UUID", required = true)
-    private String _volumeUuid;
+    private String volumeUuid;
 
-    @Inject private SolidFireIntegrationTestManager _manager;
-    @Inject private SolidFireIntegrationTestUtil _util;
+    @Inject private SolidFireIntegrationTestManager manager;
+    @Inject private SolidFireIntegrationTestUtil util;
 
     /////////////////////////////////////////////////////
     /////////////// API Implementation///////////////////
@@ -46,19 +46,19 @@ public class GetSolidFireVolumeSizeCmd extends BaseCmd {
 
     @Override
     public String getCommandName() {
-        return s_name;
+        return NAME;
     }
 
     @Override
     public long getEntityOwnerId() {
-        return _util.getAccountIdForVolumeUuid(_volumeUuid);
+        return util.getAccountIdForVolumeUuid(volumeUuid);
     }
 
     @Override
     public void execute() {
-        s_logger.info("'GetSolidFireVolumeSizeCmd.execute' method invoked");
+        LOGGER.info("'GetSolidFireVolumeSizeCmd.execute' method invoked");
 
-        long sfVolumeSize = _manager.getSolidFireVolumeSize(_volumeUuid);
+        long sfVolumeSize = manager.getSolidFireVolumeSize(volumeUuid);
 
         ApiSolidFireVolumeSizeResponse response = new ApiSolidFireVolumeSizeResponse(sfVolumeSize);
 

@@ -25,9 +25,9 @@ import com.google.gson.annotations.SerializedName;
 public class ApiPathForVolumeResponse extends BaseResponse {
     @SerializedName(ApiConstants.PATH)
     @Param(description = "The path field for the volume")
-    private String _path;
+    private String path;
 
     public ApiPathForVolumeResponse(String path) {
-        _path = path;
+        this.path = path;
     }
 }

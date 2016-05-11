@@ -37,61 +37,61 @@ import com.cloud.user.Account;
 import com.cloud.user.dao.AccountDao;
 
 public class SolidFireIntegrationTestUtil {
-    @Inject private AccountDao _accountDao;
-    @Inject private ClusterDao _clusterDao;
-    @Inject private PrimaryDataStoreDao _storagePoolDao;
-    @Inject private SnapshotDao _snapshotDao;
-    @Inject private SnapshotDetailsDao _snapshotDetailsDao;
-    @Inject private VolumeDao _volumeDao;
+    @Inject private AccountDao accountDao;
+    @Inject private ClusterDao clusterDao;
+    @Inject private PrimaryDataStoreDao storagePoolDao;
+    @Inject private SnapshotDao snapshotDao;
+    @Inject private SnapshotDetailsDao snapshotDetailsDao;
+    @Inject private VolumeDao volumeDao;
 
     private SolidFireIntegrationTestUtil() {}
 
     public long getAccountIdForAccountUuid(String accountUuid) {
-        Account account = _accountDao.findByUuid(accountUuid);
+        Account account = accountDao.findByUuid(accountUuid);
 
         return account.getAccountId();
     }
 
     public long getAccountIdForVolumeUuid(String volumeUuid) {
-        VolumeVO volume = _volumeDao.findByUuid(volumeUuid);
+        VolumeVO volume = volumeDao.findByUuid(volumeUuid);
 
         return volume.getAccountId();
     }
 
     public long getAccountIdForSnapshotUuid(String snapshotUuid) {
-        SnapshotVO snapshot = _snapshotDao.findByUuid(snapshotUuid);
+        SnapshotVO snapshot = snapshotDao.findByUuid(snapshotUuid);
 
         return snapshot.getAccountId();
     }
 
     public long getClusterIdForClusterUuid(String clusterUuid) {
-        ClusterVO cluster = _clusterDao.findByUuid(clusterUuid);
+        ClusterVO cluster = clusterDao.findByUuid(clusterUuid);
 
         return cluster.getId();
     }
 
     public long getStoragePoolIdForStoragePoolUuid(String storagePoolUuid) {
-        StoragePoolVO storagePool = _storagePoolDao.findByUuid(storagePoolUuid);
+        StoragePoolVO storagePool = storagePoolDao.findByUuid(storagePoolUuid);
 
         return storagePool.getId();
     }
 
     public String getPathForVolumeUuid(String volumeUuid) {
-        VolumeVO volume = _volumeDao.findByUuid(volumeUuid);
+        VolumeVO volume = volumeDao.findByUuid(volumeUuid);
 
         return volume.getPath();
     }
 
     public String getVolume_iScsiName(String volumeUuid) {
-        VolumeVO volume = _volumeDao.findByUuid(volumeUuid);
+        VolumeVO volume = volumeDao.findByUuid(volumeUuid);
 
         return volume.get_iScsiName();
     }
 
     public List<ApiVolumeSnapshotDetailsResponse> getSnapshotDetails(String snapshotUuid) {
-        SnapshotVO snapshot = _snapshotDao.findByUuid(snapshotUuid);
+        SnapshotVO snapshot = snapshotDao.findByUuid(snapshotUuid);
 
-        List<SnapshotDetailsVO> snapshotDetails = _snapshotDetailsDao.listDetails(snapshot.getId());
+        List<SnapshotDetailsVO> snapshotDetails = snapshotDetailsDao.listDetails(snapshot.getId());
 
         List<ApiVolumeSnapshotDetailsResponse> responses = new ArrayList<>();
 

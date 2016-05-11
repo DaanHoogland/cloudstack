@@ -30,11 +30,11 @@ import org.apache.cloudstack.util.solidfire.SolidFireIntegrationTestUtil;
         requestHasSensitiveInfo = false, responseHasSensitiveInfo = false)
 
 public class GetVolumeiScsiNameCmd extends BaseCmd {
-    private static final Logger s_logger = Logger.getLogger(GetVolumeiScsiNameCmd.class.getName());
-    private static final String s_name = "getvolumeiscsinameresponse";
+    private static final Logger LOGGER = Logger.getLogger(GetVolumeiScsiNameCmd.class.getName());
+    private static final String NAME = "getvolumeiscsinameresponse";
 
     @Parameter(name = ApiConstants.VOLUME_ID, type = CommandType.STRING, description = "CloudStack Volume UUID", required = true)
-    private String _volumeUuid;
+    private String volumeUuid;
 
     @Inject private SolidFireIntegrationTestUtil _util;
 
@@ -44,19 +44,19 @@ public class GetVolumeiScsiNameCmd extends BaseCmd {
 
     @Override
     public String getCommandName() {
-        return s_name;
+        return NAME;
     }
 
     @Override
     public long getEntityOwnerId() {
-        return _util.getAccountIdForVolumeUuid(_volumeUuid);
+        return _util.getAccountIdForVolumeUuid(volumeUuid);
     }
 
     @Override
     public void execute() {
-        s_logger.info("'GetVolumeiScsiNameCmd.execute' method invoked");
+        LOGGER.info("'GetVolumeiScsiNameCmd.execute' method invoked");
 
-        String volume_iScsiName = _util.getVolume_iScsiName(_volumeUuid);
+        String volume_iScsiName = _util.getVolume_iScsiName(volumeUuid);
 
         ApiVolumeiScsiNameResponse response = new ApiVolumeiScsiNameResponse(volume_iScsiName);
 

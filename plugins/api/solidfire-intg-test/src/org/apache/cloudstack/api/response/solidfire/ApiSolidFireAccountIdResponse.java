@@ -25,9 +25,9 @@ import org.apache.cloudstack.api.BaseResponse;
 public class ApiSolidFireAccountIdResponse extends BaseResponse {
     @SerializedName("solidFireAccountId")
     @Param(description = "SolidFire Account ID")
-    private long _solidFireAccountId;
+    private long solidFireAccountId;
 
     public ApiSolidFireAccountIdResponse(long sfAccountId) {
-        _solidFireAccountId = sfAccountId;
+        solidFireAccountId = sfAccountId;
     }
 }

@@ -71,7 +71,7 @@ public class CloudZonesStartupProcessor extends AdapterBase implements StartupCo
     @Inject
     HostDao _hostDao = null;
     @Inject
-    private HostDetailsDao _hostDetailsDao;
+    private HostDetailsDao hostDetailsDao;
     @Inject
     HostPodDao _podDao = null;
     @Inject
@@ -330,17 +330,17 @@ public class CloudZonesStartupProcessor extends AdapterBase implements StartupCo
         final String name = "supportsResign";
         final String value = String.valueOf(startupRoutingCmd.getSupportsClonedVolumes());
 
-        DetailVO hostDetail = _hostDetailsDao.findDetail(host.getId(), name);
+        DetailVO hostDetail = hostDetailsDao.findDetail(host.getId(), name);
 
         if (hostDetail != null) {
             hostDetail.setValue(value);
 
-            _hostDetailsDao.update(hostDetail.getId(), hostDetail);
+            hostDetailsDao.update(hostDetail.getId(), hostDetail);
         }
         else {
             hostDetail = new DetailVO(host.getId(), name, value);
 
-            _hostDetailsDao.persist(hostDetail);
+            hostDetailsDao.persist(hostDetail);
         }
     }
 

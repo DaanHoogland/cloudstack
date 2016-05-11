@@ -147,13 +147,13 @@ public class VolumeServiceImpl implements VolumeService {
     @Inject
     HostDao _hostDao;
     @Inject
-    private PrimaryDataStoreDao _storagePoolDao;
+    private PrimaryDataStoreDao storagePoolDao;
     @Inject
-    private HostDetailsDao _hostDetailsDao;
+    private HostDetailsDao hostDetailsDao;
     @Inject
-    private ManagementService _mgr;
+    private ManagementService mgr;
     @Inject
-    private ClusterDao _clusterDao;
+    private ClusterDao clusterDao;
 
     public VolumeServiceImpl() {
     }
@@ -1076,7 +1076,7 @@ public class VolumeServiceImpl implements VolumeService {
             throw new CloudRuntimeException("Zone ID cannot be null.");
         }
 
-        List<? extends Cluster> clusters = _mgr.searchForClusters(zoneId, new Long(0), Long.MAX_VALUE, hypervisorType.toString());
+        List<? extends Cluster> clusters = mgr.searchForClusters(zoneId, new Long(0), Long.MAX_VALUE, hypervisorType.toString());
 
         if (clusters == null) {
             clusters = new ArrayList<>();
@@ -1095,7 +1095,7 @@ public class VolumeServiceImpl implements VolumeService {
                     for (HostVO host : hosts) {
                         if (host.getResourceState() == ResourceState.Enabled) {
                             if (computeClusterMustSupportResign) {
-                                if (_clusterDao.computeClusterSupportsResign(cluster.getId())) {
+                                if (clusterDao.computeClusterSupportsResign(cluster.getId())) {
                                     return host;
                                 }
                                 else {

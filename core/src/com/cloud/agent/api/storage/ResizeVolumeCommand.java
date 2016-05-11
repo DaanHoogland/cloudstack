@@ -23,63 +23,63 @@ import com.cloud.agent.api.Command;
 import com.cloud.agent.api.to.StorageFilerTO;
 
 public class ResizeVolumeCommand extends Command {
-    private String _path;
-    private StorageFilerTO _pool;
-    private Long _currentSize;
-    private Long _newSize;
-    private boolean _shrinkOk;
-    private String _vmInstance;
+    private String path;
+    private StorageFilerTO pool;
+    private Long currentSize;
+    private Long newSize;
+    private boolean shrinkOk;
+    private String vmInstance;
 
     /* For managed storage */
-    private boolean _managed;
-    private String _iScsiName;
+    private boolean managed;
+    private String iScsiName;
 
     protected ResizeVolumeCommand() {
     }
 
     public ResizeVolumeCommand(String path, StorageFilerTO pool, Long currentSize, Long newSize, boolean shrinkOk, String vmInstance) {
-        _path = path;
-        _pool = pool;
-        _currentSize = currentSize;
-        _newSize = newSize;
-        _shrinkOk = shrinkOk;
-        _vmInstance = vmInstance;
-        _managed = false;
+        this.path = path;
+        this.pool = pool;
+        this.currentSize = currentSize;
+        this.newSize = newSize;
+        this.shrinkOk = shrinkOk;
+        this.vmInstance = vmInstance;
+        this.managed = false;
     }
 
     public ResizeVolumeCommand(String path, StorageFilerTO pool, Long currentSize, Long newSize, boolean shrinkOk, String vmInstance,
                                boolean isManaged, String iScsiName) {
         this(path, pool, currentSize, newSize, shrinkOk, vmInstance);
 
-        _iScsiName = iScsiName;
-        _managed = isManaged;
+        this.iScsiName = iScsiName;
+        this.managed = isManaged;
     }
 
     public String getPath() {
-        return _path;
+        return path;
     }
 
     public String getPoolUuid() {
-        return _pool.getUuid();
+        return pool.getUuid();
     }
 
     public StorageFilerTO getPool() {
-        return _pool;
+        return pool;
     }
 
-    public long getCurrentSize() { return _currentSize; }
+    public long getCurrentSize() { return currentSize; }
 
-    public long getNewSize() { return _newSize; }
+    public long getNewSize() { return newSize; }
 
-    public boolean getShrinkOk() { return _shrinkOk; }
+    public boolean getShrinkOk() { return shrinkOk; }
 
     public String getInstanceName() {
-        return _vmInstance;
+        return vmInstance;
     }
 
-    public boolean isManaged() { return _managed; }
+    public boolean isManaged() { return managed; }
 
-    public String get_iScsiName() {return _iScsiName; }
+    public String get_iScsiName() {return iScsiName; }
 
     /**
      * {@inheritDoc}
