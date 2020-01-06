@@ -337,12 +337,13 @@ public class DefaultSnapshotStrategy extends SnapshotStrategyBase {
      */
     private boolean isSnapshotOnPrimaryStorage(long snapshotId) {
         SnapshotDataStoreVO snapshotOnPrimary = snapshotStoreDao.findBySnapshot(snapshotId, DataStoreRole.Primary);
+        boolean isVolumeOnPrimary = false;
         if (snapshotOnPrimary != null) {
             long volumeId = snapshotOnPrimary.getVolumeId();
             VolumeVO volumeVO = volumeDao.findById(volumeId);
-            return volumeVO != null && volumeVO.getRemoved() == null;
+            isVolumeOnPrimary = volumeVO != null && volumeVO.getRemoved() == null;
         }
-        return false;
+        return isVolumeOnPrimary;
     }
 
     @Override
