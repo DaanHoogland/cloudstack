@@ -45,6 +45,7 @@
       <a-list-item v-if="(item in dataResource && !customDisplayItems.includes(item)) || (offeringDetails.includes(item) && dataResource.serviceofferingdetails)">
         <div style="width: 100%">
           <strong>{{ item === 'service' ? $t('label.supportedservices') :
+           $route.meta.name === 'userdata' && item === 'userdata' ? $t('label.user.data') :
            $route.meta.name === 'cniconfiguration' && item === 'userdata' ? $t('label.' + String($route.meta.name).toLowerCase()) :
            $t(getDetailTitle(item)) }}</strong>
           <br/>
