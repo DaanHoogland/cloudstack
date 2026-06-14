@@ -28,6 +28,8 @@ import com.cloud.dc.dao.ClusterDao;
 import com.cloud.dc.dao.DataCenterDao;
 import com.cloud.dc.dao.HostPodDao;
 import com.cloud.event.ActionEventUtils;
+import com.cloud.event.EventTypes;
+import com.cloud.event.EventVO;
 import com.cloud.exception.InvalidParameterValueException;
 import com.cloud.ha.HighAvailabilityManager;
 import com.cloud.host.Host;
@@ -474,7 +476,15 @@ public class ResourceManagerImplTest {
         verify(resourceManager, never()).setHostIntoErrorInMaintenance(any(), any());
         verify(resourceManager, never()).setHostIntoPrepareForMaintenanceAfterErrorsFixed(any());
         verify(resourceManager).resourceStateTransitTo(eq(host), eq(UnableToMigrate), anyLong());
+        actionEventUtilsMocked.verify(() -> ActionEventUtils.onCompletedActionEvent(
+                anyLong(), anyLong(), eq(EventVO.LEVEL_ERROR), eq(EventTypes.EVENT_MAINTENANCE_PREPARE_ERROR),
+                eq(String.format("error in prepare maintenance for host %s", host)), eq(hostId), eq(null), eq(0L)));
         Assert.assertFalse(enterMaintenanceMode);
+    }
+
+    @Test
+    public void testMaintenancePrepareErrorEventMapsToHostEntity() {
+        Assert.assertEquals(Host.class, EventTypes.getEntityClassForEvent(EventTypes.EVENT_MAINTENANCE_PREPARE_ERROR));
     }
 
     private void verifyReturnToPrepareForMaintenanceCalls() throws NoTransitionException {
