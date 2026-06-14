@@ -478,7 +478,7 @@ public class ResourceManagerImplTest {
         verify(resourceManager).resourceStateTransitTo(eq(host), eq(UnableToMigrate), anyLong());
         actionEventUtilsMocked.verify(() -> ActionEventUtils.onCompletedActionEvent(
                 anyLong(), anyLong(), eq(EventVO.LEVEL_ERROR), eq(EventTypes.EVENT_MAINTENANCE_PREPARE_ERROR),
-                eq(String.format("error in prepare maintenance for host %s", host)), eq(hostId), eq(null), eq(0L)));
+                eq(String.format("failed to prepare host %s for maintenance due to migration or VM state errors", host)), eq(hostId), eq(null), eq(0L)));
         Assert.assertFalse(enterMaintenanceMode);
     }
 
